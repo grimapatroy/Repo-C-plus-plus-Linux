@@ -1,0 +1,7 @@
+[
+{
+  "directory": "c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC1/ejer28/build",
+  "command": "C:/cygwin64/bin/x86_64-pc-cygwin-g++.exe  -Ic:/Users/Humanitroy/Documents/DEV_/CAPF/LEC1/ejer28/include -O3 -DNDEBUG -o CMakeFiles/modelo.dir/src/main.cpp.o -c c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC1/ejer28/src/main.cpp",
+  "file": "c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC1/ejer28/src/main.cpp"
+}
+]

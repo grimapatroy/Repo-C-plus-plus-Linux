@@ -1,0 +1,59 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "TADfecha",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "modelo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-modelo-Release-c0308e3c25bc8e5c8a24.json",
+					"name" : "modelo",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "c:/Users/GHOSTEC/Documents/CAPF/Repo_Cplusplus/LEC4/lecc4_ejer2/build",
+		"source" : "c:/Users/GHOSTEC/Documents/CAPF/Repo_Cplusplus/LEC4/lecc4_ejer2"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

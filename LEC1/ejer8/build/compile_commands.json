@@ -1,0 +1,12 @@
+[
+{
+  "directory": "c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion1/ejer8/build",
+  "command": "C:/cygwin64/bin/g++.exe  -Ic:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion1/ejer8/include -g -o CMakeFiles/ejer21.dir/src/funciones.cpp.o -c c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion1/ejer8/src/funciones.cpp",
+  "file": "c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion1/ejer8/src/funciones.cpp"
+},
+{
+  "directory": "c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion1/ejer8/build",
+  "command": "C:/cygwin64/bin/g++.exe  -Ic:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion1/ejer8/include -g -o CMakeFiles/ejer21.dir/src/main.cpp.o -c c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion1/ejer8/src/main.cpp",
+  "file": "c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion1/ejer8/src/main.cpp"
+}
+]

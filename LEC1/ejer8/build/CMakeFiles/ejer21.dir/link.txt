@@ -1,0 +1,1 @@
+C:/cygwin64/bin/g++.exe -g -Wl,--enable-auto-import CMakeFiles/ejer21.dir/src/funciones.cpp.o CMakeFiles/ejer21.dir/src/main.cpp.o -o ejer21.exe -Wl,--out-implib,libejer21.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

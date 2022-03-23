@@ -1,0 +1,1 @@
+C:/cygwin64/bin/x86_64-pc-cygwin-g++.exe -O3 -DNDEBUG -Wl,--enable-auto-import CMakeFiles/telefonia.dir/src/main.cpp.o -o telefonia.exe -Wl,--out-implib,libtelefonia.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

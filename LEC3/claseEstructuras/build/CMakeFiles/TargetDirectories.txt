@@ -1,0 +1,3 @@
+c:/Users/Humanitroy/Documents/REPORTORIO_DEVELOMENT/DEV_ALGORITMOS/CURSO_ALGORITMOS/leccion3/claseEstructuras/build/CMakeFiles/rebuild_cache.dir
+c:/Users/Humanitroy/Documents/REPORTORIO_DEVELOMENT/DEV_ALGORITMOS/CURSO_ALGORITMOS/leccion3/claseEstructuras/build/CMakeFiles/edit_cache.dir
+c:/Users/Humanitroy/Documents/REPORTORIO_DEVELOMENT/DEV_ALGORITMOS/CURSO_ALGORITMOS/leccion3/claseEstructuras/build/CMakeFiles/estructuras.dir

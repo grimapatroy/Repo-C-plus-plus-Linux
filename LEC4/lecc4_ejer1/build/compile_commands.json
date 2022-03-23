@@ -1,0 +1,7 @@
+[
+{
+  "directory": "c:/Users/GHOSTEC/Documents/DEV_/CAPF/LEC4/lecc4_ejer1/build",
+  "command": "C:/cygwin64/bin/x86_64-pc-cygwin-g++.exe  -Ic:/Users/GHOSTEC/Documents/DEV_/CAPF/LEC4/lecc4_ejer1/include -O3 -DNDEBUG -o CMakeFiles/modelo.dir/src/main.cpp.o -c c:/Users/GHOSTEC/Documents/DEV_/CAPF/LEC4/lecc4_ejer1/src/main.cpp",
+  "file": "c:/Users/GHOSTEC/Documents/DEV_/CAPF/LEC4/lecc4_ejer1/src/main.cpp"
+}
+]

@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -O3 -DNDEBUG -Wl,--enable-auto-import CMakeFiles/modelo.dir/src/main.cpp.o -o modelo.exe -Wl,--out-implib,libmodelo.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

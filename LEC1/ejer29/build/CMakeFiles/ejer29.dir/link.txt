@@ -1,0 +1,1 @@
+C:/cygwin64/bin/x86_64-pc-cygwin-g++.exe -O3 -DNDEBUG -Wl,--enable-auto-import CMakeFiles/ejer29.dir/src/main.cpp.o -o ejer29.exe -Wl,--out-implib,libejer29.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

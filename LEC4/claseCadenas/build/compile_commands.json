@@ -1,0 +1,12 @@
+[
+{
+  "directory": "c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion4/claseCadenas/build",
+  "command": "C:/cygwin64/bin/g++.exe  -Ic:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion4/claseCadenas/include -O3 -DNDEBUG -o CMakeFiles/cadenas.dir/src/funciones.cpp.o -c c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion4/claseCadenas/src/funciones.cpp",
+  "file": "c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion4/claseCadenas/src/funciones.cpp"
+},
+{
+  "directory": "c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion4/claseCadenas/build",
+  "command": "C:/cygwin64/bin/g++.exe  -Ic:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion4/claseCadenas/include -O3 -DNDEBUG -o CMakeFiles/cadenas.dir/src/main.cpp.o -c c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion4/claseCadenas/src/main.cpp",
+  "file": "c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion4/claseCadenas/src/main.cpp"
+}
+]

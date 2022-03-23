@@ -1,0 +1,3 @@
+c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC3/TernaTDA/build/CMakeFiles/edit_cache.dir
+c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC3/TernaTDA/build/CMakeFiles/rebuild_cache.dir
+c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC3/TernaTDA/build/CMakeFiles/terna.dir

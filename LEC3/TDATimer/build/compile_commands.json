@@ -1,0 +1,7 @@
+[
+{
+  "directory": "c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC3/TDATimer/build",
+  "command": "C:/cygwin64/bin/g++.exe  -Ic:/Users/Humanitroy/Documents/DEV_/CAPF/LEC3/TDATimer/include -O3 -DNDEBUG -o CMakeFiles/modelo.dir/src/main.cpp.o -c c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC3/TDATimer/src/main.cpp",
+  "file": "c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC3/TDATimer/src/main.cpp"
+}
+]

@@ -1,0 +1,59 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "cadenas",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "cadenas::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cadenas-Release-eebf72182c4527f7a420.json",
+					"name" : "cadenas",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion4/claseCadenas/build",
+		"source" : "c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion4/claseCadenas"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

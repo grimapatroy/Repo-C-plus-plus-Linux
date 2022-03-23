@@ -1,0 +1,1 @@
+C:/cygwin64/bin/x86_64-pc-cygwin-g++.exe -O3 -DNDEBUG -Wl,--enable-auto-import CMakeFiles/estructuras.dir/src/funciones.cpp.o CMakeFiles/estructuras.dir/src/main.cpp.o -o estructuras.exe -Wl,--out-implib,libestructuras.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

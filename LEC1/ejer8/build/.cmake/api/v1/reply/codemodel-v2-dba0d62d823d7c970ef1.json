@@ -1,0 +1,59 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ejer21",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ejer21::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ejer21-Debug-920a5c6a6940541ca10e.json",
+					"name" : "ejer21",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion1/ejer8/build",
+		"source" : "c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion1/ejer8"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}

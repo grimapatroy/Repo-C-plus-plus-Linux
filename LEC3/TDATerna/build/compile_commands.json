@@ -1,0 +1,12 @@
+[
+{
+  "directory": "c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC3/TernaTDA/build",
+  "command": "C:/cygwin64/bin/x86_64-pc-cygwin-g++.exe  -Ic:/Users/Humanitroy/Documents/DEV_/CAPF/LEC3/TernaTDA/include -O3 -DNDEBUG -o CMakeFiles/terna.dir/src/funciones.cpp.o -c c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC3/TernaTDA/src/funciones.cpp",
+  "file": "c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC3/TernaTDA/src/funciones.cpp"
+},
+{
+  "directory": "c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC3/TernaTDA/build",
+  "command": "C:/cygwin64/bin/x86_64-pc-cygwin-g++.exe  -Ic:/Users/Humanitroy/Documents/DEV_/CAPF/LEC3/TernaTDA/include -O3 -DNDEBUG -o CMakeFiles/terna.dir/src/main.cpp.o -c c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC3/TernaTDA/src/main.cpp",
+  "file": "c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC3/TernaTDA/src/main.cpp"
+}
+]

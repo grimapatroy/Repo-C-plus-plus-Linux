@@ -1,0 +1,7 @@
+[
+{
+  "directory": "c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion1/ejer29/build",
+  "command": "C:/cygwin64/bin/x86_64-pc-cygwin-g++.exe  -Ic:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion1/ejer29/include -O3 -DNDEBUG -o CMakeFiles/ejer29.dir/src/main.cpp.o -c c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion1/ejer29/src/main.cpp",
+  "file": "c:/Users/Humanitroy/Documents/Practicando_Programacion/C_plus_cmake/CURSO_ALGORITMOS_Y_PROGRAMACION/leccion1/ejer29/src/main.cpp"
+}
+]

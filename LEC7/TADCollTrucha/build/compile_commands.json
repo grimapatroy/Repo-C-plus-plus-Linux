@@ -1,0 +1,7 @@
+[
+{
+  "directory": "c:/Users/GHOSTEC/Documents/CAPF/Repo_Cplusplus/LEC7/TADCollTrucha/build",
+  "command": "C:/cygwin64/bin/x86_64-pc-cygwin-g++.exe  -Ic:/Users/GHOSTEC/Documents/CAPF/Repo_Cplusplus/LEC7/TADCollTrucha/include -O3 -DNDEBUG -o CMakeFiles/modelo.dir/src/main.cpp.o -c c:/Users/GHOSTEC/Documents/CAPF/Repo_Cplusplus/LEC7/TADCollTrucha/src/main.cpp",
+  "file": "c:/Users/GHOSTEC/Documents/CAPF/Repo_Cplusplus/LEC7/TADCollTrucha/src/main.cpp"
+}
+]

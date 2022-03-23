@@ -1,0 +1,7 @@
+[
+{
+  "directory": "c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC1.2/ejer10/build",
+  "command": "C:/cygwin64/bin/g++.exe  -Ic:/Users/Humanitroy/Documents/DEV_/CAPF/LEC1.2/ejer10/include -O3 -DNDEBUG -o CMakeFiles/ejer10.dir/src/main.cpp.o -c c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC1.2/ejer10/src/main.cpp",
+  "file": "c:/Users/Humanitroy/Documents/DEV_/CAPF/LEC1.2/ejer10/src/main.cpp"
+}
+]

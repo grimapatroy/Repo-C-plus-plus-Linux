@@ -1,0 +1,3 @@
+/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus/LEC9/colldeCellecion/build/CMakeFiles/edit_cache.dir
+/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus/LEC9/colldeCellecion/build/CMakeFiles/rebuild_cache.dir
+/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus/LEC9/colldeCellecion/build/CMakeFiles/modelo.dir

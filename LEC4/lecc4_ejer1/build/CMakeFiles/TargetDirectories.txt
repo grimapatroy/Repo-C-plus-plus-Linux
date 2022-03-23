@@ -1,0 +1,3 @@
+c:/Users/GHOSTEC/Documents/DEV_/CAPF/LEC4/lecc4_ejer1/build/CMakeFiles/rebuild_cache.dir
+c:/Users/GHOSTEC/Documents/DEV_/CAPF/LEC4/lecc4_ejer1/build/CMakeFiles/edit_cache.dir
+c:/Users/GHOSTEC/Documents/DEV_/CAPF/LEC4/lecc4_ejer1/build/CMakeFiles/modelo.dir
