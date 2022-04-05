@@ -1,5 +1,5 @@
 CMakeFiles/modelo.dir/src/main.cpp.o: \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC10/ejercicio1.8.1/src/main.cpp \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC10/ejercicio1.8.3/src/main.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/9/iostream \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
@@ -140,12 +140,12 @@ CMakeFiles/modelo.dir/src/main.cpp.o: \
  /usr/include/c++/9/bits/locale_facets.tcc \
  /usr/include/c++/9/bits/basic_ios.tcc \
  /usr/include/c++/9/bits/ostream.tcc /usr/include/c++/9/istream \
- /usr/include/c++/9/bits/istream.tcc \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC10/ejercicio1.8.1/src/../include/tads/Coll.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC10/ejercicio1.8.1/src/../include/tads/../funciones/strings.hpp \
- /usr/include/string.h /usr/include/strings.h \
+ /usr/include/c++/9/bits/istream.tcc /usr/include/string.h \
+ /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC10/ejercicio1.8.3/src/../include/tads/Coll.hpp \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC10/ejercicio1.8.3/src/../include/tads/../funciones/strings.hpp \
  /usr/include/c++/9/math.h /usr/include/c++/9/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -157,6 +157,6 @@ CMakeFiles/modelo.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
  /usr/include/x86_64-linux-gnu/bits/mathinline.h \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC10/ejercicio1.8.1/src/../include/tads/../funciones/tokens.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC10/ejercicio1.8.1/src/../include/tads/../funciones/strings.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC10/ejercicio1.8.1/src/../include/funciones/files.hpp
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC10/ejercicio1.8.3/src/../include/tads/../funciones/tokens.hpp \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC10/ejercicio1.8.3/src/../include/tads/../funciones/strings.hpp \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC10/ejercicio1.8.3/src/../include/funciones/files.hpp
