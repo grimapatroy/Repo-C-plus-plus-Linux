@@ -9,40 +9,48 @@ using namespace std;
 
 struct BitWriter
 {
-    // char bits[8];
-    // char bit2;
-    // char bit3;
-    // char bit4;
-    // char bit5;
-    // char bit6;
-    // char bit7;
-    // char bit8;
-    // int bit1;
-    // int bit2;
-    // int bit3;
-    // int bit4;
-    // int bit5;
-    // int bit6;
-    // int bit7;
-    // int bit8;
-    char bits;
+    FILE* arch; //archivo orignal 
+    int BYTE; //1111 1111
 };
 
+int static cont=0;
 
 
 BitWriter bitWriter(FILE* f){
-    BitWriter byte = {255};
-    fwrite(&byte,sizeof(BitWriter),1,f);
-    // fseek(f,0,SEEK_END);
-    return  byte;
+    BitWriter bw;
+    bw.arch = f;
+    bw.BYTE = 0;
+    return bw;
 }
 
 void bitWriterWrite(BitWriter bw,int bit){
-    // bw.bits[7]= bit;
-    bw.bits>>7;
 
-    // fwrite(&bw.bits,sizeof(BitWriter),1,);
+           // modifica el marcado de posicion para que grabe desde el final     
+        // fseek(bw.arch,1,SEEK_END);
 
+        // grabar el bit que revibo si bien es un1 se supone que solo va  a venir un numero hasta 255
+        fwrite(&bit,1,1,bw.arch);// la variabe que voy a grabar(direccion de memoria),cuantos  byte voy a grabar , cuantos bloques voy a grabar,el archivo
+
+        cont++;
 }
+
+void bitWriterFlush(BitWriter bw){
+    int posActual = ftell(bw.arch);
+    if(posActual%8!=0)
+    {
+        fseek(bw.arch,1,SEEK_END);
+        int resto = 8-posActual ;
+        for (int i = 1; i < resto; i++)
+        {
+            int bit=0;
+            fwrite(&bit,1,1,bw.arch);
+        }
+    
+    } 
+}
+// fseek(archivo,pesoEnByte,constante"SEEK_SET,SEEK_END,SEEK-CUR")
+// ftell(archivo)
+// fwrite(&variable,pesoByte,bloquesByte,archivo)
+//  fread(&variable,pesoByte,bloquesByte,archivo)
 
 #endif

@@ -3,6 +3,8 @@
 #define _TMAP_TAD_
 
 #include <iostream>
+#include <string.h>
+#include <stdio.h>
 #include "Array.hpp"
 
 using namespace std;

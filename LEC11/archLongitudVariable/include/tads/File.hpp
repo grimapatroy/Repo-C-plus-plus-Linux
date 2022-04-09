@@ -2,6 +2,8 @@
 #define _TDA_FILE
 
 #include <iostream>
+#include <string.h>
+#include <stdio.h>
 #include "../funciones/strings.hpp"
 #include "../funciones/tokens.hpp"
 

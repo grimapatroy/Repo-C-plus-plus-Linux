@@ -2,7 +2,8 @@
 #define _TARR_TAD_
 
 #include <iostream>
-#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 #include "../funciones/arrays.hpp"
 
 using namespace std;

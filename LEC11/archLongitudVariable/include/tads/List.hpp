@@ -2,6 +2,8 @@
 #define _TLIST_TAD_
 
 #include <iostream>
+#include <string.h>
+#include <stdio.h>
 #include "../funciones/lists.hpp"
 
 using namespace std;

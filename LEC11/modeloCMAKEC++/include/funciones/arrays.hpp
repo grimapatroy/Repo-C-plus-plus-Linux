@@ -2,6 +2,8 @@
 #define _TARRAYS_T_
 
 #include <iostream>
+#include <string.h>
+#include <stdio.h>
 
 template <typename T>
 int add(T arr[],int& len,T e)
