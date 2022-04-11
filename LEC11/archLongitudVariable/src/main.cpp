@@ -13,11 +13,23 @@ typedef unsigned short ushort;
 
 struct  Fecha
 {
-    uchar dia;
-    uchar mes;
-    uchar anio;    
+    ushort dia;
+    ushort mes;
+    ushort anio;    
 };
 
+string fechaToString1 (Fecha f){
+    
+    return  intToString(f.anio)+"/"+intToString(f.mes)+"/"+intToString(f.dia);
+}
+
+
+
+struct RegType
+{
+    ushort codigo;
+    string descripcion;
+};
 
 
 unsigned short permutarShort (unsigned short x){
@@ -27,19 +39,16 @@ unsigned short permutarShort (unsigned short x){
 }
 
 // unsigned short permutarShortMask (unsigned short x){
-    
 //     unsigned short mask1 = 65280;    //lo puedes representar en octal,hexa,decimal 11111111 00000000
 //     unsigned short mask2 = 255;     // 00000000 11111111
 //     unsigned short var = x; // x = 11101001100100
 //     return mask1+mask2;
 // }
-
 // int readByte(FILE* f){
 //     unsigned char bit; //lo utilizo como buffer
 //     fread(&bit,1,1,f);
 //     return bit;
 // }
-
 // int readInteger (FILE* f){
 //     unsigned short bit; //lo utilizo como buffer
 //     fread(&bit,2,1,f);
@@ -48,7 +57,9 @@ unsigned short permutarShort (unsigned short x){
 
 
 
+
 int readByte(FILE* f){
+    int x = ftell(f);
     return read<uchar>(f);
 }
 
@@ -60,12 +71,13 @@ string readString(FILE* f){
     string cadena="";
     // leo elprimer byte que es la longitud de la cadena
     int LongByte = readByte(f);
-    if (LongByte>=0 and LongByte<255)
+    if (LongByte>0 and LongByte<255)
     {
-        for (int i = LongByte ; 0<=i and i<255 and !feof(f); i--)
+        for (int i = LongByte ; 0<i ; i--)
         {
             // leo un byte
             uchar byte = readByte(f);
+            int p = ftell(f);
             cadena += charToString(byte);
         }
     }
@@ -73,7 +85,7 @@ string readString(FILE* f){
     {
         // leo dos byte
         int LongByte = readInteger(f);
-        for (int i = LongByte; i>=0 and !feof(f); i--)
+        for (int i = LongByte; i>0 ; i--)
         {
             // leo un byte
             uchar byte = readByte(f);
@@ -83,10 +95,48 @@ string readString(FILE* f){
     return cadena;
 }
 
-int readDate(FILE* f){
+Fecha readDate(FILE* f){
+    Fecha fechita;
 
-    return 1;
+    // ago untratamientos de bits para decodificar el anio , mes y dia
+        // tecnica mascara de bit
+            // leo los dosbyte
+            ushort date = readInteger(f);
+            // convierto en unos solo la porcion de bits que quiero averiguar y lo represento en un sistema numerico(hexa)
+            ushort maskDia = 0x1F ; //   0000000000011111 
+            ushort maskMes = 0x1E0; //   0000000111100000
+            ushort maskAnio = 0xFE00 ;// 1111111000000000
+
+            // operacion logica and entre date y mask
+            ushort resultDia = date&maskDia;
+            ushort resultMes = date&maskMes;
+            ushort resultAnio = date&maskAnio;
+
+            // descodifico
+            fechita.dia = resultDia;
+            fechita.mes = resultMes>>5;
+            ushort auxAnio = resultAnio>>9;
+            fechita.anio = auxAnio>=100?1999-auxAnio+100:2000+auxAnio;
+
+    // devuelvo un struc fecha
+    return fechita;
 }
+
+RegType ReadRegType(FILE* f){
+    RegType t;
+    t.codigo = readByte(f);
+    t.descripcion = readString(f);
+    return t;
+}
+
+
+
+
+
+
+
+
+
 
 int main()
 {   
@@ -94,10 +144,8 @@ int main()
 
     // int bit = readByte(f);
     // cout<<bit<<endl;
-
     // bit = readByte(f);
     // cout<<bit<<endl;
-
     // bit = readByte(f);
     // cout<<bit<<endl;
 
@@ -107,8 +155,38 @@ int main()
 
     string ruta = readString(f);
     cout<<"Full filename: "<<ruta<<endl;
-    fclose(f);
+
+
+    Fecha fech = readDate(f);
+    cout<<"Fecha de ultimo acceso: "<<fechaToString1(fech)<<endl;
+
+    int u = readInteger(f);
+    cout<<"Cantidad de campos configurados: "<<u<<endl;
+
+    for (int j = 0; j < u; j++)
+    {
+        int bit = readByte(f);
+        RegType r = ReadRegType(f);
+        cout<<"Campo [codigo: "<<r.codigo<<"]"<<", descripcion : "<<r.descripcion<<endl;    
+    }
     
+    u = readInteger(f);
+    cout<<"Cantidad de Registros (contactos): "<<u<<endl;
+    cout<<"--------------------------------------------"<<endl;
+
+
+
+
+
+
+    
+    // r = ReadRegType(f);
+    // pos = ftell(f);
+    
+
+
+    fclose(f);
+
     
     cout<<"----[FIN CONTENIDO DEL ARCHIVO]-----------------"<<endl;
     return 0;

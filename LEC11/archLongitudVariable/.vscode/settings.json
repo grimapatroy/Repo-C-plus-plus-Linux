@@ -44,7 +44,8 @@
         "ranges": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "sstream": "cpp"
     },
     "cmake.cmakePath": "/opt/cmake/bin/cmake"
 }
