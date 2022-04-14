@@ -9,9 +9,9 @@ using namespace std;
 
 int length(string s)
 {
-    int i ;
-    for ( i = 0; s[i] != '\0'; i++);
-    return i;
+   int i ;
+   for ( i = 0; s[i] != '\0'; i++);
+   return i;
 }
 
 int charCount(string s,char c)
@@ -87,7 +87,6 @@ int indexOf(string s,string toSearch) // ok
       aux_i=posFin;
       sSub = substring(s,aux_i,aux_i+length(toSearch)-1);
       }
-    
    return posIni>=0?posIni:-1;
 }
 
@@ -188,12 +187,12 @@ int stringToInt(string s,int b) // ok
    int resul = 0;
    int contBase=0;
 
-  for (int i = length(s)-1; i>=0  ; i--)
-  {
-    int variante = s[i]>='0'&&s[i]<='9'?'0':'A'-10;
-     resul += (s[i] - variante )*pow(b,contBase);
-     contBase++;
-  }
+   for (int i = length(s)-1; i>=0  ; i--)
+   {
+      int variante = s[i]>='0'&&s[i]<='9'?'0':'A'-10;
+      resul += (s[i] - variante )*pow(b,contBase);
+      contBase++;
+   }
    return resul;
 }
 
@@ -211,7 +210,7 @@ int stringToInt(string s) // ok
 string charToString(char c)
 {
    string resul = ""; 
-  return   resul+c;
+   return   resul+c;
 }
 
 char stringToChar(string s)

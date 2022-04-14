@@ -220,8 +220,20 @@ int main()
                 cin>>nSerie;
                 writeInteger(f,nSerie);
                 
-                btener la ruta 
+                string ruta = getDirectory()+"AGENDA.dat";
+                int cantCaracter = length(ruta);
+                if (cantCaracter>255)
+                {
+                    // dos dos byte y graba caracteres
+                    ushort longByte = cantCaracter;
 
+                }
+                else
+                {
+                    // grabo un byte y graba caracteres
+                    uchar longByte = cantCaracter;
+                }
+                
 
 
                 fclose(f);
