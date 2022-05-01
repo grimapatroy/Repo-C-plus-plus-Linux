@@ -32,7 +32,7 @@ struct Personita
    }
 // ---------------------------------------------------------
    string personaToString(Persona p){
-      // devuelve addToken
+      // addToken string
       return intToString(p.dni) + "," + p.nombre;
    }
 

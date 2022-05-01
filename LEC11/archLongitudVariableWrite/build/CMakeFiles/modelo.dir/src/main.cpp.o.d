@@ -29,6 +29,14 @@ CMakeFiles/modelo.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
  /usr/include/x86_64-linux-gnu/bits/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
+ /usr/include/c++/9/filesystem /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/archLongitudVariableWrite/src/../include/funciones/strings.hpp \
  /usr/include/c++/9/iostream \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
@@ -158,10 +166,11 @@ CMakeFiles/modelo.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
  /usr/include/x86_64-linux-gnu/bits/mathinline.h \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/archLongitudVariableWrite/src/../include/funciones/tokens.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/archLongitudVariableWrite/src/../include/funciones/strings.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/archLongitudVariableWrite/src/../include/funciones/files.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/archLongitudVariableWrite/src/../include/tads/BitReader.hpp \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/archLongitudVariableWrite/src/../include/tads/Coll.hpp \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/archLongitudVariableWrite/src/../include/tads/../funciones/strings.hpp \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/archLongitudVariableWrite/src/../include/tads/../funciones/tokens.hpp \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/archLongitudVariableWrite/src/../include/tads/../funciones/strings.hpp \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/archLongitudVariableWrite/src/../include/funciones/tokens.hpp \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/archLongitudVariableWrite/src/../include/funciones/files.hpp \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/archLongitudVariableWrite/src/../include/tads/BitReader.hpp \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/archLongitudVariableWrite/src/../include/tads/BitWriter.hpp
