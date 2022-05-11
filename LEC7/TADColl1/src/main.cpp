@@ -1,6 +1,7 @@
 #include <iostream>
 // #include "../include/funciones/strings.hpp"
 #include "../include/tads/Coll.hpp"
+#include "../include/tads/funciones.hpp"
 using namespace std;
 
 

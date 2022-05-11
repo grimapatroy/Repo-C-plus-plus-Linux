@@ -158,4 +158,6 @@ CMakeFiles/modelo.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
  /usr/include/x86_64-linux-gnu/bits/mathinline.h \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC7/TADColl1/src/../include/tads/../funciones/tokens.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC7/TADColl1/src/../include/tads/../funciones/strings.hpp
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC7/TADColl1/src/../include/tads/../funciones/strings.hpp \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC7/TADColl1/src/../include/tads/funciones.hpp \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC7/TADColl1/src/../include/tads/../tads/Coll.hpp
