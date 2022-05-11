@@ -71,9 +71,49 @@ struct RegData2
 //     return reg;
 // }
 
+RegRegistro regRegistroFromString (string token ){
+    RegRegistro rg;
+    int pos = indexOf(token,'-');
+    rg.codigo = stringToInt(getTokenAt(token,'-',0));
+    rg.campo = substring(token,pos+1,length(token));
+    return rg;
+}
+
 string regRegistroToString (RegRegistro rg)
 {
-    return intToString(rg.codigo)+","+rg.campo;
+    return intToString(rg.codigo)+"-"+rg.campo;
+}
+
+string regData2ToString (RegData2 rd2){
+    string s = intToString(rd2.cantCampos)+"#";
+    // rd2.registro = coll<RegRegistro>(',');
+    int zise = collSize<RegRegistro>(rd2.registro);
+    for (int i = 0; i <zise; i++)
+    {
+        RegRegistro rr=collGetAt<RegRegistro>(rd2.registro,i,regRegistroFromString);
+        s+=intToString(rr.codigo)+"-"+rr.campo+(i<zise-1?",":"");
+    }
+
+    return s;
+}
+
+RegData2 regData2FromString (string token){
+    RegData2 rd2;
+    rd2.cantCampos = stringToInt(getTokenAt(token,'#',0));
+    rd2.registro = coll<RegRegistro>(',');
+    int pos = indexOf(token,'#');
+    string registros = substring(token,pos+1);
+    for (int i = 0; i < tokenCount(registros,','); i++)
+    {
+        RegRegistro rg;
+        string tokenRegistro= getTokenAt(registros,',',i);
+        int x = indexOf(token,'-');
+        rg.codigo = stringToInt(getTokenAt(token,'-',0));
+        rg.campo = substring(token,x+1);
+        // agrego elemnetos a la coleccion
+        collAdd<RegRegistro>(rd2.registro,rg,regRegistroToString);
+    }
+    return rd2;
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -242,9 +282,9 @@ struct String
 
 // String stringIniciar(){
 //     String st;
-
 //     return st;
 // }
+
 // --------------------------Funciones para escribir-----------------------------------------------------------------
 
 string getDirectory()
@@ -375,39 +415,39 @@ int main()
                 int contPersonas=0;
                 int campos = 0;
                 // ingresar numero de serie y grabar
-                ushort nSerie;
-                cout<<"Ingrese el numero de serie: ";
-                cin>>nSerie;
-                writeInteger(f,nSerie);
-                // // obtener ruta y grabar
-                string ruta = getDirectory()+"AGENDA.dat";
-                writeString(f,ruta);
+                // ushort nSerie;
+                // cout<<"Ingrese el numero de serie: ";
+                // cin>>nSerie;
+                // writeInteger(f,nSerie);
+                // // // obtener ruta y grabar
+                // string ruta = getDirectory()+"AGENDA.dat";
+                // writeString(f,ruta);
                 
                 
-                // // ingresar fecha y grabar
-                Fecha fechita;
-                cout<<"Ingrese Año: ";
-                cin>>fechita.anio;
-                cout<<"Ingrese Mes: ";
-                cin>>fechita.mes;
-                cout<<"Ingrese Dia: ";
-                cin>>fechita.dia;
-                writeFecha(f,fechita);
-                // // Cantidad de campos configurados =4
-                writeInteger(f,4);
+                // // // ingresar fecha y grabar
+                // Fecha fechita;
+                // cout<<"Ingrese Año: ";
+                // cin>>fechita.anio;
+                // cout<<"Ingrese Mes: ";
+                // cin>>fechita.mes;
+                // cout<<"Ingrese Dia: ";
+                // cin>>fechita.dia;
+                // writeFecha(f,fechita);
+                // // // Cantidad de campos configurados =4
+                // writeInteger(f,4);
 
 
-                //grabo cada campo con su codigo y descripion
-                // writeByte(f,bitPerdido);
-                RegType rt;
-                rt = regType(1,"Nombre");
-                writeRegType(f,rt);
-                rt=regType(2,"Telefono");
-                writeRegType(f,rt);
-                rt=regType(3,"Direccion");
-                writeRegType(f,rt);
-                rt=regType(4,"EMail");
-                writeRegType(f,rt);
+                // //grabo cada campo con su codigo y descripion
+                // // writeByte(f,bitPerdido);
+                // RegType rt;
+                // rt = regType(1,"Nombre");
+                // writeRegType(f,rt);
+                // rt=regType(2,"Telefono");
+                // writeRegType(f,rt);
+                // rt=regType(3,"Direccion");
+                // writeRegType(f,rt);
+                // rt=regType(4,"EMail");
+                // writeRegType(f,rt);
 
                 // // descripcion de campos configurados  RegData2
                 // Ingresar Registros y grabar
@@ -427,6 +467,7 @@ int main()
                     {
                         while (optCampos and campos<=4)
                         {
+
                             cout<<"Ingrese Codigo [1:Nombre][2:Telefono][4:Direccion][4:EMail]:";
                             cin>>auxCodigito;
                             switch (auxCodigito)
@@ -464,11 +505,18 @@ int main()
                         }
                         // tengo que asignarle cantCampos(campos) , al objeto +id,clave
                         regd1.cantCampos=campos;
-                        //agregar objetos a la coleccion     
+                        //agregar objetos a la coleccion  tokenizada   
                         collAdd<RegData2>(collectionRegData,regd1,regData2ToString);
                         contPersonas++;
                         cout<<"DESEA SEGUIR REGISTRANDO PERSONAS [1=SI][0=NO]: ";
                         cin>>opt;
+                        if (opt)
+                        {
+                            campos=0;
+                            optCampos=1;
+                            regd1= {0,coll<RegRegistro>(',')};
+                        }
+                        
                     }
                     int unicaVez=0;
 
@@ -500,31 +548,30 @@ int main()
 
 // -----------------------------------------------------------------------------------
 
-                seek<int>(f,0);
-                // fseek(f,0,SEEK_SET);
+                // seek<int>(f,0);
 
-                // probando el codigo leyendo 
-                cout<<"----[CONTENIDO DEL ARCHIVO]--------------------"<<endl;
-                int i = readInteger2(f);
-                cout<<"Nro. de serie: "<<i<<endl;
+                // // probando el codigo leyendo 
+                // cout<<"----[CONTENIDO DEL ARCHIVO]--------------------"<<endl;
+                // int i = readInteger2(f);
+                // cout<<"Nro. de serie: "<<i<<endl;
 
-                string rutita= readString2(f);
-                cout<<"Full filename: "<<rutita<<endl;
-                // i = readInteger(f);
-                // cout<<i;
+                // string rutita= readString2(f);
+                // cout<<"Full filename: "<<rutita<<endl;
+                // // i = readInteger(f);
+                // // cout<<i;
 
-                Fecha fech = readDate2(f);
-                cout<<"Fecha de ultimo acceso: "<<fechaToString1(fech)<<endl;
-                int u = readInteger2(f);
-                cout<<"Cantidad de campos configurados: "<<u<<endl;
+                // Fecha fech = readDate2(f);
+                // cout<<"Fecha de ultimo acceso: "<<fechaToString1(fech)<<endl;
+                // int u = readInteger2(f);
+                // cout<<"Cantidad de campos configurados: "<<u<<endl;
 
 
-                // // int bitPe = readByte(f);
-                for (int j = 0; j < u; j++)
-                {
-                    RegType r = ReadRegType2(f);
-                    cout<<"Campo [codigo: "<<r.codigo<<"]"<<", [descripcion : "<<r.descripcion<<"]"<<endl;    
-                }
+                // // // int bitPe = readByte(f);
+                // for (int j = 0; j < u; j++)
+                // {
+                //     RegType r = ReadRegType2(f);
+                //     cout<<"Campo [codigo: "<<r.codigo<<"]"<<", [descripcion : "<<r.descripcion<<"]"<<endl;    
+                // }
 
                 
                 fclose(f);
@@ -535,6 +582,7 @@ int main()
     //         // bit = readByte(f);
     //         // cout<<bit<<endl;
     //         // bit = readByte(f);
+    //         // cout<<bit<<endl;
     //         // cout<<bit<<endl;
 
     //         cout<<"----[CONTENIDO DEL ARCHIVO]--------------------"<<endl;

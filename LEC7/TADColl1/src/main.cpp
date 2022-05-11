@@ -5,16 +5,6 @@ using namespace std;
 
 
 
-void mostrarColeccion(Coll<Persona> c) 
-{ 
-    collReset<Persona>(c); 
-    while( collHasNext<Persona>(c))
-    {
-        Persona p = collNext<Persona>(c,personaFromString);
-        cout<<personaToString(p)<<endl;
-    }
-} 
-
 int main()
 {   
     // string s = "javier|coste|lote|rufus";
@@ -77,21 +67,62 @@ int main()
 // mostrarColeccion(c);
 // -----------------------------------------------------------------------------
 
-    Coll<string> micollString = coll<string>();
-    collAdd<string>(micollString,"JUAN",stringToString);
-    collAdd<string>(micollString,"PEDRO",stringToString);
-    collAdd<string>(micollString,"PABLO",stringToString);
-    collAdd<string>(micollString,"MATIAS",stringToString);
+    // Coll<Persona> micoll = coll<Persona>();
+    // collAdd<string>(micoll,"JUAN",stringToString);
+    // collAdd<string>(micoll,"PEDRO",stringToString);
+    // collAdd<string>(micoll,"PABLO",stringToString);
+    // collAdd<string>(micoll,"MATIAS",stringToString);
+    
+    
+    // collAdd<Persona>(micoll,{87654,"ALAIN"},personaToString);
+    // collAdd<Persona>(micoll,{12345,"JOSE"},personaToString);
+    // collAdd<Persona>(micoll,{2345,"KIKO"},personaToString);
+    // collAdd<Persona>(micoll,{2345,"KIKO"},personaToString);
+    // collAdd<Persona>(micoll,{23154,"ALAIN"},personaToString);
+    // collAdd<Persona>(micoll,{23154,"ZATIR"},personaToString);
+    // collAdd<Persona>(micoll,{23154,"KARMELA"},personaToString);
+    // collAdd<Persona>(micoll,{23154,"LOLA"},personaToString);
+    // collAdd<Persona>(micoll,{23154,"ALAN"},personaToString);
+    // collAdd<Persona>(micoll,{23154,"JESUS"},personaToString);
 
-    collReset<string>(micollString);
-    bool endOfColl=false;
-    string s = collNext<string>(micollString,endOfColl,stringFromString);
+    Coll<int> c1 = coll<int>();
+    collAdd<int>(c1,102,intToString);
+    collAdd<int>(c1,202,intToString);
+    collAdd<int>(c1,302,intToString);
 
-    while (endOfColl)
+    // collReset<string>(micoll);
+    // bool endOfColl=false;
+    // string s = collNext<string>(micoll,endOfColl,stringFromString);
+
+    // while (endOfColl)
+    // {
+    //     cout<<s<<endl;
+    //     s = collNext<string>(micoll,endOfColl,stringFromString);
+    // // }
+    // string buscar = "PEDRO";
+    // int pos = collFind<Persona>(micoll,buscar,cmpPersonaNombre,personaFromString);
+    // cout<<pos;
+    // bool endOfColl=0;  
+    // collReset<Persona>(micoll);
+    // collSort<Persona>(micoll,cmpPersonasNomDesc,personaFromString,personaToString);
+
+
+    // mostrarColeccion(c1);
+    collSort<int>(c1,cmpInt,stringToInt,intToString);
+    
+    // Persona p = collNext<Persona>(micoll,endOfColl,personaFromString);
+    for (int i = 0; i < collSize<int>(c1); i++)
     {
-        cout<<s<<endl;
-        s = collNext<string>(micollString,endOfColl,stringFromString);
+        int c = collGetAt<int>(c1,i,stringToInt);
+        cout<<c<<endl;
     }
     
+    
+    // while (!endOfColl)
+    // {
+    //     cout<<personaToString(p)<<endl;
+    //     p = collNext<Persona>(micoll,endOfColl,personaFromString);
+    // }
+
     return 0;
 }

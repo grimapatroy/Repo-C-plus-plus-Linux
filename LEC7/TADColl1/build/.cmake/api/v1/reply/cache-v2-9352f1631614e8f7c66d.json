@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus/LEC7/TADColl1/build"
+			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC7/TADColl1/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -603,7 +603,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus/LEC7/TADColl1"
+			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC7/TADColl1"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1139,7 +1139,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus/LEC7/TADColl1/build"
+			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC7/TADColl1/build"
 		},
 		{
 			"name" : "TADfecha_IS_TOP_LEVEL",
@@ -1163,7 +1163,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus/LEC7/TADColl1"
+			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC7/TADColl1"
 		}
 	],
 	"kind" : "cache",

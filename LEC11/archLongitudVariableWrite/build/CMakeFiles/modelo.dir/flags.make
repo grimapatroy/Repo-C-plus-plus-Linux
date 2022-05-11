@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/archLongitudVariableWrite/include
 
-CXX_FLAGS = -O3 -DNDEBUG
+CXX_FLAGS = -g
 
