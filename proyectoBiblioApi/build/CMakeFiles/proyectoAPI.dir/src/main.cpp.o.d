@@ -164,4 +164,10 @@ CMakeFiles/proyectoAPI.dir/src/main.cpp.o: \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/src/../include/tads/BitReader.hpp \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/src/../include/tads/../funciones/strings.hpp \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/src/../include/tads/../funciones/tokens.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/src/../include/tads/BitWriter.hpp
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/src/../include/tads/BitWriter.hpp \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/src/../include/tads/test.hpp \
+ /usr/include/c++/9/sstream /usr/include/c++/9/bits/sstream.tcc \
+ /usr/include/c++/9/stdlib.h \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/src/../include/tads/../tads/Coll.hpp \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/src/../include/tads/../tads/../funciones/strings.hpp \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/src/../include/tads/../tads/../funciones/tokens.hpp
