@@ -15,7 +15,7 @@ using namespace std;
 int main()
 {
 
-    FILE *f = fopen("CALIFICACIONES_v01.dat", "r+b");
+    FILE *f = fopen("CALIFICACIONES_v02.dat", "r+b");
 
     // leemos el primer registro del archivo
     Calificacion resgistro = read<Calificacion>(f);
@@ -28,18 +28,21 @@ int main()
 
         // guardamos el registro anterior
         int idAsigAnt = resgistro.idAsig;
+
         while (!feof(f) && idAsigAnt == resgistro.idAsig)
         {
             // SECCION DE PROCESAMIENTO
             if (resgistro.calif >= 4)
             {
-                collAdd<Calificacion>(buff, resgistro.calif, );
+                collAdd<Calificacion>(buff,resgistro,calificacionToString);
             }
 
             resgistro = read<Calificacion>(f);
         }
         // RESULTADOS
+        mostrarEstudiantesAprobados(idAsigAnt,buff);
     }
+
 
     fclose(f);
 

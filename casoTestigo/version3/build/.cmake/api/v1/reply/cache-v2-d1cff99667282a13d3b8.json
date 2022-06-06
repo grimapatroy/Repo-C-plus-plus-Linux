@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version1/build"
+			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version3/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -158,8 +158,8 @@
 					"value" : "CXX compiler"
 				}
 			],
-			"type" : "FILEPATH",
-			"value" : "/usr/bin/c++"
+			"type" : "STRING",
+			"value" : "/usr/bin/g++"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -286,8 +286,8 @@
 					"value" : "C compiler"
 				}
 			],
-			"type" : "FILEPATH",
-			"value" : "/usr/bin/cc"
+			"type" : "STRING",
+			"value" : "/usr/bin/gcc"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_AR",
@@ -603,7 +603,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version1"
+			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version3"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1139,7 +1139,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version1/build"
+			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version3/build"
 		},
 		{
 			"name" : "TADfecha_IS_TOP_LEVEL",
@@ -1163,7 +1163,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version1"
+			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version3"
 		}
 	],
 	"kind" : "cache",
