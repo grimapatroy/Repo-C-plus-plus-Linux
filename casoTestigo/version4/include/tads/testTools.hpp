@@ -311,7 +311,11 @@ return true;
 	
 // }
 
+Coll<RAsignatura> subirAsignaturas(){
+	Coll<RAsignatura> collAsig ;
 
+	return collAsig;
+}
 
 
 
