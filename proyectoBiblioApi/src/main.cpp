@@ -5,7 +5,7 @@
 #include "../include/funciones/files.hpp"
 #include "../include/tads/BitReader.hpp"
 #include "../include/tads/BitWriter.hpp"
-#include "../include/tads/test.hpp"
+// #include "../include/tads/test.hpp"
 using namespace std;
 
 
@@ -14,5 +14,6 @@ using namespace std;
 
 int main()
 {   
+    cout<<"HOLA";
     return 0;
 }

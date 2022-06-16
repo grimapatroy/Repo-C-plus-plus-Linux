@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version3/build",
+  "command": "/usr/bin/g++  -I/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version3/include -O3 -DNDEBUG -o CMakeFiles/modelo.dir/src/main.cpp.o -c /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version3/src/main.cpp",
+  "file": "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version3/src/main.cpp"
+}
+]
