@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 #include "../include/tads/Coll.hpp"
+// #include "testTools.hpp"
 #include "../include/tads/testTools.hpp"
 #include "funciones/files.hpp"
 // #include "../funciones/strings.hpp"
@@ -28,6 +29,31 @@ using namespace std;
 // int calif;                     |     };
 // };                              
 
+Coll<RAsignatura> subirAsignaturas(){
+	
+	Coll<RAsignatura> collAsig = coll<RAsignatura>();
+    // FILE* f = fopen("././home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version4/ASIGNATURAS_v04.dat", "r+b");
+    // FILE* f = fopen("\\home\\jguivar\\Documentos\\LAFP2022\\Repo_Cplusplus_Linux\\casoTestigo\\version4\\build\\ASIGNATURAS_v04.dat", "r+b");
+    // FILE* f = fopen("..\\..\\..\\..\\..\\..\\..\\..\\build\\ASIGNATURAS_v04.dat", "r+b");
+	// Asignatura reg = read<Asignatura>(f);
+    // FILE* f = fopen("..\\..\\ASIGNATURAS_v04.dat","r+b");
+    FILE* f = fopen("ASIGNATURAS_v04.dat", "r+b");
+	Asignatura reg = read<Asignatura>(f);
+	while (!feof(f))
+	{
+		RAsignatura ra = rAsignatura(reg,estad(0,0));
+		collAdd<RAsignatura>(collAsig,ra,rAsignaturaToString);
+		reg = read<Asignatura>(f);
+	}
+	fclose(f);
+	return collAsig;
+}
+
+
+
+
+
+
 int main()
 {
     // subir el archivo de consultas a memoria
@@ -45,20 +71,22 @@ int main()
         // obtenemos el elemento encontrado atraves de pos
         RAsignatura elm =  collGetAt<RAsignatura>(collAsig,pos,rAsignaturaFromString);
 
-        // PROCESAMOS
+        // PROCESAMOSRAsignatura
         elm.estad.cont++;
         elm.estad.acum+=registro.calif;
 
         // actualizamos los cambis en la coleccion
-        collSetAt<RAsignatura>(collAsig,elm,pos,rAsignaturaToDebug);
+        collSetAt<RAsignatura>(collAsig,elm,pos,rAsignaturaToString);
 
         // leemos el siguiente registro
         registro = read<Calificacion>(f);
     }
+
     // mostramos el listado numero1(ordenado alfabeticamente)
-    
+    mostrarResultados(collAsig,cmpRAsigAlfabetico);
     
     // mostramos el listado numero2(ordenado por prom descend)
+    mostrarResultados(collAsig,cmpRAsigPromedio);
 
 
     fclose(f);

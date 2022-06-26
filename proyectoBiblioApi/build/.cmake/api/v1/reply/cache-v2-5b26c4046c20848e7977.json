@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version4/build"
+			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -155,10 +155,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "CXX compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "/bin/x86_64-linux-gnu-g++-9"
 		},
 		{
@@ -283,10 +283,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "C compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "/bin/x86_64-linux-gnu-gcc-9"
 		},
 		{
@@ -603,7 +603,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version4"
+			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -847,7 +847,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "TADfecha"
+			"value" : "proyectoAPI"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1130,7 +1130,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "TADfecha_BINARY_DIR",
+			"name" : "proyectoAPI_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1139,10 +1139,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version4/build"
+			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/build"
 		},
 		{
-			"name" : "TADfecha_IS_TOP_LEVEL",
+			"name" : "proyectoAPI_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1154,7 +1154,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "TADfecha_SOURCE_DIR",
+			"name" : "proyectoAPI_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1163,7 +1163,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version4"
+			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi"
 		}
 	],
 	"kind" : "cache",

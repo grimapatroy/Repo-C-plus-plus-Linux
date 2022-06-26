@@ -1,4 +1,4 @@
-#include <string.h>
+// #include <string.h>
 #include <stdio.h>
 #include "../include/funciones/strings.hpp"
 #include "../include/funciones/tokens.hpp"
@@ -14,6 +14,7 @@ using namespace std;
 
 int main()
 {   
-    cout<<"HOLA";
-    return 0;
+    
+
+return 0;
 }

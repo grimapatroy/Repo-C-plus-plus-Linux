@@ -6,10 +6,17 @@
 #include <string>
 #include <string.h>
 #include <stdlib.h>
+// #include "../include/funciones/strings.hpp"
+// #include "../include/funciones/tokens.hpp"
+// #include "../include/tads/Coll.hpp"
 #include "../funciones/strings.hpp"
 #include "../funciones/tokens.hpp"
 #include "../tads/Coll.hpp"
 using namespace std;
+
+
+// char ruta[150]="../../home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version4/build/ASIGNATURAS_v04.dat";
+
 
 struct Asignatura
 {
@@ -37,27 +44,45 @@ Asignatura asig;
 Estad estad;
 };
 
+
+
+// string asignaturaToString(Asignatura x)
+// {
+// char sep = 1;
+// string sIdAsig=to_string(x.idAsig);
+// string sNomAsig=x.nomAsig;
+// string sMaestroACargo=x.maestroACargo;
+// return sIdAsig+sep+sNomAsig+sep+sMaestroACargo;
+// }
+
+// Asignatura asignaturaFromString(string s)
+// {
+// char sep = 1;
+// Asignatura x;
+// string t0 = getTokenAt(s,sep,0);
+// x.idAsig=stoi(t0);
+// string t1 = getTokenAt(s,sep,1);
+// strcpy(x.nomAsig,t1.c_str());
+// string t2 = getTokenAt(s,sep,2);
+// strcpy(x.maestroACargo,t2.c_str());
+// return x;
+// }
+
 string asignaturaToString(Asignatura x)
 {
-char sep = 1;
-string sIdAsig=to_string(x.idAsig);
-string sNomAsig=x.nomAsig;
-string sMaestroACargo=x.maestroACargo;
-return sIdAsig+sep+sNomAsig+sep+sMaestroACargo;
+	return intToString(x.idAsig)+","+ x.nomAsig+","+ x.maestroACargo;
 }
 
 Asignatura asignaturaFromString(string s)
 {
-char sep = 1;
-Asignatura x;
-string t0 = getTokenAt(s,sep,0);
-x.idAsig=stoi(t0);
-string t1 = getTokenAt(s,sep,1);
-strcpy(x.nomAsig,t1.c_str());
-string t2 = getTokenAt(s,sep,2);
-strcpy(x.maestroACargo,t2.c_str());
-return x;
+	Asignatura x;
+	x.idAsig = stringToInt(getTokenAt(s,',',0));
+	strcpy(x.nomAsig,(getTokenAt(s,',',1)).c_str());
+	strcpy(x.maestroACargo,(getTokenAt(s,',',2)).c_str());
+	return x;
 }
+
+
 
 string asignaturaToDebug(Asignatura x)
 {
@@ -187,9 +212,6 @@ Estad estadFromString(string s){
 	return x;
 }
 
-
-
-
 string estadToDebug(Estad x)
 {
 stringstream sout;
@@ -216,24 +238,44 @@ if(a.acum!=b.acum) return false;
 return true;
 }
 
+// string rAsignaturaToString(RAsignatura x)
+// {
+// char sep = 4;
+// string sAsig=asignaturaToString(x.asig);
+// string sEstad=estadToString(x.estad);
+// return sAsig+sep+sEstad;
+// }
+
+// RAsignatura rAsignaturaFromString(string s)
+// {
+// char sep = 4;
+// RAsignatura x;
+// string t0 = getTokenAt(s,sep,0);
+// x.asig=asignaturaFromString(t0);
+// string t1 = getTokenAt(s,sep,1);
+// x.estad=estadFromString(t1);
+// return x;
+// }
+
 string rAsignaturaToString(RAsignatura x)
 {
-char sep = 4;
-string sAsig=asignaturaToString(x.asig);
-string sEstad=estadToString(x.estad);
-return sAsig+sep+sEstad;
+	return intToString(x.asig.idAsig)+","+ x.asig.nomAsig +","+ x.asig.maestroACargo+","+intToString(x.estad.cont)+","+ intToString(x.estad.acum);
 }
 
 RAsignatura rAsignaturaFromString(string s)
 {
-char sep = 4;
-RAsignatura x;
-string t0 = getTokenAt(s,sep,0);
-x.asig=asignaturaFromString(t0);
-string t1 = getTokenAt(s,sep,1);
-x.estad=estadFromString(t1);
-return x;
+	RAsignatura x;
+	x.asig.idAsig = stringToInt(getTokenAt(s,',',0));
+	strcpy(x.asig.nomAsig,(getTokenAt(s,',',1)).c_str());
+	strcpy(x.asig.maestroACargo,(getTokenAt(s,',',2)).c_str());
+	x.estad.cont = stringToInt(getTokenAt(s,',',3));
+	x.estad.acum = stringToInt(getTokenAt(s,',',4));
+	// x..calif = stringToInt(getTokenAt(s,',',2));
+	return x;
 }
+
+
+
 
 string rAsignaturaToDebug(RAsignatura x)
 {
@@ -265,11 +307,9 @@ return true;
 // {
 // 	return a.calif-b.calif;
 // }
-
 // int cmpEstadId(Estad a , int d){
 // 	return a.id-d;
 // }
-
 
 // void mostrarEstudiantesAprobados(int idAsig, Coll<Calificacion> buff)
 // {
@@ -287,8 +327,6 @@ return true;
 // 	}
 // }
 
-
-
 // int descubrirElemento(Coll<Estad>& collEstad, int id){
 // 	int pos = collFind<Estad,int>(collEstad,id,cmpEstadId,estadFromString);
 // 	if (pos<0)
@@ -296,7 +334,6 @@ return true;
 // 		Estad x = estad(id,0,0);
 // 		pos = collAdd<Estad>(collEstad,x,estadToDebug);
 // 	}
-	
 // 	return pos;
 // }
 
@@ -308,13 +345,46 @@ return true;
 // 		double promedio =elem.acum/(double)elem.cont;
 // 		cout<<"La asignatura es :"<<elem.id<<" calificacion Promedio :"<<promedio<<endl;
 // 	}
-	
 // }
 
-Coll<RAsignatura> subirAsignaturas(){
-	Coll<RAsignatura> collAsig ;
 
-	return collAsig;
+
+// funcion de comparacion, compara alfabeticamente
+int cmpRAsigAlfabetico(RAsignatura a , RAsignatura b){
+	// completar codigo aqui
+	return a.asig.nomAsig<b.asig.nomAsig?-1:a.asig.nomAsig>b.asig.nomAsig?1:0;
+}
+
+
+
+// funcion de comparacion, compara por promedio descendente
+int  cmpRAsigPromedio(RAsignatura a , RAsignatura b){
+	// completar codigo aqui
+	return (b.estad.acum/b.estad.cont)-(a.estad.acum/a.estad.cont);
+}
+
+
+
+int cmpRAsigId(RAsignatura asig, int idAux){
+	return asig.asig.idAsig-idAux;
+}
+
+
+
+void mostrarResultados(Coll<RAsignatura> collAsig , int cmpRAsignatura(RAsignatura,RAsignatura) ){
+	
+	collSort<RAsignatura>(collAsig,cmpRAsignatura,rAsignaturaFromString,rAsignaturaToString);
+		// mi collShortFalla
+
+	collReset<RAsignatura>(collAsig);
+	while (collHasNext<RAsignatura>(collAsig))
+	{
+		RAsignatura ra = collNext<RAsignatura>(collAsig,rAsignaturaFromString);
+		double prom = ra.estad.acum/(double)ra.estad.cont;
+		string sNomAsig = ra.asig.nomAsig;
+		cout<<sNomAsig<<" : "<<prom<<endl;
+	}
+	
 }
 
 
