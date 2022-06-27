@@ -9,8 +9,6 @@ using namespace std;
 int tokenCount(string s,char sep)
 {
    int result=0;
-   // != cadenavacia
-   // que sean una palabracompleta( primero tengo que ver si noesta vacia y si aparece sep en s )
    if (length(s)>0)
    {
       result =charCount(s,sep)+1;
@@ -30,48 +28,81 @@ void addToken(string& s,char sep,string t)
 
 string getTokenAt(string s,char sep, int i)
 {
-   if (i==0)
-   {
-      int pos =indexOfN(s,sep,i+1);
-      return substring(s,i,pos-1);
+   string x;
+   if (i==0){//cuando es el incio
+      int limite =indexOfN(s,sep,i+1);
+      x = substring(s,i,limite);
+      return x;
    }else{
-      return substring(s,indexOfN(s,sep,i)+1,indexOfN(s,sep,i+1)>0?indexOfN(s,sep,i+1)-1:length(s));
-   }
-   
+         if (charCount(s,sep)==i){//cuando es el final
+            x = substring(s,indexOfN(s,sep,i)+1,length(s));
+            return x;
+         }
+         if(charCount(s,sep)>i){//cualqueira elemento intermedio
+            x = substring(s,indexOfN(s,sep,i)+1,indexOfN(s,sep,i+1));
+            return x;
+         }
+         if (charCount(s,sep)<i){
+         return "ERROR";
+         }
+      }
+   return "ERROR";
 }
 
-void removeTokenAt(string& s,char sep, int i)
-{
+void removeTokenAt(string& s,char sep, int i){
    if (i==0)
    {
-      s= substring(s,indexOfN(s,sep,i+1)+1,length(s));
+      //  realizar funcion para tokens (funcion pra token vacios)
+      s=substring(s,indexOf(s,sep)+1,length(s));
    }else	{
-      s = substring(s,0,charCount(s,sep)==i?indexOfN(s,sep,i)-1:indexOfN(s,sep,i))+substring(s,indexOfN(s,sep,i+1)+1, charCount(s,sep)==i?length(s)-1:length(s));
+      int count = charCount(s,sep);
+         if (count==i){
+      // agregar funcion pra token vacios
+            s=substring(s,0,lastIndexOf(s,sep)-1);
+         }
+         if(count>i){
+            // usar esta funcion si falla al removertoken vacios
+            s= getTokenAt(s,sep,i)!=""?substring(s,0,indexOfN(s,sep,i))+substring(s,indexOfN(s,sep,i+1),length(s)):substring(s,0,indexOfN(s,sep,i))+substring(s,indexOfN(s,sep,i)+1,length(s));
+            // s=substring(s,0,indexOfN(s,sep,i))+substring(s,indexOfN(s,sep,i+1),length(s));
+         }
+         if (count<i)
+         {
+            cout<<"ERROR"<<endl;
+         }
    }
-   
-
 }
 
 void setTokenAt(string& s,char sep, string t,int i)
 {
    if (i==0)
    {
-      s= t+charToString(sep) + substring(s, indexOfN(s,sep,i+1),length(s));
-      
-   }else{
-      if (charCount(s,sep)+1==i)
-      {
-         s= s+charToString(sep) + t;
-      }else{
-         s= substring(s,0,indexOfN(s,sep,i))+ t+charToString(sep)+substring(s,
-         indexOfN(s,sep,i)+1,length(s));
-      }
+      s= t+charToString(sep) + substring(s, indexOfN(s,sep,i+1)+1,length(s));
+   }else{ 
+            if (charCount(s,sep)==i)
+            {
+               s= substring(s,0,lastIndexOf(s,sep))+charToString(sep)+ t;
+            }
+            if (charCount(s,sep)>i){
+               s= substring(s,0,indexOfN(s,sep,i)+1)+t+charToString(sep)+substring(s,
+               indexOfN(s,sep,i+1)+1,length(s));
+            }if(charCount(s,sep)<i){
+               cout<<"ERROR"<<endl;
+            }
    }
 }
 
+
 int findToken(string s,char sep, string t)
 {
-   return 0;
+   int i;
+   int n= tokenCount(s,sep);
+   for ( i = 0; i<n ; i++){
+      if (getTokenAt(s,sep,i)==t)
+      {
+         return i;
+      }
+   }
+   return -1;
 }
 
 #endif

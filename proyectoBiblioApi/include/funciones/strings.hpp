@@ -103,6 +103,7 @@ int indexOf(string s,string toSearch,int offset) // ok
    return -1;
 }
 
+
 int lastIndexOf(string s,char c)
 {
    int i;

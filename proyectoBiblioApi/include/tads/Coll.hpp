@@ -180,16 +180,16 @@ bool collHasNext(Coll<T> c)
    return false;
 }
 
-template<typename T>
-int collSgt(Coll<T> c)
-{
-   static int conteo =-1;
-   if(conteo < tokenCount(c.s,c.sep))
-   {
-      conteo ++;
-   }
-   return conteo;
-}
+// template<typename T>
+// int collSgt(Coll<T> c)
+// {
+//    static int conteo =-1;
+//    if(conteo < tokenCount(c.s,c.sep))
+//    {
+//       conteo ++;
+//    }
+//    return conteo;
+// }
 
 // obj0 |obj1 |obj2 |obj3 |obj4
 template<typename T>
