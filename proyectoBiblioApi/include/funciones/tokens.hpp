@@ -28,11 +28,23 @@ void addToken(string& s,char sep,string t)
 
 string getTokenAt(string s,char sep, int i)
 {
+   // 1|2|2|3|3|2
    string x;
    if (i==0){//cuando es el incio
-      int limite =indexOfN(s,sep,i+1);
-      x = substring(s,i,limite);
-      return x;
+      // Tengo que ver cuando llega con sep o sin sep
+         // if (sep!=isLetter(sep) and sep!=isDigit(sep))
+         if (sep>=32 and sep<=127)
+         {
+            int limite =indexOfN(s,sep,i+1);
+            x = substring(s,0,limite);
+            return x;
+         }
+         else
+         {
+            x = substring(s,i,length(s)); //sin sep
+            return x;
+         }
+
    }else{
          if (charCount(s,sep)==i){//cuando es el final
             x = substring(s,indexOfN(s,sep,i)+1,length(s));
@@ -46,7 +58,7 @@ string getTokenAt(string s,char sep, int i)
          return "ERROR";
          }
       }
-   return "ERROR";
+   return "ERROR POSICION MUY LARGA";
 }
 
 void removeTokenAt(string& s,char sep, int i){
@@ -58,7 +70,8 @@ void removeTokenAt(string& s,char sep, int i){
       int count = charCount(s,sep);
          if (count==i){
       // agregar funcion pra token vacios
-            s=substring(s,0,lastIndexOf(s,sep)-1);
+            // falla el last ¿?¿? alveces
+            s=substring(s,0,lastIndexOf(s,sep));
          }
          if(count>i){
             // usar esta funcion si falla al removertoken vacios
@@ -67,7 +80,7 @@ void removeTokenAt(string& s,char sep, int i){
          }
          if (count<i)
          {
-            cout<<"ERROR"<<endl;
+            cout<<"ERROR POSICION MUY LARGA"<<endl;
          }
    }
 }
@@ -77,7 +90,7 @@ void setTokenAt(string& s,char sep, string t,int i)
    if (i==0)
    {
       s= t+charToString(sep) + substring(s, indexOfN(s,sep,i+1)+1,length(s));
-   }else{ 
+   }else{
             if (charCount(s,sep)==i)
             {
                s= substring(s,0,lastIndexOf(s,sep))+charToString(sep)+ t;
@@ -86,7 +99,7 @@ void setTokenAt(string& s,char sep, string t,int i)
                s= substring(s,0,indexOfN(s,sep,i)+1)+t+charToString(sep)+substring(s,
                indexOfN(s,sep,i+1)+1,length(s));
             }if(charCount(s,sep)<i){
-               cout<<"ERROR"<<endl;
+               cout<<"ERROR POSICION MUY LARGA"<<endl;
             }
    }
 }

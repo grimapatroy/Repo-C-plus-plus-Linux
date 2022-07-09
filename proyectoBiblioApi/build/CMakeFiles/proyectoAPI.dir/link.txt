@@ -1,1 +1,1 @@
-/usr/bin/g++ -g CMakeFiles/proyectoAPI.dir/src/main.cpp.o -o proyectoAPI 
+/bin/x86_64-linux-gnu-g++-9 -g CMakeFiles/proyectoAPI.dir/src/main.cpp.o -o proyectoAPI 

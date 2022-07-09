@@ -165,7 +165,12 @@ int digitCount(int n)
 string intToString(int i)
 {
    int cadena;
-   string cadenaCon;
+   string cadenaCon="";
+   if (i==0)
+   {
+      cadenaCon += char(48);
+      return cadenaCon ;
+   }
    int aux = digitCount(i)-1;
    for ( int j =aux ; j >= 0; j--)
    {
@@ -288,7 +293,6 @@ string removeAt(string s,int pos)
    return s;
 }
 
-
 // [  Esto es una prueba]/[Esto es una prueba]/[Esto es una prueba   ]
 string ltrim(string s)
 {
@@ -346,7 +350,6 @@ string lpad(string s,int n,char c)
    return complet+s;
 }
 
-
 string rpad(string s,int n,char c)
 {
    string complet ="";
@@ -356,7 +359,6 @@ string rpad(string s,int n,char c)
    }
    return s+complet;
 }
-
 
 string cpad(string s,int n,char c)
 {
@@ -422,7 +424,8 @@ string toLowerCase(string s)
 
 int cmpString(string a,string b)
 {
-   return a<b?-1:a>b?1:0;
+   // return a>b?-1:a<b?1:0;//ascendente
+   return a<b?-1:a>b?1:0;//ascendente
 }
 
 int cmpDouble(double a,double b)
