@@ -140,7 +140,12 @@ CMakeFiles/modelo.dir/src/main.cpp.o: \
  /usr/include/c++/9/bits/locale_facets.tcc \
  /usr/include/c++/9/bits/basic_ios.tcc \
  /usr/include/c++/9/bits/ostream.tcc /usr/include/c++/9/istream \
- /usr/include/c++/9/bits/istream.tcc /usr/include/c++/9/filesystem \
+ /usr/include/c++/9/bits/istream.tcc /usr/include/c++/9/sstream \
+ /usr/include/c++/9/bits/sstream.tcc /usr/include/string.h \
+ /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+ /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
+ /usr/include/c++/9/stdlib.h /usr/include/c++/9/filesystem \
  /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
@@ -150,9 +155,6 @@ CMakeFiles/modelo.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/rutaPath/src/../include/tads/Coll.hpp \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/rutaPath/src/../include/tads/../funciones/strings.hpp \
- /usr/include/string.h /usr/include/strings.h \
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
  /usr/include/c++/9/math.h /usr/include/c++/9/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -165,4 +167,6 @@ CMakeFiles/modelo.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
  /usr/include/x86_64-linux-gnu/bits/mathinline.h \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/rutaPath/src/../include/tads/../funciones/tokens.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/rutaPath/src/../include/tads/../funciones/strings.hpp
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/rutaPath/src/../include/tads/../funciones/strings.hpp \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/rutaPath/src/../include/tads/testTools.hpp \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/LEC11/rutaPath/src/../include/tads/../tads/Coll.hpp

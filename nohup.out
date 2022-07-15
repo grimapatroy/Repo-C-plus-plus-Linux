@@ -1,0 +1,531 @@
+ln: failed to create symbolic link '/home/jguivar/snap/shutter/27/.config/gtk-2.0/gtkfilechooser.ini': File exists
+WARNING: gnome-web-photo is missing --> screenshots of websites will be disabled!
+
+
+(shutter:16123): Unique-DBus-WARNING **: Error while sending message: Message recipient disconnected from message bus without replying
+
+INFO: There is already another instance of Shutter running!
+ln: failed to create symbolic link '/home/jguivar/snap/shutter/27/.config/gtk-2.0/gtkfilechooser.ini': File exists
+WARNING: gnome-web-photo is missing --> screenshots of websites will be disabled!
+
+
+INFO: gathering system information...
+
+Linux IS-LP-57-19-HP 5.13.0-52-generic #59~20.04.1-Ubuntu SMP Thu Jun 16 21:21:28 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+cat: /etc/issue: Permission denied
+
+Glib 1.320 
+Gtk2 1.2498 
+
+Glib built for 2.47.3, running with 2.48.2
+Gtk2 built for 2.24.29, running with 2.24.30
+
+Barrel Distortion - /snap/shutter/27/share/shutter/resources/system/plugins/perl/spbardistortion/spbardistortion
+Negate - /snap/shutter/27/share/shutter/resources/system/plugins/perl/spnegate/spnegate
+Polaroid - /snap/shutter/27/share/shutter/resources/system/plugins/perl/sppolaroid/sppolaroid
+Resize - /snap/shutter/27/share/shutter/resources/system/plugins/perl/spresize/spresize
+Sepia - /snap/shutter/27/share/shutter/resources/system/plugins/perl/spsepia/spsepia
+Hard Shadow - /snap/shutter/27/share/shutter/resources/system/plugins/perl/spshadow/spshadow
+Watermark - /snap/shutter/27/share/shutter/resources/system/plugins/perl/spwatermark/spwatermark
+Grayscale - /snap/shutter/27/share/shutter/resources/system/plugins/shell/spgrayscale/spgrayscale
+Offset - /snap/shutter/27/share/shutter/resources/system/plugins/shell/spoffset/spoffset
+Raise Border - /snap/shutter/27/share/shutter/resources/system/plugins/shell/spraise/spraise
+Soft Edges - /snap/shutter/27/share/shutter/resources/system/plugins/shell/spsoftedges/spsoftedges
+Sunk Border - /snap/shutter/27/share/shutter/resources/system/plugins/shell/spsunk/spsunk
+Torned Paper - /snap/shutter/27/share/shutter/resources/system/plugins/shell/sptornedpaper/sptornedpaper
+Autocrop - /snap/shutter/27/share/shutter/resources/system/plugins/shell/sptrim/sptrim
+
+(shutter:16319): GLib-GIO-WARNING **: Error creating IO channel for /proc/mounts: Permission denied (g-file-error-quark, 2)
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GLib-CRITICAL **: Source ID 39 was not found when attempting to remove it at /snap/shutter/27/bin/shutter line 7267.
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GLib-CRITICAL **: Source ID 911 was not found when attempting to remove it at /snap/shutter/27/bin/shutter line 7267.
+GLib-CRITICAL **: Source ID 913 was not found when attempting to remove it at /snap/shutter/27/share/shutter/resources/modules/Shutter/App/ShutterNotification.pm line 186.
+Current window manager: GNOME Shell
+Current window manager: GNOME Shell
+
+type_changed was emitted by widget Gtk2::ComboBox=HASH(0x24cddb8)
+
+progname_toggled was emitted by widget Gtk2::CheckButton=HASH(0x24c1658)
+
+im_colors_changed was emitted by widget Gtk2::ComboBox=HASH(0x644f250)
+
+im_colors_toggled was emitted by widget Gtk2::CheckButton=HASH(0x644c030)
+
+thumbnail_changed was emitted by widget Gtk2::HScale=HASH(0x646f160)
+
+thumbnail_toggled was emitted by widget Gtk2::CheckButton=HASH(0x63f66b0)
+
+bordereffect_toggled was emitted by widget Gtk2::CheckButton=HASH(0x646f310)
+
+bordereffect_changed was emitted by widget Gtk2::SpinButton=HASH(0x646f298)
+
+menu_delay_changed was emitted by widget Gtk2::SpinButton=HASH(0x2498988)
+
+hide_time_changed was emitted by widget Gtk2::SpinButton=HASH(0x6562c08)
+
+ns_changed was emitted by widget Gtk2::ComboBox=HASH(0x6562c80)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+select was emitted by widget Gtk2::ToolButton=HASH(0x252b448)
+3 Ns used in wild-card
+Searching for files with pattern: (?^u:\$name_(\d\d\d)\.png)
+Searching for files with pattern: (?^u:.{1,}_(\d\d\d)\.png)
+Comparing Selection_002.png
+002 is currently greatest value...
+Comparing Selection_010.png
+010 is currently greatest value...
+Comparing Selection_016.png
+016 is currently greatest value...
+Comparing Selection_001.png
+Comparing Selection_015.png
+Comparing Selection_004.png
+Comparing Selection_011.png
+Comparing Selection_003.png
+Comparing Selection_013.png
+Comparing configuracionCorreoAltenativo
+Comparing Selection_012.png
+Comparing Selection_007.png
+Comparing Selection_006.png
+Comparing Selection_009.png
+Comparing Selection_005.png
+Comparing fotos.doc
+Comparing Selection_014.png
+Comparing Selection_008.png
+Using monitor: 1366 - 0 - 1920 - 1080
+Parsing wildcards for /home/jguivar/Imágenes/$name_017.png
+Parsed $width and $height: /home/jguivar/Imágenes/$name_017.png
+Parsed $profile: /home/jguivar/Imágenes/$name_017.png
+Parsed $name: /home/jguivar/Imágenes/Selection_017.png
+New uri after exists check: file:///home/jguivar/Imágenes/Selection_017.png
+Trying to save file to /home/jguivar/Imágenes/Selection_017.png
+Saving file /home/jguivar/Imágenes/Selection_017.png, png, 9
+Updating fileinfos for key: [1] - Selection_017.png
+file:///home/jguivar/Imágenes/Selection_017.png thumbnail created
+file:///home/jguivar/Imágenes/Selection_017.png thumbnail already exists
+screenshot successfully saved to /home/jguivar/Imágenes/Selection_017.png!
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+select was emitted by widget Gtk2::ToolButton=HASH(0x252b448)
+3 Ns used in wild-card
+Searching for files with pattern: (?^u:\$name_(\d\d\d)\.png)
+Searching for files with pattern: (?^u:.{1,}_(\d\d\d)\.png)
+Comparing Selection_002.png
+002 is currently greatest value...
+Comparing Selection_010.png
+010 is currently greatest value...
+Comparing Selection_016.png
+016 is currently greatest value...
+Comparing Selection_001.png
+Comparing Selection_017.png
+017 is currently greatest value...
+Comparing Selection_015.png
+Comparing Selection_004.png
+Comparing Selection_011.png
+Comparing Selection_003.png
+Comparing Selection_013.png
+Comparing configuracionCorreoAltenativo
+Comparing Selection_012.png
+Comparing Selection_007.png
+Comparing Selection_006.png
+Comparing Selection_009.png
+Comparing Selection_005.png
+Comparing fotos.doc
+Comparing Selection_014.png
+Comparing Selection_008.png
+Using monitor: 1366 - 0 - 1920 - 1080
+Parsing wildcards for /home/jguivar/Imágenes/$name_018.png
+Parsed $width and $height: /home/jguivar/Imágenes/$name_018.png
+Parsed $profile: /home/jguivar/Imágenes/$name_018.png
+Parsed $name: /home/jguivar/Imágenes/Selection_018.png
+New uri after exists check: file:///home/jguivar/Imágenes/Selection_018.png
+Trying to save file to /home/jguivar/Imágenes/Selection_018.png
+Saving file /home/jguivar/Imágenes/Selection_018.png, png, 9
+Updating fileinfos for key: [2] - Selection_018.png
+file:///home/jguivar/Imágenes/Selection_018.png thumbnail created
+file:///home/jguivar/Imágenes/Selection_018.png thumbnail already exists
+screenshot successfully saved to /home/jguivar/Imágenes/Selection_018.png!
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GLib-CRITICAL **: Source ID 1709 was not found when attempting to remove it at /snap/shutter/27/bin/shutter line 7267.
+GLib-CRITICAL **: Source ID 1711 was not found when attempting to remove it at /snap/shutter/27/share/shutter/resources/modules/Shutter/App/ShutterNotification.pm line 186.
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GLib-CRITICAL **: Source ID 4353 was not found when attempting to remove it at /snap/shutter/27/bin/shutter line 7267.
+GLib-CRITICAL **: Source ID 4355 was not found when attempting to remove it at /snap/shutter/27/share/shutter/resources/modules/Shutter/App/ShutterNotification.pm line 186.
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GLib-CRITICAL **: Source ID 5351 was not found when attempting to remove it at /snap/shutter/27/bin/shutter line 7267.
+GLib-CRITICAL **: Source ID 5353 was not found when attempting to remove it at /snap/shutter/27/share/shutter/resources/modules/Shutter/App/ShutterNotification.pm line 186.
+by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+select was emitted by widget Gtk2::ToolButton=HASH(0x252b448)
+3 Ns used in wild-card
+Searching for files with pattern: (?^u:\$name_(\d\d\d)\.png)
+Searching for files with pattern: (?^u:.{1,}_(\d\d\d)\.png)
+Comparing Selection_002.png
+002 is currently greatest value...
+Comparing Selection_010.png
+010 is currently greatest value...
+Comparing Selection_016.png
+016 is currently greatest value...
+Comparing Selection_001.png
+Comparing Selection_017.png
+017 is currently greatest value...
+Comparing Selection_015.png
+Comparing Selection_004.png
+Comparing Selection_011.png
+Comparing Selection_003.png
+Comparing Selection_013.png
+Comparing configuracionCorreoAltenativo
+Comparing Selection_012.png
+Comparing Selection_007.png
+Comparing Selection_006.png
+Comparing Selection_009.png
+Comparing Selection_005.png
+Comparing fotos.doc
+Comparing Selection_014.png
+Comparing Selection_018.png
+018 is currently greatest value...
+Comparing Selection_008.png
+Using monitor: 0 - 0 - 1366 - 768
+Parsing wildcards for /home/jguivar/Imágenes/$name_019.png
+Parsed $width and $height: /home/jguivar/Imágenes/$name_019.png
+Parsed $profile: /home/jguivar/Imágenes/$name_019.png
+Parsed $name: /home/jguivar/Imágenes/Selection_019.png
+New uri after exists check: file:///home/jguivar/Imágenes/Selection_019.png
+Trying to save file to /home/jguivar/Imágenes/Selection_019.png
+Saving file /home/jguivar/Imágenes/Selection_019.png, png, 9
+Updating fileinfos for key: [3] - Selection_019.png
+file:///home/jguivar/Imágenes/Selection_019.png thumbnail created
+file:///home/jguivar/Imágenes/Selection_019.png thumbnail already exists
+screenshot successfully saved to /home/jguivar/Imágenes/Selection_019.png!
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+select was emitted by widget Gtk2::ToolButton=HASH(0x252b448)
+3 Ns used in wild-card
+Searching for files with pattern: (?^u:\$name_(\d\d\d)\.png)
+Searching for files with pattern: (?^u:.{1,}_(\d\d\d)\.png)
+Comparing Selection_002.png
+002 is currently greatest value...
+Comparing Selection_019.png
+019 is currently greatest value...
+Comparing Selection_010.png
+Comparing Selection_016.png
+Comparing Selection_001.png
+Comparing Selection_017.png
+Comparing Selection_015.png
+Comparing Selection_004.png
+Comparing Selection_011.png
+Comparing Selection_003.png
+Comparing Selection_013.png
+Comparing configuracionCorreoAltenativo
+Comparing Selection_012.png
+Comparing Selection_007.png
+Comparing Selection_006.png
+Comparing Selection_009.png
+Comparing Selection_005.png
+Comparing fotos.doc
+Comparing Selection_014.png
+Comparing Selection_018.png
+Comparing Selection_008.png
+Using monitor: 0 - 0 - 1366 - 768
+Parsing wildcards for /home/jguivar/Imágenes/$name_020.png
+Parsed $width and $height: /home/jguivar/Imágenes/$name_020.png
+Parsed $profile: /home/jguivar/Imágenes/$name_020.png
+Parsed $name: /home/jguivar/Imágenes/Selection_020.png
+New uri after exists check: file:///home/jguivar/Imágenes/Selection_020.png
+Trying to save file to /home/jguivar/Imágenes/Selection_020.png
+Saving file /home/jguivar/Imágenes/Selection_020.png, png, 9
+Updating fileinfos for key: [4] - Selection_020.png
+file:///home/jguivar/Imágenes/Selection_020.png thumbnail created
+file:///home/jguivar/Imágenes/Selection_020.png thumbnail already exists
+screenshot successfully saved to /home/jguivar/Imágenes/Selection_020.png!
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+select was emitted by widget Gtk2::ToolButton=HASH(0x252b448)
+3 Ns used in wild-card
+Searching for files with pattern: (?^u:\$name_(\d\d\d)\.png)
+Searching for files with pattern: (?^u:.{1,}_(\d\d\d)\.png)
+Comparing Selection_002.png
+002 is currently greatest value...
+Comparing Selection_019.png
+019 is currently greatest value...
+Comparing Selection_010.png
+Comparing Selection_016.png
+Comparing Selection_001.png
+Comparing Selection_017.png
+Comparing Selection_015.png
+Comparing Selection_004.png
+Comparing Selection_011.png
+Comparing Selection_003.png
+Comparing Selection_013.png
+Comparing Selection_020.png
+020 is currently greatest value...
+Comparing configuracionCorreoAltenativo
+Comparing Selection_012.png
+Comparing Selection_007.png
+Comparing Selection_006.png
+Comparing Selection_009.png
+Comparing Selection_005.png
+Comparing fotos.doc
+Comparing Selection_014.png
+Comparing Selection_018.png
+Comparing Selection_008.png
+Using monitor: 0 - 0 - 1366 - 768
+Parsing wildcards for /home/jguivar/Imágenes/$name_021.png
+Parsed $width and $height: /home/jguivar/Imágenes/$name_021.png
+Parsed $profile: /home/jguivar/Imágenes/$name_021.png
+Parsed $name: /home/jguivar/Imágenes/Selection_021.png
+New uri after exists check: file:///home/jguivar/Imágenes/Selection_021.png
+Trying to save file to /home/jguivar/Imágenes/Selection_021.png
+Saving file /home/jguivar/Imágenes/Selection_021.png, png, 9
+Updating fileinfos for key: [5] - Selection_021.png
+file:///home/jguivar/Imágenes/Selection_021.png thumbnail created
+file:///home/jguivar/Imágenes/Selection_021.png thumbnail already exists
+screenshot successfully saved to /home/jguivar/Imágenes/Selection_021.png!
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+fct_update_tray_menu was called by Gnome2::Wnck::Screen=HASH(0x56fc7b0)
+
+select was emitted by widget Gtk2::ToolButton=HASH(0x252b448)
+3 Ns used in wild-card
+Searching for files with pattern: (?^u:\$name_(\d\d\d)\.png)
+Searching for files with pattern: (?^u:.{1,}_(\d\d\d)\.png)
+Comparing Selection_002.png
+002 is currently greatest value...
+Comparing Selection_019.png
+019 is currently greatest value...
+Comparing Selection_010.png
+Comparing Selection_016.png
+Comparing Selection_001.png
+Comparing Selection_017.png
+Comparing Selection_015.png
+Comparing Selection_004.png
+Comparing Selection_011.png
+Comparing Selection_003.png
+Comparing Selection_013.png
+Comparing Selection_020.png
+020 is currently greatest value...
+Comparing configuracionCorreoAltenativo
+Comparing Selection_012.png
+Comparing Selection_007.png
+Comparing Selection_006.png
+Comparing Selection_009.png
+Comparing Selection_005.png
+Comparing fotos.doc
+Comparing Selection_014.png
+Comparing Selection_018.png
+Comparing Selection_021.png
+021 is currently greatest value...
+Comparing SelectionGConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.259" (uid=1000 pid=16319 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=8274 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GLib-CRITICAL **: Source ID 6593 was not found when attempting to remove it at /snap/shutter/27/bin/shutter line 7267.
+GLib-CRITICAL **: Source ID 6825 was not found when attempting to remove it at /snap/shutter/27/share/shutter/resources/modules/Shutter/App/ShutterNotification.pm line 186.
+GLib-CRITICAL **: Source ID 7572 was not found when attempting to remove it at /snap/shutter/27/bin/shutter line 7267.
+GLib-GObject-CRITICAL **: g_object_unref: assertion 'G_IS_OBJECT (object)' failed at /snap/shutter/27/bin/shutter line 5673.
+GLib-GObject-CRITICAL **: g_object_unref: assertion 'G_IS_OBJECT (object)' failed at /snap/shutter/27/bin/shutter line 5673.
+GLib-GObject-CRITICAL **: g_object_unref: assertion 'G_IS_OBJECT (object)' failed at /snap/shutter/27/bin/shutter line 5673.
+GLib-GObject-CRITICAL **: g_object_unref: assertion 'G_IS_OBJECT (object)' failed at /snap/shutter/27/bin/shutter line 5673.
+GLib-GObject-CRITICAL **: g_object_unref: assertion 'G_IS_OBJECT (object)' failed at /snap/shutter/27/bin/shutter line 5673.
+GLib-GObject-CRITICAL **: g_object_unref: assertion 'G_IS_OBJECT (object)' failed at /snap/shutter/27/bin/shutter line 5673.
+GLib-GObject-CRITICAL **: g_object_unref: assertion 'G_IS_OBJECT (object)' failed at /snap/shutter/27/bin/shutter line 5673.
+GLib-GObject-CRITICAL **: g_object_unref: assertion 'G_IS_OBJECT (object)' failed at /snap/shutter/27/bin/shutter line 5673.
+GLib-GObject-CRITICAL **: g_object_unref: assertion 'G_IS_OBJECT (object)' failed at /snap/shutter/27/bin/shutter line 5673.
+GLib-GObject-CRITICAL **: g_object_unref: assertion 'G_IS_OBJECT (object)' failed at /snap/shutter/27/bin/shutter line 5673.
+GLib-GObject-CRITICAL **: g_object_unref: assertion 'G_IS_OBJECT (object)' failed at /snap/shutter/27/bin/shutter line 5673.
+GLib-GObject-CRITICAL **: g_object_unref: assertion 'G_IS_OBJECT (object)' failed at /snap/shutter/27/bin/shutter line 5673.
+shutter: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.

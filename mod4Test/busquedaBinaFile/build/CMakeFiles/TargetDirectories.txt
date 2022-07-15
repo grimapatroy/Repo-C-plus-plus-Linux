@@ -1,0 +1,3 @@
+/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/mod4Test/busquedaBinaFile/build/CMakeFiles/edit_cache.dir
+/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/mod4Test/busquedaBinaFile/build/CMakeFiles/rebuild_cache.dir
+/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/mod4Test/busquedaBinaFile/build/CMakeFiles/modelo.dir

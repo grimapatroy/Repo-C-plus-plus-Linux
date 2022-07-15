@@ -29,19 +29,17 @@ int main()
     {
         int cont = 0;
         int acum = 0;
-
         int idAsigAnt = resgistro.idAsig;
+
         while (!feof(f) && idAsigAnt == resgistro.idAsig)
         {
             cont++; 
             acum += resgistro.idAsig;
-
             resgistro = read<Calificacion>(f);
         }
         // RESULTADOS
         double promedio = acum/(double)cont;
         cout<<"ID ASIGNATURA:"<<resgistro.idAsig<<" "<<"PROMEDIO: "<<promedio<<endl;
-
     }
     
     fclose(f);

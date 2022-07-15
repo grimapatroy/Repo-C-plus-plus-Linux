@@ -1,9 +1,14 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
+#include <sstream>
+#include <string>
+#include <string.h>
+#include <stdlib.h>
 #include <filesystem>
 #include <unistd.h>
 #include "../include/tads/Coll.hpp"
+#include "../include/tads/testTools.hpp"
 using namespace std;
 
 // using std::cout; using std::cin;
@@ -35,14 +40,14 @@ string getDirectory()
 
 
 
-
-
-
-
 int main()
 {   
     // char path[1024];
     // string path;
-    cout << "*******************+RUTA ACTUAL DEL EJECUTABLE: "<<getDirectory() << endl;
+    // cout << "*******************RUTA ACTUAL DEL EJECUTABLE: "<<getDirectory() << endl;
+    // crearArchivo();
+    
+    leerArchivo();
+
     return 0;
 }

@@ -8,83 +8,6 @@
 using namespace std;
 
 int GLOBAL =-1, GLOBAL1=-1;
-// ----------------------------------------------------------------
-// ----structuras para archivos------------------------------------------------------------
-struct Personita
-{
-   int dni;
-   char nombre[15];
-};
-
-
-// ----------------------------------------------------------------
-// ----------------------------------------------------------------
-
-// ----------------------------------------------------------------
-   struct Persona
-   {
-      int dni;
-      string nombre;
-   };
-
-   Persona persona(int a ,string n){
-      return {a,n};
-   }
-// ---------------------------------------------------------
-   string personaToString(Persona p){
-      // devuelve addToken
-      return intToString(p.dni) + "," + p.nombre;
-   }
-
-   Persona personaFromString(string a){
-      Persona p;
-      p.dni=stringToInt(getTokenAt(a,',',0));// destokenizar a
-      p.nombre=getTokenAt(a,',',1);// tokenizar a
-      return p;
-   }
-
-
-// -------------funciones de comparacion--------------------------------------------
-
-   int cmpPersonaDNI(Persona p,int dni)
-   {
-      return p.dni-dni;
-   }
-// ------------------------------------
-   int cmpPersonaNombre(Persona p, string k){
-
-      return p.nombre<k?-1:p.nombre>k?1:0;
-   }
-   int cmpPersonaNombre2(Persona p1,Persona p2){
-      return p1.nombre<p2.nombre?-1:p1.nombre>p2.nombre?1:0;
-   }
-
-   int cmpPersonasNomAsc(Persona p1,Persona p2)
-   {
-      return p1.nombre<p2.nombre?-1:p1.nombre>p2.nombre?1:0;
-   }
-
-   int cmpPersonasNomDesc(Persona p1,Persona p2)
-   {
-   return p2.nombre<p1.nombre?-1:p2.nombre>p1.nombre?1:0;
-   }
-
-   int cmpPersonasDNI(Persona p1,Persona p2)
-   {
-   return p1.dni-p2.dni;
-   }
-
-   
-// ----------------------------------------------------------------
-string stringFromString(string cadena){
-
-   return cadena;
-}
-
-
-// ----------------------------------------------------------------
-// ----------------------------------------------------------------
-// ----------------------------------------------------------------
 
 
 template<typename T>
@@ -119,36 +42,12 @@ int collSize(Coll<T> c)
 }
 
 template<typename T>
-void collRemoveAll(Coll<T>& c)
-{
-   c.s="";
-}
-
-template<typename T>
-void collRemoveAt(Coll<T>& c, int p)
-{
-   // c.s = getTokenAt();
-   removeTokenAt(c.s,c.sep,p);
-}
-
-template<typename T>
 int collAdd(Coll<T>& c,T t,string tToString(T))
 {
    addToken(c.s,c.sep,tToString(t));
    return tokenCount(c.s,c.sep)-1;
 }
 
-// obj0 |obj1 |obj2 |obj3 |obj4
-template <typename T>
-void collSetAt(Coll<T>& c,T t,int p,string tToString(T))
-{
-   // c.s = sub
-   removeTokenAt(c.s,c.sep,p);
-   setTokenAt(c.s,c.sep,tToString(t));
-   // addToken(c.s,) 
-}
-
-// obj0 |obj1 |obj2 |obj3 |obj4
 template <typename T>
 T collGetAt(Coll<T> c,int p,T tFromString(string))
 {
@@ -157,17 +56,33 @@ T collGetAt(Coll<T> c,int p,T tFromString(string))
    return t; 
 }
 
+template <typename T>
+void collSetAt(Coll<T>& c,T t,int p,string tToString(T))
+{
+   setTokenAt(c.s,c.sep,tToString(t),p);
+}
 
-// 33,joel | 44,Pedro | 55,Ramon |15,Lili | 20,Lesli
-// obj0 |obj1 |obj2 |obj3 |obj4   -------- k
-// coll c
+template<typename T>
+void collRemoveAll(Coll<T>& c)
+{
+   c.s="";
+}
+
+template<typename T>
+void collRemoveAt(Coll<T>& c, int p)
+{
+   removeTokenAt(c.s,c.sep,p);
+}
+
 template <typename T, typename K>
 int collFind(Coll<T> c,K k,int cmpTK(T,K),T tFromString(string))
 {
    int i;
-   for (i = 0; i < collSize(c); i++)
+   int n = collSize<T>(c);
+   for (i = 0; i < n; i++)
    {
-      T t =tFromString(getTokenAt(c.s,c.sep,i)) ;
+      string token = getTokenAt(c.s,c.sep,i);
+      T t =tFromString(token) ;
       if(cmpTK(t,k)==0){
          return i;
       }
@@ -175,51 +90,35 @@ int collFind(Coll<T> c,K k,int cmpTK(T,K),T tFromString(string))
    return -1;
 }
 
-
-// 33,Dedro | 44,Bablo | 55,Carlos |15,Auan | 20,Lesli
-// obj0 |obj1 |obj2 |obj3 |obj4   -------- k
 template <typename T>
 void collSort(Coll<T>& c,int cmpTT(T,T),T tFromString(string),string tToString(T))
 {
-   T temporal;
    int j;
    bool ordenado = false;
-   int rondas = 0;
       while (!ordenado)
       {
          ordenado = true;
-         for ( j = 0; j <collSize(c)-1-rondas; j++)
+         for ( j = 0; j <collSize<T>(c)-1; j++)
          {
-            T t1 = tFromString(getTokenAt(c.s,c.sep,j));
-            T t2 = tFromString(getTokenAt(c.s,c.sep,j+1));
-            if (cmpTT(t1,t2)<0)
+            int posT1 = j;
+            int posT2 = j+1;
+            T t1 = tFromString(getTokenAt(c.s,c.sep,posT1));
+            T t2 = tFromString(getTokenAt(c.s,c.sep,posT2));
+            if (cmpTT(t1,t2)>0)
             {
-               temporal = t1;
-               if (collSize(c)-1==rondas+1)
-               {
-                  setTokenAt(c.s,c.sep,tToString(t2),j);
-                  setTokenAt(c.s,c.sep,tToString(temporal),j+1);
-                  removeTokenAt(c.s,c.sep,j+2);
-                  ordenado = true;
-                  break;
-               }
-               setTokenAt(c.s,c.sep,tToString(t2),j);
-               removeTokenAt(c.s,c.sep,j+2);
-                  // removeTokenAt(c.s,c.sep,j+1);
-               ordenado = false;
+                     T temp = t1;
+                     setTokenAt(c.s,c.sep,tToString(t2),posT1);
+                     setTokenAt(c.s,c.sep,tToString(temp),posT2);
+                     ordenado = false;
             }
          }
-         rondas++;
       }
-      
 }
 
 
-// obj0 |obj1 |obj2 |obj3 |obj4
 template<typename T>
 bool collHasNext(Coll<T> c)
 {
-
    if (tokenCount(c.s,c.sep)==0)
    {
          return false;
@@ -233,27 +132,44 @@ bool collHasNext(Coll<T> c)
       }
    }
    return false;
+   // static int temp = 0 ;
+   // if (tokenCount(c.s,c.sep)==0)
+   // {
+   //    return false;
+   // }
+   // else
+   // {
+   //       while (++temp<tokenCount(c.s,c.sep)){
+   //       // c.cont = temp;
+   //       return true;
+   //    }
+   // }
+   // return false;
 }
 
-
-// obj0 |obj1 |obj2 |obj3 |obj4
 template<typename T>
 T collNext(Coll<T>& c,T tFromString(string))
 {
    T t = tFromString(getTokenAt(c.s,c.sep,GLOBAL));
+   // static int temp2 = -1 ;
+   // T t = tFromString(getTokenAt(c.s,c.sep,++temp2));
+   // T t = tFromString(getTokenAt(c.s,c.sep,collSgt<T>(c)));
    return t;
 }
 
 
-// obj0 |obj1 |obj2 |obj3 |obj4
+
+
 template<typename T>
 T collNext(Coll<T>& c,bool& endOfColl,T tFromString(string))
 {
    T t;
-   endOfColl = ++GLOBAL<tokenCount(c.s,c.sep)?true:false;
-   if(endOfColl and ++GLOBAL1<tokenCount(c.s,c.sep))
+   // endOfColl = ++GLOBAL<tokenCount(c.s,c.sep)?true:false;
+   if(++GLOBAL1<tokenCount(c.s,c.sep))
    {
       t = tFromString(getTokenAt(c.s,c.sep,GLOBAL1));
+   }else{
+      endOfColl = 1; 
    }
    return t;
 }
@@ -268,82 +184,25 @@ void collReset(Coll<T>& c)
    GLOBAL1 = -1;
 }
 
-// ----------------------------------------------------------------
-// ----------------------------------------------------------------
-// ----------------------------------------------------------------
-
-// ------------------------funciones para coleccion de colecciones de tipo T----------------------------------
-// TtoString
-
-string collIntToString(Coll<int> x){
-   string r="";
-   collReset<int>(x);
-   while (collHasNext<int>(x))
-   {
-      int i = collNext<int>(x,stringToInt);
-      addToken(r,',',intToString(i));
-   }
-   return r;
+template<typename T>
+string collToString(Coll<T> c)
+{
+	return c.sep+c.s;
 }
 
-// tFromString
-Coll<int>  collIntFromString(string s){
-   Coll<int> x = coll<int>(',');  
-   for (int i = 0; i < tokenCount(s,','); i++)
-   {
-      int token = stringToInt(getTokenAt(s,',',i));
-      collAdd<int>(x,token,intToString);
-   }
-   
-   return x;
-}
-// ----------------------------------------------------------------
-// ----------------------------------------------------------------
-// ----------------------------------------------------------------
-
-
-// Colecciones de estructuras que tienen colecciones
-   struct Conjunto
-   {
-      string nombre;
-      Coll<int>c;
-   };
-   
-// ----------------------------------------------------------------
-// Funciones de Colecciones de estructuras que tienen colecciones
-
-
-string conjuntoToString(Conjunto cjt){
-   
-   string token=cjt.nombre+"#";
-   // collReset<int>(cjt.c);
-   // while (collHasNext<int>(cjt.c))
-   // {
-   // }
-   int size = collSize<int>(cjt.c);
-   for (int i = 0; i < size; i++)
-   {
-      int subTokenInt = collGetAt<int>(cjt.c,i,stringToInt);
-      token += intToString(subTokenInt)+(i<size-1?",":"");
-   }
-   return token;
+template<typename T>
+Coll<T> collFromString(string s)
+{
+	Coll<T> c;
+	c.sep=s[0];
+	c.s=substring(s,1);
+	return c;
 }
 
-Conjunto conjuntoFromString(string token){
-   Conjunto c;
-   
-   c.nombre = getTokenAt(token,'#',0);
 
-   c.c = coll<int>(',');
-   string x = getTokenAt(token,'#',1);
-   for (int i = 0; i < tokenCount(x,','); i++)
-   {
-      int subTokenInt = stringToInt(getTokenAt(x,',',i));
-      collAdd<int>(c.c,subTokenInt,intToString);
-   }
-   return c;
-}
-
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
 
 
 

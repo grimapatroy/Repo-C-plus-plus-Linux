@@ -42,37 +42,12 @@ int collSize(Coll<T> c)
 }
 
 template<typename T>
-void collRemoveAll(Coll<T>& c)
-{
-   c.s="";
-   // coll();
-}
-
-template<typename T>
-void collRemoveAt(Coll<T>& c, int p)
-{
-   // c.s = getTokenAt();
-   removeTokenAt(c.s,c.sep,p);
-}
-
-template<typename T>
 int collAdd(Coll<T>& c,T t,string tToString(T))
 {
    addToken(c.s,c.sep,tToString(t));
    return tokenCount(c.s,c.sep)-1;
 }
 
-// obj0 |obj1 |obj2 |obj3 |obj4
-template <typename T>
-void collSetAt(Coll<T>& c,T t,int p,string tToString(T))
-{
-   // c.s = sub
-   removeTokenAt(c.s,c.sep,p);
-   setTokenAt(c.s,c.sep,tToString(t),p);
-   // addToken(c.s,) 
-}
-
-// obj0 |obj1 |obj2 |obj3 |obj4
 template <typename T>
 T collGetAt(Coll<T> c,int p,T tFromString(string))
 {
@@ -81,17 +56,33 @@ T collGetAt(Coll<T> c,int p,T tFromString(string))
    return t; 
 }
 
+template <typename T>
+void collSetAt(Coll<T>& c,T t,int p,string tToString(T))
+{
+   setTokenAt(c.s,c.sep,tToString(t),p);
+}
 
-// 33,joel | 44,Pedro | 55,Ramon |15,Lili | 20,Lesli
-// obj0 |obj1 |obj2 |obj3 |obj4   -------- k
-// coll c
+template<typename T>
+void collRemoveAll(Coll<T>& c)
+{
+   c.s="";
+}
+
+template<typename T>
+void collRemoveAt(Coll<T>& c, int p)
+{
+   removeTokenAt(c.s,c.sep,p);
+}
+
 template <typename T, typename K>
 int collFind(Coll<T> c,K k,int cmpTK(T,K),T tFromString(string))
 {
    int i;
-   for (i = 0; i < collSize(c); i++)
+   int n = collSize<T>(c);
+   for (i = 0; i < n; i++)
    {
-      T t =tFromString(getTokenAt(c.s,c.sep,i)) ;
+      string token = getTokenAt(c.s,c.sep,i);
+      T t =tFromString(token) ;
       if(cmpTK(t,k)==0){
          return i;
       }
@@ -99,72 +90,35 @@ int collFind(Coll<T> c,K k,int cmpTK(T,K),T tFromString(string))
    return -1;
 }
 
-
-// 33,Dedro | 44,Bablo | 55,Carlos |15,Auan | 20,Lesli
-// obj0 |obj1 |obj2 |obj3 |obj4   -------- k
 template <typename T>
 void collSort(Coll<T>& c,int cmpTT(T,T),T tFromString(string),string tToString(T))
 {
    int j;
    bool ordenado = false;
-   // int rondas = 0;
       while (!ordenado)
       {
          ordenado = true;
-         for ( j = 0; j <collSize(c)-1; j++)
+         for ( j = 0; j <collSize<T>(c)-1; j++)
          {
             int posT1 = j;
             int posT2 = j+1;
             T t1 = tFromString(getTokenAt(c.s,c.sep,posT1));
             T t2 = tFromString(getTokenAt(c.s,c.sep,posT2));
-            // maximos y minimos 
-               if(cmpTT(t1,t2)<0  or cmpTT(t1,t2)>0 )
-               {
-                        if (cmpTT(t1,t2)<0)
-                        {
-                                 T temp = t1;
-                                 if (posT1!=0)
-                                 {
-                                 setTokenAt(c.s,c.sep,tToString(t2),posT1);
-                                 // setTokenAt(c.s,c.sep,tToString(temp),posT2);
-                                 removeTokenAt(c.s,c.sep,posT2+1);
-                                 ordenado = false;
-                                 }else
-                                 {
-                                    setTokenAt(c.s,c.sep,tToString(t2),posT1);
-                                    setTokenAt(c.s,c.sep,tToString(temp),posT2);
-                                    removeTokenAt(c.s,c.sep,posT2+1);
-                                    ordenado = false;
-                                 }
-                        }else{
-                                 continue;
-                              }
-               }else
-                     {
-                        continue;
-                     }
-         }// rondas++;
+            if (cmpTT(t1,t2)>0)
+            {
+                     T temp = t1;
+                     setTokenAt(c.s,c.sep,tToString(t2),posT1);
+                     setTokenAt(c.s,c.sep,tToString(temp),posT2);
+                     ordenado = false;
+            }
+         }
       }
 }
 
 
-// obj0 |obj1 |obj2 |obj3 |obj4
 template<typename T>
 bool collHasNext(Coll<T> c)
 {
-   // static int contador=-1;
-   // if (tokenCount(c.s,c.sep)==0)
-   // {
-   //       return false;
-   // }
-   // else
-   // {
-   //    while (++contador<tokenCount(c.s,c.sep))
-   //    {
-   //       return true;
-   //    }
-   //    return false;
-   // }
    if (tokenCount(c.s,c.sep)==0)
    {
          return false;
@@ -178,24 +132,27 @@ bool collHasNext(Coll<T> c)
       }
    }
    return false;
+   // static int temp = 0 ;
+   // if (tokenCount(c.s,c.sep)==0)
+   // {
+   //    return false;
+   // }
+   // else
+   // {
+   //       while (++temp<tokenCount(c.s,c.sep)){
+   //       // c.cont = temp;
+   //       return true;
+   //    }
+   // }
+   // return false;
 }
 
-template<typename T>
-int collSgt(Coll<T> c)
-{
-   static int conteo =-1;
-   if(conteo < tokenCount(c.s,c.sep))
-   {
-      conteo ++;
-   }
-   return conteo;
-}
-
-// obj0 |obj1 |obj2 |obj3 |obj4
 template<typename T>
 T collNext(Coll<T>& c,T tFromString(string))
 {
    T t = tFromString(getTokenAt(c.s,c.sep,GLOBAL));
+   // static int temp2 = -1 ;
+   // T t = tFromString(getTokenAt(c.s,c.sep,++temp2));
    // T t = tFromString(getTokenAt(c.s,c.sep,collSgt<T>(c)));
    return t;
 }
@@ -203,7 +160,6 @@ T collNext(Coll<T>& c,T tFromString(string))
 
 
 
-// obj0 |obj1 |obj2 |obj3 |obj4
 template<typename T>
 T collNext(Coll<T>& c,bool& endOfColl,T tFromString(string))
 {
@@ -215,7 +171,6 @@ T collNext(Coll<T>& c,bool& endOfColl,T tFromString(string))
    }else{
       endOfColl = 1; 
    }
-   
    return t;
 }
 
@@ -243,6 +198,7 @@ Coll<T> collFromString(string s)
 	c.s=substring(s,1);
 	return c;
 }
+
 
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------

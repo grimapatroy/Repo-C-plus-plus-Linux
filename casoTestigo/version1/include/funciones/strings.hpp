@@ -9,9 +9,9 @@ using namespace std;
 
 int length(string s)
 {
-    int i ;
-    for ( i = 0; s[i] != '\0'; i++);
-    return i;
+   int i ;
+   for ( i = 0; s[i] != '\0'; i++);
+   return i;
 }
 
 int charCount(string s,char c)
@@ -31,11 +31,10 @@ int charCount(string s,char c)
 string substring(string s,int d,int h)
 {
    string sub="";
-   for (int i = d;h >= i and s[i] !='\0'; i++)
+   for (int i = d;h > i and s[i] !='\0'; i++)
    {
       sub += s[i];
    }
-      
    return sub;
 }
 
@@ -53,16 +52,15 @@ string substring(string s,int d) // ok
 int indexOf(string s,char c) // ok
 {
    int pos=-1;
-   int aux;
    for ( int i= 0; s[i] !='\0' ; i++)
    {
       if(s[i] ==c)
       {
          pos = i;
-         aux = i;
+         break;
       }
    }
-   return pos>=0?aux:-1;
+   return pos;
 }
 
 int indexOf(string s,char c,int offSet) // ok
@@ -74,48 +72,43 @@ int indexOf(string s,char c,int offSet) // ok
 
 int indexOf(string s,string toSearch) // ok
 {
-   int aux_i;
-   int posIni,posFin;
    string sSub;
-      for ( posIni = 0; s[posIni] != '\0' and s[posIni]!=toSearch[0]; posIni++);
-      aux_i=posIni;
-      sSub = substring(s,posIni,posIni+length(toSearch)-1);
-
-      while (toSearch != sSub)
-      {
-      for ( posFin = aux_i+1; s[posFin] != '\0' and s[posFin]!=toSearch[0]; posFin++);
-      aux_i=posFin;
-      sSub = substring(s,aux_i,aux_i+length(toSearch)-1);
-      }
-    
-   return posIni>=0?posIni:-1;
+         int pos =indexOf(s,toSearch[0]);
+         while(pos>=0)
+         {
+               sSub = substring(s,pos,pos+length(toSearch));
+               if (sSub==toSearch)
+               {
+                  return pos;
+               }else{
+                  pos =indexOf(s,toSearch[0],pos+1);
+               }
+         }
+      return -1;
 }
 
 //Esta funcion es la funcion mas dificil
 int indexOf(string s,string toSearch,int offset) // ok
 {
-   string sSub;
-   int  posIni, posFin;
-   int i = length(toSearch);
-   for ( posIni = offset; s[posIni]!=toSearch[0]; posIni++);
-   sSub = substring(s,posIni,posIni+length(toSearch)-1);
-
-   while (toSearch != sSub)
-   {
-      for (posFin = posIni+length(toSearch)+1; s[posFin] !=toSearch[0]; posFin++);
-      posIni=posFin;
-      sSub = substring(s,posIni,posIni+length(toSearch)-1);
-   }
-
-   return posIni>=0?posIni:-1;
+      string sSub;
+      for(int i = offset ;toSearch[i]!='\0'; i++)
+      {
+            int pos =indexOf(s,toSearch[0],i+1);
+            sSub = substring(s,pos,pos+length(toSearch));
+            if (sSub==toSearch)
+            {
+               return pos;
+            }
+      }
+   return -1;
 }
+
 
 int lastIndexOf(string s,char c)
 {
    int i;
    int ultimaPos=length(s);
    for ( i = ultimaPos; i>=0 and s[i]!=c; i--);
-   // int valorReal= ultimaPos - i;
    return i>=0?i:-1;
 }
 
@@ -172,7 +165,12 @@ int digitCount(int n)
 string intToString(int i)
 {
    int cadena;
-   string cadenaCon;
+   string cadenaCon="";
+   if (i==0)
+   {
+      cadenaCon += char(48);
+      return cadenaCon ;
+   }
    int aux = digitCount(i)-1;
    for ( int j =aux ; j >= 0; j--)
    {
@@ -187,13 +185,12 @@ int stringToInt(string s,int b) // ok
 {
    int resul = 0;
    int contBase=0;
-
-  for (int i = length(s)-1; i>=0  ; i--)
-  {
-    int variante = s[i]>='0'&&s[i]<='9'?'0':'A'-10;
-     resul += (s[i] - variante )*pow(b,contBase);
-     contBase++;
-  }
+   for (int i = length(s)-1; i>=0  ; i--)
+   {
+      int variante = s[i]>='0'&&s[i]<='9'?'0':'A'-10;
+      resul += (s[i] - variante )*pow(b,contBase);
+      contBase++;
+   }
    return resul;
 }
 
@@ -211,7 +208,7 @@ int stringToInt(string s) // ok
 string charToString(char c)
 {
    string resul = ""; 
-  return   resul+c;
+   return   resul+c;
 }
 
 char stringToChar(string s)
@@ -233,23 +230,17 @@ string doubleToString(double d)
    int resto = mod*int(pow(10,2));
    return intToString(int(d))+"."+intToString(resto) ;
 }
+
 //"5482.20" 
 double stringToDouble(string s)
 {
    string entera="",decimal="";
-   int i,j;
-   for ( i = 0; s[i] !='.'; i++)
-   {
-      entera += s[i];
-   }
-   for ( j = i+1; s[j] !='0'; j++)
-   {
-      decimal +=s[j];
-   }
-   double resul = stringToInt(entera) + stringToInt(decimal)/pow(10,2);
+   entera = substring(s,0,indexOf(s,'.'));
+   decimal = substring(s,indexOf(s,'.')+1,length(s));
+   int exp = length(decimal);
+   double resul = stringToInt(entera) + stringToInt(decimal)/pow(10,exp);
    return resul;
 }
-
 
 bool isEmpty(string s)
 {
@@ -267,7 +258,7 @@ bool endsWith(string s,string x)
 {
    int i;
    for ( i = length(s)-length(x); s[i]==x[i] and s[i]!='\0'; i++);
-   return s[i++]=='\0'?true:false;
+   return (s[i+length(x)]=='\0')?true:false;
 }
 
 bool contains(string s,char c)
@@ -288,19 +279,14 @@ string replace(string s,char oldChar,char newChar)
 
 string insertAt(string s,int pos,char c)
 {
-   int i;
-   string x = s + " ";
-   for ( i = length(x); i>pos; i--)
-   {
-      x[i]=x[i-1];
-   }
-   x[pos]=c;
-   return x;
+   string part1 = substring(s,0,pos+1)+charToString(c);
+   string part2 = substring(s,pos,length(s));
+   return part1+part2;
 }
 
 string removeAt(string s,int pos)
 {
-   for ( int i = pos; i < length(s)-1; i++)
+   for ( int i = pos; i <= length(s)-1; i++)
    {
       s[i]=s[i+1];
    }
@@ -310,9 +296,14 @@ string removeAt(string s,int pos)
 // [  Esto es una prueba]/[Esto es una prueba]/[Esto es una prueba   ]
 string ltrim(string s)
 {
-   int i;
-   for (  i = 0; s[i]==' ' ; i++);
-   return substring(s,i,length(s)-1);
+   if (s[0]!=' ')
+   {
+      return s;
+   }else{
+      int i=0;
+      for (i = 0; s[i]==' ' ; i++);
+      return substring(s,i,length(s));
+   }
 }
 
 // [Esto es una prueba   ]
@@ -320,7 +311,7 @@ string rtrim(string s)
 {
    int i ;
    for ( i = length(s)-1; s[i]==' ' ; i--);
-   return substring(s,0,i);
+   return substring(s,0,i+1);
 }
 
 string trim(string s)
@@ -359,7 +350,6 @@ string lpad(string s,int n,char c)
    return complet+s;
 }
 
-
 string rpad(string s,int n,char c)
 {
    string complet ="";
@@ -377,8 +367,7 @@ string cpad(string s,int n,char c)
    {
       complet+=c;
    }
-   return length(complet)>0?substring(complet,0,(length(complet)/2)-1)+s+substring(complet,length(complet)/2):s;
-   // return lpad(rpad(s,length(complet)/2,c),length(complet)/2,c);
+   return length(complet)>0?substring(complet,0,(length(complet)/2))+s+substring(complet,length(complet)/2):s;
 }
 
 bool isDigit(char c)
@@ -435,7 +424,8 @@ string toLowerCase(string s)
 
 int cmpString(string a,string b)
 {
-   return a<b?-1:a>b?1:0;
+   // return a>b?-1:a<b?1:0;//ascendente
+   return a<b?-1:a>b?1:0;//ascendente
 }
 
 int cmpDouble(double a,double b)
