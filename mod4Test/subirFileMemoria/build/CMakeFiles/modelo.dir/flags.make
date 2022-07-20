@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/mod4Test/subirFileMemoria/include
 
-CXX_FLAGS = -O3 -DNDEBUG
+CXX_FLAGS = -g
 

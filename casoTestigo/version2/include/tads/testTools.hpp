@@ -9,6 +9,7 @@
 #include "../funciones/strings.hpp"
 #include "../funciones/tokens.hpp"
 #include "../tads/Coll.hpp"
+#include "../funciones/files.hpp"
 using namespace std;
 
 struct Calificacion

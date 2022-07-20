@@ -36,7 +36,6 @@ int main()
             {
                 collAdd<Calificacion>(buff,resgistro,calificacionToString);
             }
-
             resgistro = read<Calificacion>(f);
         }
         // RESULTADOS

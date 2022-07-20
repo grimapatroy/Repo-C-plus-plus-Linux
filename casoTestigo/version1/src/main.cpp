@@ -9,6 +9,9 @@
 using namespace std;
 
 
+//  Se pide informar: para cada asignatura,
+// la calificación promedio obtenida por los estudiantes.
+
 struct Calificacion
 {
     int idAsig; //identificador de asignatura
@@ -22,24 +25,22 @@ int main()
 {   
 
     FILE* f = fopen("CALIFICACIONES_v01.dat","r+b");
-    
     Calificacion resgistro = read<Calificacion>(f);
-
     while (!feof(f))
     {
         int cont = 0;
         int acum = 0;
-        int idAsigAnt = resgistro.idAsig;
+        int idAsigAnt = resgistro.idAsig; //variable de control para saber que el registro leido corresponde al subconjunto
 
         while (!feof(f) && idAsigAnt == resgistro.idAsig)
         {
             cont++; 
-            acum += resgistro.idAsig;
+            acum += resgistro.calif;
             resgistro = read<Calificacion>(f);
         }
         // RESULTADOS
         double promedio = acum/(double)cont;
-        cout<<"ID ASIGNATURA:"<<resgistro.idAsig<<" "<<"PROMEDIO: "<<promedio<<endl;
+        cout<<"[ID ASIGNATURA: "<<idAsigAnt<<"\t"<<"\t"<<" "<<"PROMEDIO: "<<promedio<<"]"<<endl;
     }
     
     fclose(f);
