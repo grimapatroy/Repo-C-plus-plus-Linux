@@ -122,19 +122,17 @@ int cmpCalificacion (Calificacion a , Calificacion b)
 void mostrarEstudiantesAprobados(int idAsig, Coll<Calificacion> buff)
 {
 	// muestro la IdAsignatura
+	cout<<"*****************************************"<<endl;
 	cout<<"Asignatura: " <<idAsig<<endl;
-
 	// ordeno la coleccion
 	collSort<Calificacion>(buff,cmpCalificacion,calificacionFromString,calificacionToString);
-
 	// lo iteramos
 	collReset<Calificacion>(buff);
 	while (collHasNext<Calificacion>(buff))
 	{
 		Calificacion elemento = collNext<Calificacion>(buff,calificacionFromString);
-
 		// mostramos los estudiantes aprobados
-		cout<<elemento.idEst<<" , "<<elemento.calif<<endl;
+		cout<<"Codigo Estudiante: "<<elemento.idEst<<"\t"<<"\t"<<"Calificacion: "<<elemento.calif<<endl;
 	}
 }
 

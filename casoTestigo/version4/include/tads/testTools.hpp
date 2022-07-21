@@ -9,221 +9,192 @@
 #include "../funciones/strings.hpp"
 #include "../funciones/tokens.hpp"
 #include "../tads/Coll.hpp"
+#include "../funciones/files.hpp"
+
 using namespace std;
 
-struct Producto
+struct Abonado
 {
-	int idPro;
-	char descr[8];
-	double precio;
-	int idRub;
+	int idAbo;
+	char nombre[50];
+	char direccion[200];
+	int fechaAlta;
 };
 
-struct Persona
+struct AbonadoIdx
 {
-	int dni;
-	string nombe;
-	string direccion;
+	int idAbo;
+	int pos;
 };
 
-struct RPersona
-{
-	Persona p;
-	int cont;
-};
-
-string productoToString(Producto x)
+string abonadoToString(Abonado x)
 {
 	char sep = 1;
-	string sIdPro=to_string(x.idPro);
-	string sDescr=x.descr;
-	string sPrecio=to_string(x.precio);
-	string sIdRub=to_string(x.idRub);
-	return sIdPro+sep+sDescr+sep+sPrecio+sep+sIdRub;
-}
-
-Producto productoFromString(string s)
-{
-	char sep = 1;
-	Producto x;
-	string t0 = getTokenAt(s,sep,0);
-	x.idPro=stoi(t0);
-	string t1 = getTokenAt(s,sep,1);
-	strcpy(x.descr,t1.c_str());
-	string t2 = getTokenAt(s,sep,2);
-	x.precio=stod(t2);
-	string t3 = getTokenAt(s,sep,3);
-	x.idRub=stoi(t3);
-	return x;
-}
-
-string productoToDebug(Producto x)
-{
-	stringstream sout;
-	sout<< "[";
-	sout << x.idPro;
-	sout << ",";
-	sout << x.descr;
-	sout << ",";
-	sout << x.precio;
-	sout << ",";
-	sout << x.idRub;
-	sout<< "]";
-	return sout.str();
-}
-
-string productoToDebug(string mssg,Producto x)
-{
-	stringstream sout;
-	sout<< mssg<<":[";
-	sout << x.idPro;
-	sout << ",";
-	sout << x.descr;
-	sout << ",";
-	sout << x.precio;
-	sout << ",";
-	sout << x.idRub;
-	sout<< "]";
-	return sout.str();
-}
-
-Producto producto(int idPro,string descr,double precio,int idRub)
-{
-	Producto a;
-	a.idPro = idPro;
-	strcpy(a.descr,descr.c_str());
-	a.precio = precio;
-	a.idRub = idRub;
-	return a;
-}
-
-bool productoEquals(Producto a,Producto b)
-{
-	if(a.idPro!=b.idPro) return false;
-	if(a.precio!=b.precio) return false;
-	if(a.idRub!=b.idRub) return false;
-	return true;
-}
-
-string personaToString(Persona x)
-{
-	char sep = 2;
-	string sDni=to_string(x.dni);
-	string sNombe=x.nombe;
+	string sIdAbo=to_string(x.idAbo);
+	string sNombre=x.nombre;
 	string sDireccion=x.direccion;
-	return sDni+sep+sNombe+sep+sDireccion;
+	string sFechaAlta=to_string(x.fechaAlta);
+	return sIdAbo+sep+sNombre+sep+sDireccion+sep+sFechaAlta;
 }
 
-Persona personaFromString(string s)
+Abonado abonadoFromString(string s)
+{
+	char sep = 1;
+	Abonado x;
+	string t0 = getTokenAt(s,sep,0);
+	x.idAbo=stoi(t0);
+	string t1 = getTokenAt(s,sep,1);
+	strcpy(x.nombre,t1.c_str());
+	string t2 = getTokenAt(s,sep,2);
+	strcpy(x.direccion,t2.c_str());
+	string t3 = getTokenAt(s,sep,3);
+	x.fechaAlta=stoi(t3);
+	return x;
+}
+
+string abonadoToDebug(Abonado x)
+{
+	stringstream sout;
+	sout<< "[";
+	sout << x.idAbo;
+	sout << ",";
+	sout << x.nombre;
+	sout << ",";
+	sout << x.direccion;
+	sout << ",";
+	sout << x.fechaAlta;
+	sout<< "]";
+	return sout.str();
+}
+
+string abonadoToDebug(string mssg,Abonado x)
+{
+	stringstream sout;
+	sout<< mssg<<":[";
+	sout << x.idAbo;
+	sout << ",";
+	sout << x.nombre;
+	sout << ",";
+	sout << x.direccion;
+	sout << ",";
+	sout << x.fechaAlta;
+	sout<< "]";
+	return sout.str();
+}
+
+Abonado abonado(int idAbo,string nombre,string direccion,int fechaAlta)
+{
+	Abonado a;
+	a.idAbo = idAbo;
+	strcpy(a.nombre,nombre.c_str());
+	strcpy(a.direccion,direccion.c_str());
+	a.fechaAlta = fechaAlta;
+	return a;
+}
+
+bool abonadoEquals(Abonado a,Abonado b)
+{
+	if(a.idAbo!=b.idAbo) return false;
+	if(a.fechaAlta!=b.fechaAlta) return false;
+	return true;
+}
+
+string abonadoIdxToString(AbonadoIdx x)
 {
 	char sep = 2;
-	Persona x;
+	string sIdAbo=to_string(x.idAbo);
+	string sPos=to_string(x.pos);
+	return sIdAbo+sep+sPos;
+}
+
+AbonadoIdx abonadoIdxFromString(string s)
+{
+	char sep = 2;
+	AbonadoIdx x;
 	string t0 = getTokenAt(s,sep,0);
-	x.dni=stoi(t0);
+	x.idAbo=stoi(t0);
 	string t1 = getTokenAt(s,sep,1);
-	x.nombe=t1;
-	string t2 = getTokenAt(s,sep,2);
-	x.direccion=t2;
+	x.pos=stoi(t1);
 	return x;
 }
 
-string personaToDebug(Persona x)
+string abonadoIdxToDebug(AbonadoIdx x)
 {
 	stringstream sout;
 	sout<< "[";
-	sout << x.dni;
+	sout << x.idAbo;
 	sout << ",";
-	sout << x.nombe;
-	sout << ",";
-	sout << x.direccion;
+	sout << x.pos;
 	sout<< "]";
 	return sout.str();
 }
 
-string personaToDebug(string mssg,Persona x)
+string abonadoIdxToDebug(string mssg,AbonadoIdx x)
 {
 	stringstream sout;
 	sout<< mssg<<":[";
-	sout << x.dni;
+	sout << x.idAbo;
 	sout << ",";
-	sout << x.nombe;
-	sout << ",";
-	sout << x.direccion;
+	sout << x.pos;
 	sout<< "]";
 	return sout.str();
 }
 
-Persona persona(int dni,string nombe,string direccion)
+AbonadoIdx abonadoIdx(int idAbo,int pos)
 {
-	Persona a;
-	a.dni = dni;
-	a.nombe = nombe;
-	a.direccion = direccion;
+	AbonadoIdx a;
+	a.idAbo = idAbo;
+	a.pos = pos;
 	return a;
 }
 
-bool personaEquals(Persona a,Persona b)
+bool abonadoIdxEquals(AbonadoIdx a,AbonadoIdx b)
 {
-	if(a.dni!=b.dni) return false;
-	if(a.nombe!=b.nombe) return false;
-	if(a.direccion!=b.direccion) return false;
+	if(a.idAbo!=b.idAbo) return false;
+	if(a.pos!=b.pos) return false;
 	return true;
 }
 
-string rPersonaToString(RPersona x)
-{
-	char sep = 3;
-	string sP=personaToString(x.p);
-	string sCont=to_string(x.cont);
-	return sP+sep+sCont;
+Coll<AbonadoIdx> indexarAbonados (FILE* f){
+	
+	Coll<AbonadoIdx> collIdx = coll<AbonadoIdx>();
+	Abonado a = read<Abonado>(f);
+	AbonadoIdx idx = abonadoIdx(a.idAbo,filePos<Abonado>(f)-1);
+
+	while (!feof(f))
+	{
+		collAdd<AbonadoIdx>(collIdx,idx,abonadoIdxToString);
+		a = read<Abonado>(f);
+		idx = abonadoIdx(a.idAbo,filePos<Abonado>(f)-1);
+	}
+	return collIdx;
 }
 
-RPersona rPersonaFromString(string s)
-{
-	char sep = 3;
-	RPersona x;
-	string t0 = getTokenAt(s,sep,0);
-	x.p=personaFromString(t0);
-	string t1 = getTokenAt(s,sep,1);
-	x.cont=stoi(t1);
-	return x;
+// int cmpAbonadoIdxId(AbonadoIdx idx,int id){
+// 	return idx.idAbo-id;
+// }
+
+// Abonado buscarAbonado(Coll<AbonadoIdx> collIdx,FILE* f,int id,bool& encontrado){
+// 	int posIdx = collFind<AbonadoIdx,int>(collIdx,id,cmpAbonadoIdxId,abonadoIdxFromString);
+// 	Abonado a;
+// 	// AbonadoIdx idx = collFind<>();
+// 	if (posIdx>=0)
+// 	{
+// 		encontrado = true;
+// 		AbonadoIdx idx = collGetAt<AbonadoIdx>(collIdx,posIdx,abonadoIdxFromString);
+// 		seek<Abonado>(f,idx.pos);
+// 		a = read<Abonado>(f);
+// 	}
+// 	return a;
+// }
+
+int cmpAbonadoId(AbonadoIdx a, AbonadoIdx b){
+	return b.idAbo-a.idAbo;	
 }
 
-string rPersonaToDebug(RPersona x)
-{
-	stringstream sout;
-	sout<< "[";
-	sout << personaToDebug(x.p);
-	sout << ",";
-	sout << x.cont;
-	sout<< "]";
-	return sout.str();
-}
 
-string rPersonaToDebug(string mssg,RPersona x)
-{
-	stringstream sout;
-	sout<< mssg<<":[";
-	sout << personaToDebug(x.p);
-	sout << ",";
-	sout << x.cont;
-	sout<< "]";
-	return sout.str();
-}
 
-RPersona rPersona(Persona p,int cont)
-{
-	RPersona a;
-	a.p = p;
-	a.cont = cont;
-	return a;
-}
 
-bool rPersonaEquals(RPersona a,RPersona b)
-{
-	if(!personaEquals(a.p,b.p)) return false;
-	if(a.cont!=b.cont) return false;
-	return true;
-}
+
 
 #endif

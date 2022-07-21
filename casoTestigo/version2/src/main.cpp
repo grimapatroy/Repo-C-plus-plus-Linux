@@ -25,10 +25,8 @@ int main()
     {
         // SECCON DE INICIALIZACION
         Coll<Calificacion> buff = coll<Calificacion>();
-
         // guardamos el registro anterior
         int idAsigAnt = resgistro.idAsig;
-
         while (!feof(f) && idAsigAnt == resgistro.idAsig)
         {
             // SECCION DE PROCESAMIENTO

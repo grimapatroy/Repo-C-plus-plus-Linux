@@ -9,6 +9,8 @@
 #include "../funciones/strings.hpp"
 #include "../funciones/tokens.hpp"
 #include "../tads/Coll.hpp"
+#include "../funciones/files.hpp"
+
 using namespace std;
 
 struct Calificacion
@@ -25,44 +27,27 @@ struct Estad
 	int acum;
 };
 
-// string calificacionToString(Calificacion x)
-// {
-// 	char sep = 1;
-// 	string sIdAsig=to_string(x.idAsig);
-// 	string sIdEst=to_string(x.idEst);
-// 	string sCalif=to_string(x.calif);
-// 	return sIdAsig+sep+sIdEst+sep+sCalif;
-// }
-
-// Calificacion calificacionFromString(string s)
-// {
-// 	char sep = 1;
-// 	Calificacion x;
-// 	string t0 = getTokenAt(s,sep,0);
-// 	x.idAsig=stoi(t0);
-// 	string t1 = getTokenAt(s,sep,1);
-// 	x.idEst=stoi(t1);
-// 	string t2 = getTokenAt(s,sep,2);
-// 	x.calif=stoi(t2);
-// 	return x;
-// }
-
 string calificacionToString(Calificacion x)
 {
-	return intToString(x.idAsig)+","+intToString(x.idEst)+","+intToString(x.calif);
+	char sep = 1;
+	string sIdAsig=to_string(x.idAsig);
+	string sIdEst=to_string(x.idEst);
+	string sCalif=to_string(x.calif);
+	return sIdAsig+sep+sIdEst+sep+sCalif;
 }
 
 Calificacion calificacionFromString(string s)
 {
-	Calificacion c ;
-	c.idAsig = stringToInt(getTokenAt(s,',',0));
-	c.idEst = stringToInt(getTokenAt(s,',',1));
-	c.calif = stringToInt(getTokenAt(s,',',2));
-	// c.perdido = stringToInt(getTokenAt(s,',',3));
-	return c;
+	char sep = 1;
+	Calificacion x;
+	string t0 = getTokenAt(s,sep,0);
+	x.idAsig=stoi(t0);
+	string t1 = getTokenAt(s,sep,1);
+	x.idEst=stoi(t1);
+	string t2 = getTokenAt(s,sep,2);
+	x.calif=stoi(t2);
+	return x;
 }
-
-
 
 string calificacionToDebug(Calificacion x)
 {
@@ -116,19 +101,19 @@ bool calificacionEquals(Calificacion a,Calificacion b)
 // 	return x;
 // }
 
-// string estadToString(Estad x){
-// 	return intToString(x.id)+","+intToString(x.cont)+","+intToString(x.acum);
-// }
-
-Estad estadFromString(string s){
-	Estad x;
-	x.id = stringToInt(getTokenAt(s,',',0));
-	x.cont = stringToInt(getTokenAt(s,',',1));
-	x.acum = stringToInt(getTokenAt(s,',',2));
-	return x;
+string estadToString(Estad x)
+{
+	return intToString(x.id)+","+intToString(x.cont)+","+intToString(x.acum);
 }
 
-
+Estad estadFromString(string s)
+{
+	Estad c ;
+	c.id = stringToInt(getTokenAt(s,',',0));
+	c.cont = stringToInt(getTokenAt(s,',',1));
+	c.acum = stringToInt(getTokenAt(s,',',2));
+	return c;
+}
 
 string estadToDebug(Estad x)
 {
@@ -169,7 +154,6 @@ int cmpEstadId(Estad a , int d){
 	return a.id-d;
 }
 
-
 // void mostrarEstudiantesAprobados(int idAsig, Coll<Calificacion> buff)
 // {
 // 	// muestro la IdAsignatura
@@ -191,9 +175,8 @@ int descubrirElemento(Coll<Estad>& collEstad, int id){
 	if (pos<0)
 	{
 		Estad x = estad(id,0,0);
-		pos = collAdd<Estad>(collEstad,x,estadToDebug);
+		pos = collAdd<Estad>(collEstad,x,estadToString);
 	}
-	
 	return pos;
 }
 

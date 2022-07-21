@@ -17,27 +17,21 @@ int main()
 
     FILE* f = fopen("CALIFICACIONES_v03.dat", "r+b");
     
-    // inicializo la coleccion de objetos de acumuladores y contadores de idAsig
+    // coleccion de contadores y acumuladores
     Coll<Estad> collEstad = coll<Estad>();
-
-    // leo el primer registro
-    Calificacion registro = read<Calificacion>(f);
-
-    // iteramos el archivo
-    while (!feof(f))
+    // leemos el primer registro del archivo
+    Calificacion reg = read<Calificacion>(f);
+    while( !feof(f) )
     {
-        // buscamos (y eventualmete agregamos) en la coleccion
-        int pos = descubrirElemento(collEstad,registro.idAsig);
-
-        // procesamos el elemento  lo obtenemos de la coleccion
-        Estad elem = collGetAt<Estad>(collEstad,pos,estadFromString);
-        elem.cont++;
-        elem.acum +=registro.calif;
-        // incorporamos el elemento modificado en la coleccion
-        collSetAt<Estad>(collEstad,elem,pos,estadToDebug);
-
-    // lee el siguiente registro
-        registro = read<Calificacion>(f);
+    // buscamos (y eventualmente agragamos) en la coll
+    int pos = descubrirElemento(collEstad,reg.idAsig);
+    // procesamos
+    Estad elm = collGetAt<Estad>(collEstad,pos,estadFromString);
+    elm.cont++;
+    elm.acum += reg.calif;
+    collSetAt<Estad>(collEstad,elm,pos,estadToString);
+    // leemos el siguiente registro
+    reg = read<Calificacion>(f);
     }
     // resultados
     mostrarResultados(collEstad);

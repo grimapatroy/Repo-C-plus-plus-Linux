@@ -44,22 +44,59 @@ string getTokenAt(string s,char sep, int i)
             x = substring(s,i,length(s)); //sin sep
             return x;
          }
-
    }else{
-         if (charCount(s,sep)==i){//cuando es el final
+         int cantidad = charCount(s,sep);
+         if (cantidad==i){//cuando es el final
             x = substring(s,indexOfN(s,sep,i)+1,length(s));
             return x;
          }
-         if(charCount(s,sep)>i){//cualqueira elemento intermedio
+         if(cantidad>i){//cualqueira elemento intermedio
             x = substring(s,indexOfN(s,sep,i)+1,indexOfN(s,sep,i+1));
             return x;
          }
-         if (charCount(s,sep)<i){
+         if (cantidad<i){
          return "ERROR";
          }
       }
    return "ERROR POSICION MUY LARGA";
 }
+
+
+// string getTokenAt(string s,char sep, int i)
+// {
+//    // 1|2|2|3|3|2
+//    string x;
+//    if (i==0){//cuando es el incio
+//       // Tengo que ver cuando llega con sep o sin sep
+//          // if (sep!=isLetter(sep) and sep!=isDigit(sep))
+//          if (sep>=32 and sep<=127)
+//          {
+//             int limite =indexOfN(s,sep,i+1);
+//             x = substring(s,0,limite);
+//             return x;
+//          }
+//          else
+//          {
+//             x = substring(s,i,length(s)); //sin sep
+//             return x;
+//          }
+//    }else{
+//          if (charCount(s,sep)==i){//cuando es el final
+//             x = substring(s,indexOfN(s,sep,i)+1,length(s));
+//             return x;
+//          }
+//          if(charCount(s,sep)>i){//cualqueira elemento intermedio
+//             x = substring(s,indexOfN(s,sep,i)+1,indexOfN(s,sep,i+1));
+//             return x;
+//          }
+//          if (charCount(s,sep)<i){
+//          return "ERROR";
+//          }
+//       }
+//    return "ERROR POSICION MUY LARGA";
+// }
+
+
 
 void removeTokenAt(string& s,char sep, int i){
    if (i==0)
@@ -91,14 +128,15 @@ void setTokenAt(string& s,char sep, string t,int i)
    {
       s= t+charToString(sep) + substring(s, indexOfN(s,sep,i+1)+1,length(s));
    }else{
-            if (charCount(s,sep)==i)
+            int count = charCount(s,sep);
+            if (count==i)
             {
                s= substring(s,0,lastIndexOf(s,sep))+charToString(sep)+ t;
             }
-            if (charCount(s,sep)>i){
+            if (count>i){
                s= substring(s,0,indexOfN(s,sep,i)+1)+t+charToString(sep)+substring(s,
                indexOfN(s,sep,i+1)+1,length(s));
-            }if(charCount(s,sep)<i){
+            }if(count<i){
                cout<<"ERROR POSICION MUY LARGA"<<endl;
             }
    }

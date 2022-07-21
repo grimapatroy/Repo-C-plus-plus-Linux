@@ -163,4 +163,5 @@ CMakeFiles/modelo.dir/src/main.cpp.o: \
  /usr/include/c++/9/sstream /usr/include/c++/9/bits/sstream.tcc \
  /usr/include/c++/9/stdlib.h \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version2/src/../include/tads/../tads/Coll.hpp \
+ /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version2/src/../include/tads/../funciones/files.hpp \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version2/include/funciones/files.hpp
