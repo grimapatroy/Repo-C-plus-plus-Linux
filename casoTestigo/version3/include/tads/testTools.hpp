@@ -30,39 +30,39 @@ struct Estad
 string calificacionToString(Calificacion x)
 {
 	char sep = 1;
-	string sIdAsig=to_string(x.idAsig);
-	string sIdEst=to_string(x.idEst);
-	string sCalif=to_string(x.calif);
-	return sIdAsig+sep+sIdEst+sep+sCalif;
+	string sIdAsig = to_string(x.idAsig);
+	string sIdEst = to_string(x.idEst);
+	string sCalif = to_string(x.calif);
+	return sIdAsig + sep + sIdEst + sep + sCalif;
 }
 
 Calificacion calificacionFromString(string s)
 {
 	char sep = 1;
 	Calificacion x;
-	string t0 = getTokenAt(s,sep,0);
-	x.idAsig=stoi(t0);
-	string t1 = getTokenAt(s,sep,1);
-	x.idEst=stoi(t1);
-	string t2 = getTokenAt(s,sep,2);
-	x.calif=stoi(t2);
+	string t0 = getTokenAt(s, sep, 0);
+	x.idAsig = stoi(t0);
+	string t1 = getTokenAt(s, sep, 1);
+	x.idEst = stoi(t1);
+	string t2 = getTokenAt(s, sep, 2);
+	x.calif = stoi(t2);
 	return x;
 }
 
 string calificacionToDebug(Calificacion x)
 {
 	stringstream sout;
-	sout<< "[";
+	sout << "[";
 	sout << x.idAsig;
 	sout << ",";
 	sout << x.idEst;
 	sout << ",";
 	sout << x.calif;
-	sout<< "]";
+	sout << "]";
 	return sout.str();
 }
 
-Calificacion calificacion(int idAsig,int idEst,int calif)
+Calificacion calificacion(int idAsig, int idEst, int calif)
 {
 	Calificacion a;
 	a.idAsig = idAsig;
@@ -71,11 +71,14 @@ Calificacion calificacion(int idAsig,int idEst,int calif)
 	return a;
 }
 
-bool calificacionEquals(Calificacion a,Calificacion b)
+bool calificacionEquals(Calificacion a, Calificacion b)
 {
-	if(a.idAsig!=b.idAsig) return false;
-	if(a.idEst!=b.idEst) return false;
-	if(a.calif!=b.calif) return false;
+	if (a.idAsig != b.idAsig)
+		return false;
+	if (a.idEst != b.idEst)
+		return false;
+	if (a.calif != b.calif)
+		return false;
 	return true;
 }
 
@@ -103,32 +106,32 @@ bool calificacionEquals(Calificacion a,Calificacion b)
 
 string estadToString(Estad x)
 {
-	return intToString(x.id)+","+intToString(x.cont)+","+intToString(x.acum);
+	return intToString(x.id) + "," + intToString(x.cont) + "," + intToString(x.acum);
 }
 
 Estad estadFromString(string s)
 {
-	Estad c ;
-	c.id = stringToInt(getTokenAt(s,',',0));
-	c.cont = stringToInt(getTokenAt(s,',',1));
-	c.acum = stringToInt(getTokenAt(s,',',2));
+	Estad c;
+	c.id = stringToInt(getTokenAt(s, ',', 0));
+	c.cont = stringToInt(getTokenAt(s, ',', 1));
+	c.acum = stringToInt(getTokenAt(s, ',', 2));
 	return c;
 }
 
 string estadToDebug(Estad x)
 {
 	stringstream sout;
-	sout<< "[";
+	sout << "[";
 	sout << x.id;
 	sout << ",";
 	sout << x.cont;
 	sout << ",";
 	sout << x.acum;
-	sout<< "]";
+	sout << "]";
 	return sout.str();
 }
 
-Estad estad(int id,int cont,int acum)
+Estad estad(int id, int cont, int acum)
 {
 	Estad b;
 	b.id = id;
@@ -137,21 +140,25 @@ Estad estad(int id,int cont,int acum)
 	return b;
 }
 
-bool estadEquals(Estad a,Estad b)
+bool estadEquals(Estad a, Estad b)
 {
-	if(a.id!=b.id) return false;
-	if(a.cont!=b.cont) return false;
-	if(a.acum!=b.acum) return false;
+	if (a.id != b.id)
+		return false;
+	if (a.cont != b.cont)
+		return false;
+	if (a.acum != b.acum)
+		return false;
 	return true;
 }
 
-int cmpCalificacion (Calificacion a , Calificacion b)
+int cmpCalificacion(Calificacion a, Calificacion b)
 {
-	return a.calif-b.calif;
+	return a.calif - b.calif;
 }
 
-int cmpEstadId(Estad a , int d){
-	return a.id-d;
+int cmpEstadId(Estad a, int d)
+{
+	return a.id - d;
 }
 
 // void mostrarEstudiantesAprobados(int idAsig, Coll<Calificacion> buff)
@@ -170,26 +177,26 @@ int cmpEstadId(Estad a , int d){
 // 	}
 // }
 
-int descubrirElemento(Coll<Estad>& collEstad, int id){
-	int pos = collFind<Estad,int>(collEstad,id,cmpEstadId,estadFromString);
-	if (pos<0)
+int descubrirElemento(Coll<Estad> &collEstad, int id)
+{
+	int pos = collFind<Estad, int>(collEstad, id, cmpEstadId, estadFromString);
+	if (pos < 0)
 	{
-		Estad x = estad(id,0,0);
-		pos = collAdd<Estad>(collEstad,x,estadToString);
+		Estad x = estad(id, 0, 0);
+		pos = collAdd<Estad>(collEstad, x, estadToString);
 	}
 	return pos;
 }
 
-void  mostrarResultados(Coll<Estad> collEstad){
+void mostrarResultados(Coll<Estad> collEstad)
+{
 	collReset<Estad>(collEstad);
 	while (collHasNext<Estad>(collEstad))
 	{
-		Estad elem = collNext<Estad>(collEstad,estadFromString);
-		double promedio =elem.acum/(double)elem.cont;
-		cout<<"La asignatura es :"<<elem.id<<" calificacion Promedio :"<<promedio<<endl;
+		Estad elem = collNext<Estad>(collEstad, estadFromString);
+		double promedio = elem.acum / (double)elem.cont;
+		cout << "La asignatura es :" << elem.id << " calificacion Promedio :" << promedio << endl;
 	}
-	
 }
-
 
 #endif

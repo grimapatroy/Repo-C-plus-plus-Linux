@@ -6,6 +6,7 @@
 #include <string>
 #include <string.h>
 #include <stdlib.h>
+
 #include "../funciones/strings.hpp"
 #include "../funciones/tokens.hpp"
 #include "../tads/Coll.hpp"
@@ -13,188 +14,324 @@
 
 using namespace std;
 
-struct Abonado
+struct Asignatura
 {
-	int idAbo;
-	char nombre[50];
-	char direccion[200];
-	int fechaAlta;
+	int idAsig;
+	char nomAsig[30];
+	char maestroACargo[50];
 };
 
-struct AbonadoIdx
+struct Calificacion
 {
-	int idAbo;
-	int pos;
+	int idAsig;
+	int idEst;
+	int calif;
 };
 
-string abonadoToString(Abonado x)
+struct Estad
+{
+	int cont;
+	int acum;
+};
+
+struct RAsignatura
+{
+	Asignatura asig;
+	Estad estad;
+};
+
+string asignaturaToString(Asignatura x)
 {
 	char sep = 1;
-	string sIdAbo=to_string(x.idAbo);
-	string sNombre=x.nombre;
-	string sDireccion=x.direccion;
-	string sFechaAlta=to_string(x.fechaAlta);
-	return sIdAbo+sep+sNombre+sep+sDireccion+sep+sFechaAlta;
+	string sIdAsig=to_string(x.idAsig);
+	string sNomAsig=x.nomAsig;
+	string sMaestroACargo=x.maestroACargo;
+	return sIdAsig+sep+sNomAsig+sep+sMaestroACargo;
 }
 
-Abonado abonadoFromString(string s)
+Asignatura asignaturaFromString(string s)
 {
 	char sep = 1;
-	Abonado x;
+	Asignatura x;
 	string t0 = getTokenAt(s,sep,0);
-	x.idAbo=stoi(t0);
+	x.idAsig=stoi(t0);
 	string t1 = getTokenAt(s,sep,1);
-	strcpy(x.nombre,t1.c_str());
+	strcpy(x.nomAsig,t1.c_str());
 	string t2 = getTokenAt(s,sep,2);
-	strcpy(x.direccion,t2.c_str());
-	string t3 = getTokenAt(s,sep,3);
-	x.fechaAlta=stoi(t3);
+	strcpy(x.maestroACargo,t2.c_str());
 	return x;
 }
 
-string abonadoToDebug(Abonado x)
+string asignaturaToDebug(Asignatura x)
 {
 	stringstream sout;
 	sout<< "[";
-	sout << x.idAbo;
+	sout << x.idAsig;
 	sout << ",";
-	sout << x.nombre;
+	sout << x.nomAsig;
 	sout << ",";
-	sout << x.direccion;
-	sout << ",";
-	sout << x.fechaAlta;
+	sout << x.maestroACargo;
 	sout<< "]";
 	return sout.str();
 }
 
-string abonadoToDebug(string mssg,Abonado x)
+Asignatura asignatura(int idAsig,string nomAsig,string maestroACargo)
 {
-	stringstream sout;
-	sout<< mssg<<":[";
-	sout << x.idAbo;
-	sout << ",";
-	sout << x.nombre;
-	sout << ",";
-	sout << x.direccion;
-	sout << ",";
-	sout << x.fechaAlta;
-	sout<< "]";
-	return sout.str();
-}
-
-Abonado abonado(int idAbo,string nombre,string direccion,int fechaAlta)
-{
-	Abonado a;
-	a.idAbo = idAbo;
-	strcpy(a.nombre,nombre.c_str());
-	strcpy(a.direccion,direccion.c_str());
-	a.fechaAlta = fechaAlta;
+	Asignatura a;
+	a.idAsig = idAsig;
+	strcpy(a.nomAsig,nomAsig.c_str());
+	strcpy(a.maestroACargo,maestroACargo.c_str());
 	return a;
 }
 
-bool abonadoEquals(Abonado a,Abonado b)
+bool asignaturaEquals(Asignatura a,Asignatura b)
 {
-	if(a.idAbo!=b.idAbo) return false;
-	if(a.fechaAlta!=b.fechaAlta) return false;
+	if(a.idAsig!=b.idAsig) return false;
 	return true;
 }
 
-string abonadoIdxToString(AbonadoIdx x)
-{
-	char sep = 2;
-	string sIdAbo=to_string(x.idAbo);
-	string sPos=to_string(x.pos);
-	return sIdAbo+sep+sPos;
+// string calificacionToString(Calificacion x)
+// {
+// 	char sep = 2;
+// 	string sIdAsig=to_string(x.idAsig);
+// 	string sIdEst=to_string(x.idEst);
+// 	string sCalif=to_string(x.calif);
+// 	return sIdAsig+sep+sIdEst+sep+sCalif;
+// }
+
+
+string calificacionToString(Calificacion x){
+	return intToString(x.idAsig)+','+ intToString(x.idEst)+','+intToString(x.calif);
 }
 
-AbonadoIdx abonadoIdxFromString(string s)
+
+// Calificacion calificacionFromString(string s)
+// {
+// 	char sep = 2;
+// 	Calificacion x;
+// 	string t0 = getTokenAt(s,sep,0);
+// 	x.idAsig=stoi(t0);
+// 	string t1 = getTokenAt(s,sep,1);
+// 	x.idEst=stoi(t1);
+// 	string t2 = getTokenAt(s,sep,2);
+// 	x.calif=stoi(t2);
+// 	return x;
+// }
+
+Calificacion calificacionFromString(string s)
 {
-	char sep = 2;
-	AbonadoIdx x;
-	string t0 = getTokenAt(s,sep,0);
-	x.idAbo=stoi(t0);
-	string t1 = getTokenAt(s,sep,1);
-	x.pos=stoi(t1);
+	Calificacion x;
+	x.idAsig = stringToInt(getTokenAt(s, ',', 0));
+	x.idEst = stringToInt(getTokenAt(s, ',', 1));
+	x.idAsig = stringToInt(getTokenAt(s, ',', 2));
 	return x;
 }
 
-string abonadoIdxToDebug(AbonadoIdx x)
+
+string calificacionToDebug(Calificacion x)
 {
 	stringstream sout;
 	sout<< "[";
-	sout << x.idAbo;
+	sout << x.idAsig;
 	sout << ",";
-	sout << x.pos;
+	sout << x.idEst;
+	sout << ",";
+	sout << x.calif;
 	sout<< "]";
 	return sout.str();
 }
 
-string abonadoIdxToDebug(string mssg,AbonadoIdx x)
+Calificacion calificacion(int idAsig,int idEst,int calif)
 {
-	stringstream sout;
-	sout<< mssg<<":[";
-	sout << x.idAbo;
-	sout << ",";
-	sout << x.pos;
-	sout<< "]";
-	return sout.str();
-}
-
-AbonadoIdx abonadoIdx(int idAbo,int pos)
-{
-	AbonadoIdx a;
-	a.idAbo = idAbo;
-	a.pos = pos;
+	Calificacion a;
+	a.idAsig = idAsig;
+	a.idEst = idEst;
+	a.calif = calif;
 	return a;
 }
 
-bool abonadoIdxEquals(AbonadoIdx a,AbonadoIdx b)
+bool calificacionEquals(Calificacion a,Calificacion b)
 {
-	if(a.idAbo!=b.idAbo) return false;
-	if(a.pos!=b.pos) return false;
+	if(a.idAsig!=b.idAsig) return false;
+	if(a.idEst!=b.idEst) return false;
+	if(a.calif!=b.calif) return false;
 	return true;
 }
 
-Coll<AbonadoIdx> indexarAbonados (FILE* f){
+// string estadToString(Estad x)
+// {
+// 	char sep = 3;
+// 	string sCont=to_string(x.cont);
+// 	string sAcum=to_string(x.acum);
+// 	return sCont+sep+sAcum;
+// }
+
+
+string estadToString(Estad x)
+{
+	return intToString(x.cont) + "," + intToString(x.acum);
+}
+
+// Estad estadFromString(string s)
+// {
+// 	char sep = 3;
+// 	Estad x;
+// 	string t0 = getTokenAt(s,sep,0);
+// 	x.cont=stoi(t0);
+// 	string t1 = getTokenAt(s,sep,1);
+// 	x.acum=stoi(t1);
+// 	return x;
+// }
+
+Estad estadFromString(string s)
+{
+	Estad c;
+	// c.id = stringToInt(getTokenAt(s, ',', 0));
+	c.cont = stringToInt(getTokenAt(s, ',', 0));
+	c.acum = stringToInt(getTokenAt(s, ',', 1));
+	return c;
+}
+
+
+string estadToDebug(Estad x)
+{
+	stringstream sout;
+	sout<< "[";
+	sout << x.cont;
+	sout << ",";
+	sout << x.acum;
+	sout<< "]";
+	return sout.str();
+}
+
+Estad estad(int cont,int acum)
+{
+	Estad b;
+	b.cont = cont;
+	b.acum = acum;
+	return b;
+}
+
+bool estadEquals(Estad a,Estad b)
+{
+	if(a.cont!=b.cont) return false;
+	if(a.acum!=b.acum) return false;
+	return true;
+}
+
+// string rAsignaturaToString(RAsignatura x)
+// {
+// 	char sep = 4;
+// 	string sAsig=asignaturaToString(x.asig);
+// 	string sEstad=estadToString(x.estad);
+// 	return sAsig+sep+sEstad;
+// }
+
+
+string rAsignaturaToString(RAsignatura x)
+{
+	return asignaturaToString(x.asig)+"*"+ estadToString(x.estad);
+}
+
+// RAsignatura rAsignaturaFromString(string s)
+// {
+// 	char sep = 4;
+// 	RAsignatura x;
+// 	string t0 = getTokenAt(s,sep,0);
+// 	x.asig=asignaturaFromString(t0);
+// 	string t1 = getTokenAt(s,sep,1);
+// 	x.estad=estadFromString(t1);
+// 	return x;
+// }
+
+RAsignatura rAsignaturaFromString(string s)
+{
+	RAsignatura x;
+	x.asig = asignaturaFromString(getTokenAt(s,'*',0));
+	x.estad = estadFromString(getTokenAt(s,'*',1));
+	return x;
+}
+
+
+string rAsignaturaToDebug(RAsignatura x)
+{
+	stringstream sout;
+	sout<< "[";
+	sout << asignaturaToDebug(x.asig);
+	sout << ",";
+	sout << estadToDebug(x.estad);
+	sout<< "]";
+	return sout.str();
+}
+
+RAsignatura rAsignatura(Asignatura asig,Estad estad)
+{
+	RAsignatura b;
+	b.asig = asig;
+	b.estad = estad;
+	return b;
+}
+
+bool rAsignaturaEquals(RAsignatura a,RAsignatura b)
+{
+	if(!asignaturaEquals(a.asig,b.asig)) return false;
+	if(!estadEquals(a.estad,b.estad)) return false;
+	return true;
+}
+
+void mostarResultados(Coll<RAsignatura> collRAsig, int cmpRAsignatura(RAsignatura,RAsignatura)){
 	
-	Coll<AbonadoIdx> collIdx = coll<AbonadoIdx>();
-	Abonado a = read<Abonado>(f);
-	AbonadoIdx idx = abonadoIdx(a.idAbo,filePos<Abonado>(f)-1);
+	collSort<RAsignatura>(collRAsig,cmpRAsignatura,rAsignaturaFromString,rAsignaturaToString);
+
+	collReset<RAsignatura>(collRAsig);
+	while (collHasNext<RAsignatura>(collRAsig))
+	{
+		RAsignatura elemRAsig = collNext<RAsignatura>(collRAsig,rAsignaturaFromString);
+
+		double promedio  = (elemRAsig.estad.acum)/(double)(elemRAsig.estad.cont);
+		string sNomAsig = elemRAsig.asig.nomAsig;
+
+		cout<<"ASIGNATURA: "<<sNomAsig<<"\t"<<"\t"<<"promedio: "<<promedio<<endl;
+	}
+	
+
+}
+
+Coll<RAsignatura> subiraAsignaturas()
+{
+	Coll<RAsignatura> collRAsig = coll<RAsignatura>();
+	FILE* f = fopen("ASIGNATURAS_v04.dat","r+b");
+
+	Asignatura regCurso = read<Asignatura>(f);
 
 	while (!feof(f))
 	{
-		collAdd<AbonadoIdx>(collIdx,idx,abonadoIdxToString);
-		a = read<Abonado>(f);
-		idx = abonadoIdx(a.idAbo,filePos<Abonado>(f)-1);
+		RAsignatura elemRAsigna= rAsignatura(regCurso,estad(0,0));
+		
+		collAdd<RAsignatura>(collRAsig,elemRAsigna,rAsignaturaToString);
+
+		regCurso = read<Asignatura>(f);
 	}
-	return collIdx;
+	fclose(f);
+
+	return collRAsig;	
 }
 
-// int cmpAbonadoIdxId(AbonadoIdx idx,int id){
-// 	return idx.idAbo-id;
-// }
-
-// Abonado buscarAbonado(Coll<AbonadoIdx> collIdx,FILE* f,int id,bool& encontrado){
-// 	int posIdx = collFind<AbonadoIdx,int>(collIdx,id,cmpAbonadoIdxId,abonadoIdxFromString);
-// 	Abonado a;
-// 	// AbonadoIdx idx = collFind<>();
-// 	if (posIdx>=0)
-// 	{
-// 		encontrado = true;
-// 		AbonadoIdx idx = collGetAt<AbonadoIdx>(collIdx,posIdx,abonadoIdxFromString);
-// 		seek<Abonado>(f,idx.pos);
-// 		a = read<Abonado>(f);
-// 	}
-// 	return a;
-// }
-
-int cmpAbonadoId(AbonadoIdx a, AbonadoIdx b){
-	return b.idAbo-a.idAbo;	
+int cmpRAsigId (RAsignatura a , int b){
+	return a.asig.idAsig - b;
 }
 
+int cmpRAsigAlfabetico(RAsignatura a , RAsignatura b){
+	// return cmpString(a.asig.nomAsig,b.asig.nomAsig);
+	string sA = a.asig.nomAsig;
+	string sB = b.asig.nomAsig;
+	return sA<sB?-1:sA>sB?1:0;
+}
 
-
-
-
+int cmpRAsigPromedio(RAsignatura a , RAsignatura b){
+	double pA = a.estad.acum/ (double)a.estad.cont;
+	double pB = b.estad.acum/ (double)b.estad.cont;
+	return pA>pB?-1:pA<pB?1:0;
+}
 
 #endif
