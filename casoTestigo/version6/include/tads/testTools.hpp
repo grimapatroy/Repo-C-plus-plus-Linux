@@ -334,27 +334,55 @@ void mostrarResultados(Coll<RAsignatura> collRAsigs){
 
 
 void actualizar(Coll<RAsignatura> collRAsigs){
-	
-	FILE* f = fopen("ASIGNATURAS_v06.dat","w+b"); 
+	FILE* f = fopen("ASIGNATURAS_v06.dat","r+b");
 
-	collReset<RAsignatura>(collRAsigs);
-	while (collHasNext<RAsignatura>(collRAsigs))
+	Asignatura elemAsig = read<Asignatura>(f);
+
+
+	while (!feof(f))
 	{
-		RAsignatura elemRAsi = collNext<RAsignatura>(collRAsigs,rAsignaturaFromString);
+		int pos = collFind<RAsignatura,int>(collRAsigs,elemAsig.idAsig,cmpRAsigId,rAsignaturaFromString);
 
-		double promAnter = elemRAsi.asig.califProm;
-		double promActual = elemRAsi.estad.acum/(double)elemRAsi.estad.cont;
-		double promNuevo = promActual + promAnter /2;
+		RAsignatura elemRAsigs = collGetAt<RAsignatura>(collRAsigs,pos,rAsignaturaFromString);
 
-		elemRAsi.asig.califProm = promNuevo;
-		write<Asignatura>(f,elemRAsi.asig);
-		
+		double promAnterior= elemRAsigs.asig.califProm;
+		double promActual = elemRAsigs.estad.acum/(double)elemRAsigs.estad.cont;
+
+		double promNuevo = (promActual + promAnterior)/2;
+
+		elemRAsigs.asig.califProm = promNuevo;
+
+		seek<Asignatura>(f,filePos<Asignatura>(f)-1);
+		write<Asignatura>(f,elemRAsigs.asig);
+
+		elemAsig = read<Asignatura>(f);
 	}
-	
-	
+
 	fclose(f);
 
 }
+
+
+// void actualizar(Coll<RAsignatura> collRAsigs){
+	
+// 	FILE* f = fopen("ASIGNATURAS_v06.dat","w+b"); 
+
+// 	collReset<RAsignatura>(collRAsigs);
+// 	while (collHasNext<RAsignatura>(collRAsigs))
+// 	{
+// 		RAsignatura elemRAsi = collNext<RAsignatura>(collRAsigs,rAsignaturaFromString);
+
+// 		double promAnter = elemRAsi.asig.califProm;
+// 		double promActual = elemRAsi.estad.acum/(double)elemRAsi.estad.cont;
+// 		double promNuevo = promActual + promAnter /2;
+
+// 		elemRAsi.asig.califProm = promNuevo;
+// 		write<Asignatura>(f,elemRAsi.asig);
+// 	}
+// 	fclose(f);
+// }
+
+
 
 
 #endif
