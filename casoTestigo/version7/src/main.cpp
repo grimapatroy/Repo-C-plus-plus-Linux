@@ -23,6 +23,23 @@ using namespace std;
 
 int main()
 {   
+    Coll<RAsignatura> collRAsignaturas = subirAsignaturas();
+    
+    FILE* f = fopen("CALIFICACIONES_v07.dat","r+b");
+
+    Calificacion elemCalif = read<Calificacion>(f);
+    
+    while (!feof(f))
+    {
+        procesarCalificacion(elemCalif,collRAsignaturas);
+        
+        elemCalif = read<Calificacion>(f);
+    }
+    
+    mostarResultados(collRAsignaturas);
+
+    fclose(f);
+
 
     return 0;
 }
