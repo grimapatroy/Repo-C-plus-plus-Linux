@@ -21,8 +21,27 @@ using namespace std;
 
 int main()
 {   
+    Coll<Asignatura> collAsig = subirAsignatura();
+
+    Coll<RMaestro> collRMaestros  = coll<RMaestro>();
+
+    FILE* f = fopen("CALIFICACIONES_v08.dat","r+b");
+
+    Calificacion regCalf = read<Calificacion>(f); 
+
+    while (!feof(f))
+    {
+        procesarYDescubrimiento(regCalf,collAsig,collRMaestros);
+
+        regCalf = read<Calificacion>(f);
+
+    }
+    
+    mostrarResultados(collRMaestros);
 
 
+
+    fclose(f);
 
     return 0;
 }

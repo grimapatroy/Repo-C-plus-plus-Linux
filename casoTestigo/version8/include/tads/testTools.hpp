@@ -30,9 +30,9 @@ struct Calificacion
 	int calif;
 };
 
-struct RAsignatura
+struct RMaestro
 {
-	Asignatura asig;
+	string maestro;
 	Coll<int> collEst;
 };
 // --------------------------------------------------
@@ -184,12 +184,12 @@ bool calificacionEquals(Calificacion a,Calificacion b)
 // 	return sAsig+sep+sCollEst;
 // }
 
-string rAsignaturaToString(RAsignatura x)
+string rMaestroToString(RMaestro x)
 {
 	// char sep = 3;
-	string sAsig=asignaturaToString(x.asig);
+	// string sAsig=asignaturaToString(x.asig);
 	string sCollEst=collToString<int>(x.collEst);
-	return sAsig+"*"+sCollEst;
+	return x.maestro+"*"+sCollEst;
 }
 
 
@@ -204,22 +204,23 @@ string rAsignaturaToString(RAsignatura x)
 // 	return x;
 // }
 
-RAsignatura rAsignaturaFromString(string s)
+RMaestro rMaestroFromString(string s)
 {
 	// char sep = 3;
-	RAsignatura x;
-	string t0 = getTokenAt(s,'*',0);
-	x.asig=asignaturaFromString(t0);
+	RMaestro x;
+	// string t0 = getTokenAt(s,'*',0);
+	// x.asig=asignaturaFromString(t0);
+	x.maestro =  getTokenAt(s,'*',0);
 	string t1 = getTokenAt(s,'*',1);
 	x.collEst=collFromString<int>(t1);
 	return x;
 }
 
-string rAsignaturaToDebug(RAsignatura x)
+string rMaestroToDebug(RMaestro x)
 {
 	stringstream sout;
 	sout<< "[";
-	sout << asignaturaToDebug(x.asig);
+	sout << x.maestro;
 	sout << ",";
 	collReset<int>(x.collEst);
 	int n=collSize<int>(x.collEst);
@@ -234,85 +235,105 @@ string rAsignaturaToDebug(RAsignatura x)
 	return sout.str();
 }
 
-RAsignatura rAsignatura(Asignatura asig,Coll<int> collEst)
+RMaestro rMaestro(string maestro,Coll<int> collEst)
 {
-	RAsignatura b;
-	b.asig = asig;
-	b.collEst = collEst;
-	return b;
+	RMaestro a;
+	a.maestro = maestro;
+	a.collEst = collEst;
+	return a;
 }
 
-bool rAsignaturaEquals(RAsignatura a,RAsignatura b)
+bool rMaestroEquals(RMaestro a,RMaestro b)
 {
-	if(!asignaturaEquals(a.asig,b.asig)) return false;
+	if(a.maestro!=b.maestro) return false;
 	if(collToString<int>(a.collEst)!=collToString<int>(b.collEst)) return false;
 	return true;
 }
 
 
+// Coll<RAsignatura> subirAsignaturas (){
+// 	FILE* f =fopen("ASIGNATURAS_v07.dat","r+b");
+// 	Asignatura elemAsig = read<Asignatura>(f);
+// 	Coll<RAsignatura> collRAsig = coll<RAsignatura>();
+// 	while (!feof(f))
+// 	{
+// 		RAsignatura elemRAsig = rAsignatura(elemAsig,coll<int>(','));
+// 		collAdd<RAsignatura>(collRAsig,elemRAsig,rAsignaturaToString);
+// 		elemAsig = read<Asignatura>(f);
+// 	}
+// 	fclose(f);
+// 	return collRAsig;
+// }
 
-Coll<RAsignatura> subirAsignaturas (){
-	FILE* f =fopen("ASIGNATURAS_v07.dat","r+b");
+// int cmpRAsignaturaId(RAsignatura a ,int b){
+// 	return a.asig.idAsig-b;
+// }
 
-	Asignatura elemAsig = read<Asignatura>(f);
-	Coll<RAsignatura> collRAsig = coll<RAsignatura>();
+// void procesarCalificacion(Calificacion elemCalif,Coll<RAsignatura>& collRAsignaturas){
+// 	if (elemCalif.calif<4)
+// 	{
+// 		int pos = collFind<RAsignatura,int>(collRAsignaturas,elemCalif.idAsig,cmpRAsignaturaId,rAsignaturaFromString);
+// 		RAsignatura elemRAsig = collGetAt<RAsignatura>(collRAsignaturas,pos,rAsignaturaFromString);
+// 		collAdd<int>(elemRAsig.collEst,elemCalif.idEst,intToString);
+// 		collSetAt<RAsignatura>(collRAsignaturas,elemRAsig,pos,rAsignaturaToString);
+// 	}
+// }
 
+// void mostarResultados(Coll<RAsignatura> collRAsignaturas){
+// 	cout<<"Asignaruta"<<"\t"<<"\t"<<"\t"<<"Maestro"<<"\t"<<"\t"<<"\t"<<"Estudiantes Aplazados"<<endl;
+// 	collReset<RAsignatura>(collRAsignaturas);
+// 	while(collHasNext<RAsignatura>(collRAsignaturas)){
+// 		RAsignatura elemRAsig = collNext<RAsignatura>(collRAsignaturas,rAsignaturaFromString);
+// 		string sNombreAsig = elemRAsig.asig.nomAsig;
+// 		string sMaestroACargo = elemRAsig.asig.maestroACargo;
+// 		cout<<sNombreAsig<<"\t"<<sMaestroACargo<<"\t";
+// 		int i=0;
+// 		for ( i = 0; i < collSize<int>(elemRAsig.collEst); i++)
+// 		{
+// 			int elemIdEst = collGetAt<int>(elemRAsig.collEst,i,stringToInt);
+// 			cout<<elemIdEst<<",";
+// 		}
+// 		cout<<endl;
+// 	}
+// }
+
+
+Coll<Asignatura>  subirAsignatura(){
+	FILE* f = fopen("ASIGNATURAS_v08.dat","r+b");
+	Coll<Asignatura> collAsig = coll<Asignatura>();
+	Asignatura regAsig = read<Asignatura>(f);
 	while (!feof(f))
 	{
-		RAsignatura elemRAsig = rAsignatura(elemAsig,coll<int>(','));
-		collAdd<RAsignatura>(collRAsig,elemRAsig,rAsignaturaToString);
-		elemAsig = read<Asignatura>(f);
+		collAdd<Asignatura>(collAsig,regAsig,asignaturaToString);
+		regAsig = read<Asignatura>(f);
 	}
 	fclose(f);
-	return collRAsig;
-}
-
-int cmpRAsignaturaId(RAsignatura a ,int b){
-	return a.asig.idAsig-b;
+	return collAsig;
 }
 
 
-
-void procesarCalificacion(Calificacion elemCalif,Coll<RAsignatura>& collRAsignaturas){
-
-	if (elemCalif.calif<4)
+void procesarCalificacion(Calificacion regCalf,Coll<Asignatura> collAsig,Coll<RMaestro>& collRMaestros){
+	
+	
+	if (regCalf.calif<4)
 	{
-		int pos = collFind<RAsignatura,int>(collRAsignaturas,elemCalif.idAsig,cmpRAsignaturaId,rAsignaturaFromString);
+			Asignatura elemAsig = buscarAsignatura(regCalf.idAsig,collAsig);
+			string maestro = elemAsig.maestroACargo;
+			int pos = buscarMaestro(collRMaestros,maestro);
 
-		RAsignatura elemRAsig = collGetAt<RAsignatura>(collRAsignaturas,pos,rAsignaturaFromString);
+			RMaestro  elemRMaestro =  collGetAt<RMaestro>(collRMaestros,pos,rMaestroFromString);
+			
+			// Asignatura elemRAsig = rAsignatura(elemAsig,coll<int>(','));
 
-		collAdd<int>(elemRAsig.collEst,elemCalif.idEst,intToString);
 
-		collSetAt<RAsignatura>(collRAsignaturas,elemRAsig,pos,rAsignaturaToString);
 	}
+	
+
 }
 
 
+void  mostrarResultados(Coll<RMaestro> collRMaestros){
 
-
-void mostarResultados(Coll<RAsignatura> collRAsignaturas){
-
-	cout<<"Asignaruta"<<"\t"<<"\t"<<"\t"<<"Maestro"<<"\t"<<"\t"<<"\t"<<"Estudiantes Aplazados"<<endl;
-
-	collReset<RAsignatura>(collRAsignaturas);
-	while(collHasNext<RAsignatura>(collRAsignaturas)){
-
-		RAsignatura elemRAsig = collNext<RAsignatura>(collRAsignaturas,rAsignaturaFromString);
-		string sNombreAsig = elemRAsig.asig.nomAsig;
-		string sMaestroACargo = elemRAsig.asig.maestroACargo;
-
-
-		cout<<sNombreAsig<<"\t"<<sMaestroACargo<<"\t";
-		int i=0;
-		for ( i = 0; i < collSize<int>(elemRAsig.collEst); i++)
-		{
-			int elemIdEst = collGetAt<int>(elemRAsig.collEst,i,stringToInt);
-			cout<<elemIdEst<<",";
-
-		}
-		cout<<endl;
-
-	}
 }
 
 
