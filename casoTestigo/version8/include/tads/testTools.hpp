@@ -297,6 +297,23 @@ bool rMaestroEquals(RMaestro a,RMaestro b)
 // 	}
 // }
 
+int cmpAsignaturaId(Asignatura a, int id){
+	return a.idAsig-id;
+}
+
+
+Asignatura buscarAsignatura( int idAsig, Coll<Asignatura> collAsig){
+
+	int pos = collFind<Asignatura,int>(collAsig,idAsig,cmpAsignaturaId,asignaturaFromString);
+	Asignatura elemAsig = collGetAt<Asignatura>(collAsig,pos,asignaturaFromString);
+	return elemAsig;
+}
+
+
+int cmpMaestroNombre(RMaestro a, string nombre){
+	return cmpString(a.maestro,nombre);
+}
+
 
 Coll<Asignatura>  subirAsignatura(){
 	FILE* f = fopen("ASIGNATURAS_v08.dat","r+b");
@@ -311,30 +328,56 @@ Coll<Asignatura>  subirAsignatura(){
 	return collAsig;
 }
 
+int buscarYDescubrirMaestro(Coll<RMaestro>& collRMaestros,string maestro){
+	int pos = collFind<RMaestro,string>(collRMaestros,maestro,cmpMaestroNombre,rMaestroFromString);
+	if (pos<0)
+	{
+		RMaestro elemRMaestro = rMaestro(maestro,coll<int>(','));
+		pos = collAdd<RMaestro>(collRMaestros,elemRMaestro,rMaestroToString);
+	}
+	return pos;	
+}
+
+
 
 void procesarCalificacion(Calificacion regCalf,Coll<Asignatura> collAsig,Coll<RMaestro>& collRMaestros){
-	
-	
 	if (regCalf.calif<4)
 	{
 			Asignatura elemAsig = buscarAsignatura(regCalf.idAsig,collAsig);
 			string maestro = elemAsig.maestroACargo;
-			int pos = buscarMaestro(collRMaestros,maestro);
-
+			int pos = buscarYDescubrirMaestro(collRMaestros,maestro);
 			RMaestro  elemRMaestro =  collGetAt<RMaestro>(collRMaestros,pos,rMaestroFromString);
-			
-			// Asignatura elemRAsig = rAsignatura(elemAsig,coll<int>(','));
-
-
+			collAdd<int>(elemRMaestro.collEst,regCalf.idEst,intToString);
+			collSetAt<RMaestro>(collRMaestros,elemRMaestro,pos,rMaestroToString);
 	}
-	
-
 }
+
 
 
 void  mostrarResultados(Coll<RMaestro> collRMaestros){
+	// bool enc;
+	// RMaestro elemRMaestro = collNext<RMaestro>(collRMaestros,enc,rMaestroFromString);
+	cout<<"MAESTRO"<<"\t"<<"\t"<<"\t"<<"Estudiantes Aplazados"<<endl;
+	// while (!enc)
+	for (int i = 0; i < collSize<RMaestro>(collRMaestros); i++)
+	{
+		RMaestro elemRMaestro = collGetAt<RMaestro>(collRMaestros,i,rMaestroFromString);
+		string maestro = elemRMaestro.maestro;
+		cout<<maestro<<"\t"<<"\t"<<"\t";
 
+			Coll<int> collEst = elemRMaestro.collEst;
+			collReset<int>(collEst);
+			while (collHasNext<int>(collEst))
+			{
+				int elemIdEst  = collNext<int>(collEst,stringToInt);
+				cout<<elemIdEst<<",";
+			}
+		cout<<endl;
+	}
+	// elemRMaestro = collNext<RMaestro>(collRMaestros,enc,rMaestroFromString);
 }
+
+
 
 
 

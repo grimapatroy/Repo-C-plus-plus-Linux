@@ -31,10 +31,8 @@ int main()
 
     while (!feof(f))
     {
-        procesarYDescubrimiento(regCalf,collAsig,collRMaestros);
-
+        procesarCalificacion(regCalf,collAsig,collRMaestros);
         regCalf = read<Calificacion>(f);
-
     }
     
     mostrarResultados(collRMaestros);
