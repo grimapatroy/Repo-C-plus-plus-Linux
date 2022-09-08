@@ -529,3 +529,47 @@ GLib-GObject-CRITICAL **: g_object_unref: assertion 'G_IS_OBJECT (object)' faile
 GLib-GObject-CRITICAL **: g_object_unref: assertion 'G_IS_OBJECT (object)' failed at /snap/shutter/27/bin/shutter line 5673.
 GLib-GObject-CRITICAL **: g_object_unref: assertion 'G_IS_OBJECT (object)' failed at /snap/shutter/27/bin/shutter line 5673.
 shutter: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+update.go:85: cannot change mount namespace according to change mount (/snap/gtk-common-themes/1535/share/gtk2/Materia-compact /snap/shutter/27/share/themes/Materia-compact none bind,ro 0 0): cannot write to "/snap/gtk-common-themes/1535/share/gtk2/Materia-compact" because it would affect the host in "/snap"
+update.go:85: cannot change mount namespace according to change mount (/snap/gtk-common-themes/1535/share/gtk2/Materia-dark-compact /snap/shutter/27/share/themes/Materia-dark-compact none bind,ro 0 0): cannot write to "/snap/gtk-common-themes/1535/share/gtk2/Materia-dark-compact" because it would affect the host in "/snap"
+update.go:85: cannot change mount namespace according to change mount (/snap/gtk-common-themes/1535/share/gtk2/Yaru-MATE-dark /snap/shutter/27/share/themes/Yaru-MATE-dark none bind,ro 0 0): cannot use "/snap/gtk-common-themes/1535/share/gtk2/Yaru-MATE-dark" as bind-mount source: not a directory
+update.go:85: cannot change mount namespace according to change mount (/snap/gtk-common-themes/1535/share/gtk2/Yaru-MATE-light /snap/shutter/27/share/themes/Yaru-MATE-light none bind,ro 0 0): cannot use "/snap/gtk-common-themes/1535/share/gtk2/Yaru-MATE-light" as bind-mount source: not a directory
+ln: failed to create symbolic link '/home/jguivar/snap/shutter/27/.config/gtk-2.0/gtkfilechooser.ini': File exists
+WARNING: gnome-web-photo is missing --> screenshots of websites will be disabled!
+
+
+INFO: gathering system information...
+
+Linux IS-LP-57-19-HP 5.15.0-46-generic #49~20.04.1-Ubuntu SMP Thu Aug 4 19:15:44 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+cat: /etc/issue: Permission denied
+
+Glib 1.320 
+Gtk2 1.2498 
+
+Glib built for 2.47.3, running with 2.48.2
+Gtk2 built for 2.24.29, running with 2.24.30
+
+Barrel Distortion - /snap/shutter/27/share/shutter/resources/system/plugins/perl/spbardistortion/spbardistortion
+Negate - /snap/shutter/27/share/shutter/resources/system/plugins/perl/spnegate/spnegate
+Polaroid - /snap/shutter/27/share/shutter/resources/system/plugins/perl/sppolaroid/sppolaroid
+Resize - /snap/shutter/27/share/shutter/resources/system/plugins/perl/spresize/spresize
+Sepia - /snap/shutter/27/share/shutter/resources/system/plugins/perl/spsepia/spsepia
+Hard Shadow - /snap/shutter/27/share/shutter/resources/system/plugins/perl/spshadow/spshadow
+Watermark - /snap/shutter/27/share/shutter/resources/system/plugins/perl/spwatermark/spwatermark
+Grayscale - /snap/shutter/27/share/shutter/resources/system/plugins/shell/spgrayscale/spgrayscale
+Offset - /snap/shutter/27/share/shutter/resources/system/plugins/shell/spoffset/spoffset
+Raise Border - /snap/shutter/27/share/shutter/resources/system/plugins/shell/spraise/spraise
+Soft Edges - /snap/shutter/27/share/shutter/resources/system/plugins/shell/spsoftedges/spsoftedges
+Sunk Border - /snap/shutter/27/share/shutter/resources/system/plugins/shell/spsunk/spsunk
+Torned Paper - /snap/shutter/27/share/shutter/resources/system/plugins/shell/sptornedpaper/sptornedpaper
+Autocrop - /snap/shutter/27/share/shutter/resources/system/plugins/shell/sptrim/sptrim
+
+(shutter:56945): GLib-GIO-WARNING **: Error creating IO channel for /proc/mounts: Permission denied (g-file-error-quark, 2)
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.3607" (uid=1000 pid=56945 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=57201 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.3607" (uid=1000 pid=56945 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=57201 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.3607" (uid=1000 pid=56945 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=57201 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.3607" (uid=1000 pid=56945 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=57201 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.3607" (uid=1000 pid=56945 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=57201 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GConf Error: Configuration server couldn't be contacted: D-BUS error: An AppArmor policy prevents this sender from sending this message to this recipient; type="method_call", sender=":1.3607" (uid=1000 pid=56945 comm="/usr/bin/perl /snap/shutter/27/bin/shutter " label="snap.shutter.shutter (enforce)") interface="org.gnome.GConf.Server" member="GetDefaultDatabase" error name="(unset)" requested_reply="0" destination="org.gnome.GConf" (uid=1000 pid=57201 comm="/usr/lib/x86_64-linux-gnu/gconf/gconfd-2 " label="unconfined")
+GLib-CRITICAL **: Source ID 39 was not found when attempting to remove it at /snap/shutter/27/bin/shutter line 7267.
+shutter: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
