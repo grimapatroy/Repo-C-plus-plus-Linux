@@ -15,273 +15,380 @@
 using namespace std;
 
 
-struct Asignatura
-{
-	int idAsig;
-	char nomAsig[30];
-	char maestroACargo[50];
-	double califProm;
-};
 
-struct Calificacion
-{
-	int idAsig;
-	int idEst;
-	int calif;
-};
 
-struct RMaestro
-{
-	string maestro;
-	Coll<int> collEst;
-};
-// --------------------------------------------------
-// string asignaturaToString(Asignatura x)
-// {
-// 	char sep = 1;
-// 	string sIdAsig=to_string(x.idAsig);
+// string asignaturaToString(Asignatura x){
 // 	string sNomAsig=x.nomAsig;
 // 	string sMaestroACargo=x.maestroACargo;
-// 	string sCalifProm=to_string(x.califProm);
-// 	return sIdAsig+sep+sNomAsig+sep+sMaestroACargo+sep+sCalifProm;
+// 	return intToString(x.idAsig)+','+ sNomAsig +','+ sMaestroACargo + ',' + doubleToString(x.califProm);
 // }
-
-string asignaturaToString(Asignatura x){
-	string sNomAsig=x.nomAsig;
-	string sMaestroACargo=x.maestroACargo;
-	return intToString(x.idAsig)+','+ sNomAsig +','+ sMaestroACargo + ',' + doubleToString(x.califProm);
-}
-
-
-Asignatura asignaturaFromString(string s)
-{
-	Asignatura x;
-	x.idAsig = stringToInt(getTokenAt(s, ',', 0));
-	string sNomAsig = getTokenAt(s, ',', 1);
-	strcpy(x.nomAsig,sNomAsig.c_str());
-	string t2= getTokenAt(s, ',', 2);
-	strcpy(x.maestroACargo,t2.c_str());
-	x.califProm = stringToDouble(getTokenAt(s, ',', 3));
-	// x.idAsig = stringToInt(getTokenAt(s, ',', 2));
-	return x;
-}
 
 
 // Asignatura asignaturaFromString(string s)
 // {
-// 	char sep = 1;
 // 	Asignatura x;
-// 	string t0 = getTokenAt(s,sep,0);
-// 	x.idAsig=stoi(t0);
-// 	string t1 = getTokenAt(s,sep,1);
-// 	strcpy(x.nomAsig,t1.c_str());
-// 	string t2 = getTokenAt(s,sep,2);
+// 	x.idAsig = stringToInt(getTokenAt(s, ',', 0));
+// 	string sNomAsig = getTokenAt(s, ',', 1);
+// 	strcpy(x.nomAsig,sNomAsig.c_str());
+// 	string t2= getTokenAt(s, ',', 2);
 // 	strcpy(x.maestroACargo,t2.c_str());
-// 	string t3 = getTokenAt(s,sep,3);
-// 	x.califProm=stod(t3);
+// 	x.califProm = stringToDouble(getTokenAt(s, ',', 3));
+// 	// x.idAsig = stringToInt(getTokenAt(s, ',', 2));
 // 	return x;
 // }
+struct Rendi
+{
+	int idAsig;
+	char comision;
+	double califProm;
+};
 
-string asignaturaToDebug(Asignatura x)
+struct Lst1
+{
+	int idAsig;
+	char comMax;
+	double max;
+	char comMin;
+	double min;
+};
+
+struct Lst2
+{
+	int idAsig;
+	double promGral;
+};
+
+struct LstA
+{
+	int idAsig;
+	double prom2;
+	double porc;
+};
+
+string rendiToString(Rendi x)
+{
+	char sep = 1;
+	string sIdAsig=to_string(x.idAsig);
+	string sComision=string(1,x.comision);
+	string sCalifProm=to_string(x.califProm);
+	return sIdAsig+sep+sComision+sep+sCalifProm;
+}
+
+Rendi rendiFromString(string s)
+{
+	char sep = 1;
+	Rendi x;
+	string t0 = getTokenAt(s,sep,0);
+	x.idAsig=stoi(t0);
+	string t1 = getTokenAt(s,sep,1);
+	x.comision=(char)t1[0];
+	string t2 = getTokenAt(s,sep,2);
+	x.califProm=stod(t2);
+	return x;
+}
+
+string rendiToDebug(Rendi x)
 {
 	stringstream sout;
 	sout<< "[";
 	sout << x.idAsig;
 	sout << ",";
-	sout << x.nomAsig;
-	sout << ",";
-	sout << x.maestroACargo;
+	sout << x.comision;
 	sout << ",";
 	sout << x.califProm;
 	sout<< "]";
 	return sout.str();
 }
 
-Asignatura asignatura(int idAsig,string nomAsig,string maestroACargo,double califProm)
+string rendiToDebug(string mssg,Rendi x)
 {
-	Asignatura a;
+	stringstream sout;
+	sout<< mssg<<":[";
+	sout << x.idAsig;
+	sout << ",";
+	sout << x.comision;
+	sout << ",";
+	sout << x.califProm;
+	sout<< "]";
+	return sout.str();
+}
+
+Rendi rendi(int idAsig,char comision,double califProm)
+{
+	Rendi a;
 	a.idAsig = idAsig;
-	strcpy(a.nomAsig,nomAsig.c_str());
-	strcpy(a.maestroACargo,maestroACargo.c_str());
+	a.comision = comision;
 	a.califProm = califProm;
 	return a;
 }
 
-bool asignaturaEquals(Asignatura a,Asignatura b)
+bool rendiEquals(Rendi a,Rendi b)
 {
 	if(a.idAsig!=b.idAsig) return false;
+	if(a.comision!=b.comision) return false;
 	if(a.califProm!=b.califProm) return false;
 	return true;
 }
 
-// --------------------------------------------------
-
-// --------------------------------------------------
-string calificacionToString(Calificacion x){
-	return intToString(x.idAsig)+','+ intToString(x.idEst)+','+intToString(x.calif);
+string lst1ToString(Lst1 x)
+{
+	char sep = 2;
+	string sIdAsig=to_string(x.idAsig);
+	string sComMax=string(1,x.comMax);
+	string sMax=to_string(x.max);
+	string sComMin=string(1,x.comMin);
+	string sMin=to_string(x.min);
+	return sIdAsig+sep+sComMax+sep+sMax+sep+sComMin+sep+sMin;
 }
 
-
-Calificacion calificacionFromString(string s)
+Lst1 lst1FromString(string s)
 {
-	Calificacion x;
-	x.idAsig = stringToInt(getTokenAt(s, ',', 0));
-	x.idEst = stringToInt(getTokenAt(s, ',', 1));
-	x.idAsig = stringToInt(getTokenAt(s, ',', 2));
+	char sep = 2;
+	Lst1 x;
+	string t0 = getTokenAt(s,sep,0);
+	x.idAsig=stoi(t0);
+	string t1 = getTokenAt(s,sep,1);
+	x.comMax=(char)t1[0];
+	string t2 = getTokenAt(s,sep,2);
+	x.max=stod(t2);
+	string t3 = getTokenAt(s,sep,3);
+	x.comMin=(char)t3[0];
+	string t4 = getTokenAt(s,sep,4);
+	x.min=stod(t4);
 	return x;
 }
 
-// Calificacion calificacionFromString(string s)
-// {
-// 	char sep = 2;
-// 	Calificacion x;
-// 	string t0 = getTokenAt(s,sep,0);
-// 	x.idAsig=stoi(t0);
-// 	string t1 = getTokenAt(s,sep,1);
-// 	x.idEst=stoi(t1);
-// 	string t2 = getTokenAt(s,sep,2);
-// 	x.calif=stoi(t2);
-// 	return x;
-// }
-
-string calificacionToDebug(Calificacion x)
+string lst1ToDebug(Lst1 x)
 {
 	stringstream sout;
 	sout<< "[";
 	sout << x.idAsig;
 	sout << ",";
-	sout << x.idEst;
+	sout << x.comMax;
 	sout << ",";
-	sout << x.calif;
+	sout << x.max;
+	sout << ",";
+	sout << x.comMin;
+	sout << ",";
+	sout << x.min;
 	sout<< "]";
 	return sout.str();
 }
 
-Calificacion calificacion(int idAsig,int idEst,int calif)
+string lst1ToDebug(string mssg,Lst1 x)
 {
-	Calificacion a;
+	stringstream sout;
+	sout<< mssg<<":[";
+	sout << x.idAsig;
+	sout << ",";
+	sout << x.comMax;
+	sout << ",";
+	sout << x.max;
+	sout << ",";
+	sout << x.comMin;
+	sout << ",";
+	sout << x.min;
+	sout<< "]";
+	return sout.str();
+	}
+
+Lst1 lst1(int idAsig,char comMax,double max,char comMin,double min)
+{
+	Lst1 a;
 	a.idAsig = idAsig;
-	a.idEst = idEst;
-	a.calif = calif;
+	a.comMax = comMax;
+	a.max = max;
+	a.comMin = comMin;
+	a.min = min;
 	return a;
 }
 
-bool calificacionEquals(Calificacion a,Calificacion b)
+bool lst1Equals(Lst1 a,Lst1 b)
 {
 	if(a.idAsig!=b.idAsig) return false;
-	if(a.idEst!=b.idEst) return false;
-	if(a.calif!=b.calif) return false;
+	if(a.comMax!=b.comMax) return false;
+	if(a.max!=b.max) return false;
+	if(a.comMin!=b.comMin) return false;
+	if(a.min!=b.min) return false;
 	return true;
 }
 
-
-// --------------------------------------------------
-
-// string rAsignaturaToString(RAsignatura x)
-// {
-// 	char sep = 3;
-// 	string sAsig=asignaturaToString(x.asig);
-// 	string sCollEst=collToString<int>(x.collEst);
-// 	return sAsig+sep+sCollEst;
-// }
-
-string rMaestroToString(RMaestro x)
+string lst2ToString(Lst2 x)
 {
-	// char sep = 3;
-	// string sAsig=asignaturaToString(x.asig);
-	string sCollEst=collToString<int>(x.collEst);
-	return x.maestro+"*"+sCollEst;
+	char sep = 3;
+	string sIdAsig=to_string(x.idAsig);
+	string sPromGral=to_string(x.promGral);
+	return sIdAsig+sep+sPromGral;
 }
 
-
-// RAsignatura rAsignaturaFromString(string s)
-// {
-// 	char sep = 3;
-// 	RAsignatura x;
-// 	string t0 = getTokenAt(s,sep,0);
-// 	x.asig=asignaturaFromString(t0);
-// 	string t1 = getTokenAt(s,sep,1);
-// 	x.collEst=collFromString<int>(t1);
-// 	return x;
-// }
-
-RMaestro rMaestroFromString(string s)
+Lst2 lst2FromString(string s)
 {
-	// char sep = 3;
-	RMaestro x;
-	// string t0 = getTokenAt(s,'*',0);
-	// x.asig=asignaturaFromString(t0);
-	x.maestro =  getTokenAt(s,'*',0);
-	string t1 = getTokenAt(s,'*',1);
-	x.collEst=collFromString<int>(t1);
+	char sep = 3;
+	Lst2 x;
+	string t0 = getTokenAt(s,sep,0);
+	x.idAsig=stoi(t0);
+	string t1 = getTokenAt(s,sep,1);
+	x.promGral=stod(t1);
 	return x;
 }
 
-string rMaestroToDebug(RMaestro x)
+string lst2ToDebug(Lst2 x)
 {
 	stringstream sout;
 	sout<< "[";
-	sout << x.maestro;
+	sout << x.idAsig;
 	sout << ",";
-	collReset<int>(x.collEst);
-	int n=collSize<int>(x.collEst);
-	sout << "{";
-	for(int i=0; i<n; i++)
-	{
-		int q = collGetAt<int>(x.collEst,i,stringToInt);
-		sout << intToString(q) << ((i<n-1)?",":"");
-	}
-	sout << "}";
+	sout << x.promGral;
 	sout<< "]";
 	return sout.str();
 }
 
-RMaestro rMaestro(string maestro,Coll<int> collEst)
+string lst2ToDebug(string mssg,Lst2 x)
 {
-	RMaestro a;
-	a.maestro = maestro;
-	a.collEst = collEst;
+	stringstream sout;
+	sout<< mssg<<":[";
+	sout << x.idAsig;
+	sout << ",";
+	sout << x.promGral;
+	sout<< "]";
+	return sout.str();
+}
+
+Lst2 lst2(int idAsig,double promGral)
+{
+	Lst2 a;
+	a.idAsig = idAsig;
+	a.promGral = promGral;
 	return a;
 }
 
-bool rMaestroEquals(RMaestro a,RMaestro b)
+bool lst2Equals(Lst2 a,Lst2 b)
 {
-	if(a.maestro!=b.maestro) return false;
-	if(collToString<int>(a.collEst)!=collToString<int>(b.collEst)) return false;
+	if(a.idAsig!=b.idAsig) return false;
+	if(a.promGral!=b.promGral) return false;
 	return true;
 }
 
-int cmpAsignatura (Asignatura x , Asignatura y){
-	string m1 = x.maestroACargo;
-	string m2 = y.maestroACargo;
-	return m1<m2?-1:m1>m2?1:0;
+string lstAToString(LstA x)
+{
+	char sep = 4;
+	string sIdAsig=to_string(x.idAsig);
+	string sProm2=to_string(x.prom2);
+	string sPorc=to_string(x.porc);
+	return sIdAsig+sep+sProm2+sep+sPorc;
 }
 
-void procesarPunto3(Asignatura elemAsig2019 ,Asignatura elemAsig2020,Coll<Asignatura>& coll19Y20){
-	
-	string nomes2019 = elemAsig2019.maestroACargo;
-	string nomes2020 = elemAsig2020.maestroACargo;
-
-	if (nomes2019!=nomes2020)
-	{
-		collAdd<Asignatura>(coll19Y20,elemAsig2019,asignaturaToString);
-	}
+LstA lstAFromString(string s)
+{
+	char sep = 4;
+	LstA x;
+	string t0 = getTokenAt(s,sep,0);
+	x.idAsig=stoi(t0);
+	string t1 = getTokenAt(s,sep,1);
+	x.prom2=stod(t1);
+	string t2 = getTokenAt(s,sep,2);
+	x.porc=stod(t2);
+	return x;
 }
 
-void mostrarResultados(string s,Coll<Asignatura> collAsig){
-
-	// Asignatura elemAsig = ;
-	collSort<Asignatura>(collAsig,cmpAsignatura,asignaturaFromString,asignaturaToString);
-
-	collReset<Asignatura>(collAsig);
-	
-	cout<<s<<endl;
-	while (collHasNext<Asignatura>(collAsig))
-	{
-		Asignatura elemAsig = collNext<Asignatura>(collAsig,asignaturaFromString);
-		cout<<asignaturaToString(elemAsig)<<endl;
-	}
-	
+string lstAToDebug(LstA x)
+{
+	stringstream sout;
+	sout<< "[";
+	sout << x.idAsig;
+	sout << ",";
+	sout << x.prom2;
+	sout << ",";
+	sout << x.porc;
+	sout<< "]";
+	return sout.str();
 }
+
+string lstAToDebug(string mssg,LstA x)
+{
+	stringstream sout;
+	sout<< mssg<<":[";
+	sout << x.idAsig;
+	sout << ",";
+	sout << x.prom2;
+	sout << ",";
+	sout << x.porc;
+	sout<< "]";
+	return sout.str();
+}
+
+LstA lstA(int idAsig,double prom2,double porc)
+{
+	LstA a;
+	a.idAsig = idAsig;
+	a.prom2 = prom2;
+	a.porc = porc;
+	return a;
+}
+
+bool lstAEquals(LstA a,LstA b)
+{
+	if(a.idAsig!=b.idAsig) return false;
+	if(a.prom2!=b.prom2) return false;
+	if(a.porc!=b.porc) return false;
+	return true;
+}
+
+void procesar1(Rendi& regRend19,FILE* arch19,Coll<Lst1>& collLista2019){
+	// coloco el registro leido como max
+	char cComMax = regRend19.comision;
+	double dMax = regRend19.comision;
+
+	// coloco el registro leido como min
+	char cComMin = regRend19.comision;
+	double dMin = regRend19.comision;
+
+	// corte de control
+		// variable de control , id sig Anterior
+		int idAsingAnt = regRend19.idAsig;
+		while (!feof(arch19) && regRend19.idAsig)
+		{
+			// maximos y minimos
+			if (regRend19.califProm>dMax)
+			{
+				dMax = regRend19.califProm;
+				cComMax = regRend19.comision;
+			}
+			else
+			{
+				if (regRend19.califProm<dMin)
+				{
+					dMin = regRend19.califProm;
+					cComMin = regRend19.comision;
+				}	
+			}
+			regRend19 = read<Rendi>(arch19);	
+		}
+		
+		// agregamos a la coleccion la peor y mejor calificacion promedio
+		Lst1 elemLst1 = lst1(idAsingAnt,cComMax,dMax,cComMin,dMin);
+		collAdd<Lst1>(collLista2019,elemLst1,lst1ToString);
+}
+
+
+void procesar2(Rendi& regRend20,FILE* arch20,Coll<Lst2>& collLista2020){
+	// Aplicar corte de control por que me pide el sub todal de un grupo , agrupado por id
+	int idAsingAnt = regRend20.idAsig;//guardo el registro del id por que co conte de control van a seguir avanzando los registros
+	double dPromGra = promGeneral(regRend20,collLista2020);//corte de cortrol
+	
+	Lst2 elemLst2 = lst2(idAsingAnt,dPromGra);
+	collAdd<>();
+}
+
+
+
+
+
+
+
+
+
+
+
 
 #endif
