@@ -364,31 +364,52 @@ void procesar1(Rendi& regRend19,FILE* arch19,Coll<Lst1>& collLista2019){
 			}
 			regRend19 = read<Rendi>(arch19);	
 		}
-		
 		// agregamos a la coleccion la peor y mejor calificacion promedio
 		Lst1 elemLst1 = lst1(idAsingAnt,cComMax,dMax,cComMin,dMin);
 		collAdd<Lst1>(collLista2019,elemLst1,lst1ToString);
 }
 
 
-void procesar2(Rendi& regRend20,FILE* arch20,Coll<Lst2>& collLista2020){
-	// Aplicar corte de control por que me pide el sub todal de un grupo , agrupado por id
-	int idAsingAnt = regRend20.idAsig;//guardo el registro del id por que co conte de control van a seguir avanzando los registros
-	double dPromGra = promGeneral(regRend20,collLista2020);//corte de cortrol
-	
-	Lst2 elemLst2 = lst2(idAsingAnt,dPromGra);
-	collAdd<>();
+double promCC(FILE* arch,Rendi regX){
+
+	return .1;
 }
 
 
 
+void procesar2(Rendi& regRend20,FILE* arch20,Coll<Lst2>& collLista2020){
+	// Aplicar corte de control por que me pide el sub todal de un grupo , agrupado por id
+	int idAsingAnt = regRend20.idAsig;//guardo el registro del id por que co conte de control van a seguir avanzando los registros
+	double dPromGra = promCC(arch20,regRend20);//corte de cortrol
+	
+	Lst2 elemLst2 = lst2(idAsingAnt,dPromGra);
+	collAdd<Lst2>(collLista2020,elemLst2,lst2ToString);
+}
 
 
+void procesar3(Rendi& regRend19,Rendi& regRend20,FILE* arch19,FILE* arch20,Coll<LstA>& collListaAmbas){
+
+	int idAsignatura =  regRend19.idAsig; // puedes guardar cualquier id(2019-2020) , ya que vienen siendo comparados por el else, y cuando aga conte de control va a cambiar de id
+	double prom2019 = promCC(arch19,regRend19);//corte de control
+	double prom2020 = promCC(arch20,regRend20); // corte de control
+	double porcion = 100-prom2019/prom2020*100;
+
+	LstA elemAmbos = lstA(idAsignatura,prom2020,porcion);
+	collAdd<LstA>(collListaAmbas,elemAmbos,lstAToString);
+
+}
+
+void mostrarResultados(Coll<Lst1> collLista2019){
+
+}
+
+void mostrarResultados(Coll<Lst2> collLista2020){
+
+}
 
 
+void mostrarResultados(Coll<LstA> collListaAmbas){
 
-
-
-
+}
 
 #endif
