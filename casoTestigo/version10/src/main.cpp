@@ -71,8 +71,8 @@ int main()
         // aqui acaba el corte de control
     
     //mostramos resltados
-        mostrarResultados(collLista2019);
-        mostrarResultados(collLista2020);
+        // mostrarResultados(collLista2019);
+        // mostrarResultados(collLista2020);
         mostrarResultados(collListaAmbas);
 
 

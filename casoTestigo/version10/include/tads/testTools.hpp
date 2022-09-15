@@ -370,9 +370,22 @@ void procesar1(Rendi& regRend19,FILE* arch19,Coll<Lst1>& collLista2019){
 }
 
 
-double promCC(FILE* arch,Rendi regX){
+double promCC(FILE* arch,Rendi& regX){
+	
+	int cont = 0;
+	double sum = 0;
 
-	return .1;
+	int idAsignatura = regX.idAsig;
+	while (!feof(arch) && idAsignatura == regX.idAsig)
+	{
+		sum += regX.califProm;
+		cont++;
+
+		regX = read<Rendi>(arch);
+	}
+	
+	double prom = sum/(double)cont;
+	return prom;
 }
 
 
@@ -399,17 +412,47 @@ void procesar3(Rendi& regRend19,Rendi& regRend20,FILE* arch19,FILE* arch20,Coll<
 
 }
 
-void mostrarResultados(Coll<Lst1> collLista2019){
 
+void mostrarResultados(Coll<Lst1> collLista2019){
+	cout<<"CALIFICACIONES DEL 2019"<<endl;
+	collReset<Lst1>(collLista2019);
+	while (collHasNext<Lst1>(collLista2019))
+	{
+		Lst1 elemLst1 = collNext<Lst1>(collLista2019,lst1FromString);
+		cout<<"ID ASIGNATURA: "<<elemLst1.idAsig<<endl;
+		cout<<"COMISION MAYOR: "<<elemLst1.comMax<<endl;
+		cout<<"PROMEDIO MAYOR: "<<elemLst1.max<<endl;
+		cout<<"COMISION MENOR: "<<elemLst1.comMin<<endl;
+		cout<<"PROMEDIO MENOR: "<<elemLst1.min<<endl;
+		cout<<endl;
+	}
 }
 
-void mostrarResultados(Coll<Lst2> collLista2020){
 
+void mostrarResultados(Coll<Lst2> collLista2020){
+	cout<<"CALIFICACIONES DEL 2020"<<endl;
+	collReset<Lst2>(collLista2020);
+	while (collHasNext<Lst2>(collLista2020))
+	{
+		Lst2 elemLst2 = collNext<Lst2>(collLista2020,lst2FromString);
+		cout<<"ID ASIGNATURA: "<<elemLst2.idAsig<<endl;
+		cout<<"PROMEDIO GENERAL: "<<elemLst2.promGral<<endl;
+		cout<<endl;
+	}
 }
 
 
 void mostrarResultados(Coll<LstA> collListaAmbas){
-
+	cout<<"CALIFICACIONES DE AMBOS AÑOS"<<endl;
+	collReset<LstA>(collListaAmbas);
+	while (collHasNext<LstA>(collListaAmbas))
+	{
+		LstA elemLstA = collNext<LstA>(collListaAmbas,lstAFromString);
+		cout<<"ID ASIGNATURA: "<<elemLstA.idAsig<<endl;
+		cout<<"PROMEDIO DEL AÑO 2020: "<<elemLstA.prom2<<endl;
+		cout<<"PROCENTAJE DE DIFERENCIA ANTE EL 2019: "<<elemLstA.porc<<endl;
+		cout<<endl;
+	}
 }
 
 #endif
