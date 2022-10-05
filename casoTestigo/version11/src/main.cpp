@@ -31,34 +31,28 @@ using namespace std;
 
 int main()
 {   
-    // abrimos los archivos
-    FILE* fInscrip = fopen("INSCRIPCIONES_v11.dat","r+b");
-    FILE* fPadron = fopen("PADRON_v11.dat","r+b");
-    FILE* fOut = fopen("INCONSISTENCIA.dat","w+b");
+    FILE* archPadron = fopen("PADRON_v11.dat","r+b");
+    FILE* archInsc= fopen("INSCRIPCIONES_v11.dat","r+b");
+    FILE* archOut= fopen("INCONSISTENCIAS.dat","w+b");
 
-
-    // recorremos el archivo de novedades hasta que acabe
-    Inscripcion regIns = read<Inscripcion>(fInscrip);
-    while (!feof(fInscrip))
+    Inscripcion regInscrip = read<Inscripcion>(archInsc);
+    while (!feof(archInsc))
     {
-        // buscamos el estudiante en el PADRON y asignamos true o false a enc segun encuentre o no
+        // iniciamos , buscamos el registro
         bool enc;
-        Padron elemPradon = buscarEstudiante(regIns.idEst,fPadron,enc);
+        Padron regPadron = buscarPadron(archPadron,regInscrip.idEst,enc);
 
-        // procesamos
-        procesarInscripcion(regIns,elemPradon,fOut,enc);
+        // procesamos el registro
+        procesarIncripcion(regPadron,enc,archOut,regInscrip);
 
         // leemos el siguiente registro
-        regIns = read<Inscripcion>(fInscrip);
+        regInscrip = read<Inscripcion>(archInsc);
     }
     
 
-
-    // cerramos los archivos
-    fclose(fInscrip);
-    fclose(fPadron);
-    fclose(fOut);
-
+    fclose(archPadron);
+    fclose(archInsc);
+    fclose(archOut);
     return 0;
 }
 

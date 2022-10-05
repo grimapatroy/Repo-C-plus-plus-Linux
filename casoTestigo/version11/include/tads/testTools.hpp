@@ -323,32 +323,30 @@ bool inconsistenciaEquals(Inconsistencia a,Inconsistencia b)
 
 
 
-Padron buscarEstudiante(int idEst,FILE* fPadron,bool& enc){
-	// buscaremos directamente sobre el archivo padron como esta ordenado por idEst
+Padron buscarPadron( FILE* archPadron, int regIdEst,bool& enc){
+Padron elemPradron;
+// aplicamos un algoritmo de bsuquedad binaria, ya que esta ordenado poridEst
+// definimos 2 los indices
+int i= 0;
+int j = fileSize<Padron>(archPadron)-1;
+while ( i<=j && !enc){
+	//defino  el indice de enmedio
+	int k = (i+j)/2;
 
-	Padron regPradron ;
-	// aplicamos busqeudad binaria , definimos los indices
-	int i = 0; //indice inicial
-	int j = fileSize<Padron>(fPadron)-1; //indice final
+	// me posiciono y leo
+	seek<Padron>(archPadron,k);
+	elemPradron = read<Padron>(archPadron);
 
-	enc=false;
-	while (i<=j && !enc)
-	{
-		int k = (i+k)/2;
-		// posiciono y leo
-		seek<Padron>(fPadron,k);
-		regPradron = read<Padron>(fPadron);
-		
-		if (regPradron.idEst<idEst)
+	// comparo el valor con el registro leido y atualizo indices
+		if (elemPradron.idEst<regIdEst)
 		{
-			// actualizo indice i para descartar la aprte anterior
-			i=k+1;
+			i= k+1;
 		}
 		else
 		{
-			if (regPradron.idEst>idEst)
+			if (elemPradron.idEst>regIdEst)
 			{
-				j=k-1;
+				j = k-1;
 			}
 			else
 			{
@@ -356,55 +354,49 @@ Padron buscarEstudiante(int idEst,FILE* fPadron,bool& enc){
 			}
 		}
 	}
-	return regPradron;
+	return elemPradron;
 }
 
-
-int fechaCmp(int regfecha, int padronfech){
-	return regfecha-padronfech;
+int cmpFecha(int fecharegInscrip, int fechaMatriPadron){
+	return fecharegInscrip-fechaMatriPadron;
 }
 
-void procesarInscripcion(Inscripcion regIns,Padron elemPradon,FILE* fOut,bool& enc){
+void procesarIncripcion(Padron regPadron,bool& enc,FILE* archOut, Inscripcion regInscrip){
+	// se crea un elemento inconsistencia para grabar en el archivo
+	Inconsistencia elemOut;
 
-	Inconsistencia out;
-
-	// asignamos la idEscuela involucrada
-	out.idEscuela = regIns.idEscuela;
-	// el estudiante no es encontrado
+	// se guarda el escuela involucrada
+	elemOut.idEscuela = regInscrip.idEscuela;
 	if (!enc)
 	{
-		strcpy(out.nombreEstudiante,"desconocido!!");
-		out.idTipoProblema = ERR_ESTINEXIST;
-		write<Inconsistencia>(fOut,out);
+		strcpy(elemOut.nombreEstudiante,"desconocido");
+		elemOut.idTipoProblema = ERR_ESTINEXIST;
+		// grabo el elemento
+		write<Inconsistencia>(archOut,elemOut);
 	}
 	else
 	{
-		// guardo el nombre del estudiante 
-		strcpy(out.nombreEstudiante,elemPradon.nombre);
-
-		if(regIns.idEscuela!=elemPradon.idEscuela)
-		{
-		// el estudiante figura matriculado a una escuela diferente a la ques e matriculo
-			out.idTipoProblema = ERR_ESCUELADIF;
-			write<Inconsistencia>(fOut,out);
-		}
-		else
-		{
-			if (fechaCmp(regIns.fecha,elemPradon.fechaMatriculacion)<0)
+		// guardo el nombre del estudiante
+		strcpy(elemOut.nombreEstudiante,regPadron.nombre);
+			if (regPadron.idEst != regInscrip.idEst)
 			{
-				out.idTipoProblema = ERR_FECHAANT;
-				write<Inconsistencia>(fOut,out);
+				elemOut.idTipoProblema = ERR_ESCUELADIF;
+				write<Inconsistencia>(archOut,elemOut);
 			}
-		}
+			else
+			{
+				if (cmpFecha(regInscrip.fecha,regPadron.fechaMatriculacion)<0)
+				{
+					elemOut.idTipoProblema = ERR_FECHAANT;
+					write<Inconsistencia>(archOut,elemOut);
+				}
+				
+			}
+		
 	}
+	
+
 }
-
-
-
-
-
-
-
 
 
 
