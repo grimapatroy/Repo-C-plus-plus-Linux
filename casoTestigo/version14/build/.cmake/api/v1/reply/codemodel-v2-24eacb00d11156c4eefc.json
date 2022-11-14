@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "modelo::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-modelo-Release-b82137c2ed9c02fa66dd.json",
+					"jsonFile" : "target-modelo-Release-b07630783f2920f03514.json",
 					"name" : "modelo",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version7/build",
-		"source" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version7"
+		"build" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version14/build",
+		"source" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version14"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 3
+		"minor" : 4
 	}
 }

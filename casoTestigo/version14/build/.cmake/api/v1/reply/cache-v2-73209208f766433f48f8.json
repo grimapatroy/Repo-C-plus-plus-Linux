@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version7/build"
+			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version14/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -79,7 +79,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "21"
+			"value" : "25"
 		},
 		{
 			"name" : "CMAKE_CACHE_PATCH_VERSION",
@@ -91,7 +91,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "5"
+			"value" : "0"
 		},
 		{
 			"name" : "CMAKE_COLOR_MAKEFILE",
@@ -546,6 +546,18 @@
 			"value" : ""
 		},
 		{
+			"name" : "CMAKE_FIND_PACKAGE_REDIRECTS_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake."
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version14/build/CMakeFiles/pkgRedirects"
+		},
+		{
 			"name" : "CMAKE_GENERATOR",
 			"properties" : 
 			[
@@ -603,7 +615,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version7"
+			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version14"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -891,7 +903,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/opt/cmake/share/cmake-3.21"
+			"value" : "/opt/cmake/share/cmake-3.25"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1139,7 +1151,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version7/build"
+			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version14/build"
 		},
 		{
 			"name" : "TADfecha_IS_TOP_LEVEL",
@@ -1163,7 +1175,19 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version7"
+			"value" : "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version14"
+		},
+		{
+			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "linker supports push/pop state"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "TRUE"
 		}
 	],
 	"kind" : "cache",
