@@ -1,4 +1,4 @@
-# Install script for directory: /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version14
+# Install script for directory: /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version15
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version14/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/casoTestigo/version15/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

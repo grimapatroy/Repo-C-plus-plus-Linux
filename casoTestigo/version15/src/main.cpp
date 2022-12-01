@@ -9,68 +9,40 @@
 
 using namespace std;
 
+// 1. Se pide generar el archivo PADRONFIX.dat, con la misma estructura
+// que PADRON, asignando nuevos idEst a aquellos estudiantes cuyo iden-
+// tificador está duplicado. El nuevo archivo debe estar ordenado por idEst.
+// 2. ¿Cómo cambiarían la estructura de datos, estrategia y algoritmo, si el lista-
+// do del punto anterior debiera estar ordenado por idEscuela+idEst?
 
-
-// el archivo Padron.dat esta desordenado 
-// 1. Un listado de todos los estudiantes empadronados correctamente (sin
-// error), ordenado por idEst.
-// 2. Para aquellos estudiantes con idEst duplicado, emitir el siguiente listado,
-// ordenado por idEst, y con el siguiente formato:
-// Id. Estudiante: 999
-// Nombre         DNI  Telefono        Direccion
-// XXXXXXXXXXXX 99999 99999999999 XXXXXXXXXXXXXXXXXXX
-// XXXXXXXXXXXX 99999 99999999999 XXXXXXXXXXXXXXXXXXX
-//     :           :       :           :
-// Id. Estudiante: 999
-// Nombre DNI Telefono Direccion
-// :       :        :       :
-// -----------------------------------------------------------
-// struct Idx
-// {
-// int idEst; // clave de busqueda
-// Coll<int> collPos; // posiciones con este idEst
-// }
 
 
 int main()
 {
+    FILE* archPadron = fopen("PADRON_v15.dat","r+b");
 
-    FILE* archPradron = fopen("PADRON_v14.dat","r+b");
+    Coll<Idx> collIdx = coll<Idx>();
 
-    // creo la coleccion e inicializo
-    Coll<Idx> collIdx =  coll<Idx>();
-
-
-    // empiezo a recorrer el archivo registro por registro
-    Padron p = read<Padron>(archPradron);
-    while (!feof(archPradron))
+    Padron  regPadron = read<Padron>(archPadron);
+    while (!feof(archPadron))
     {
-        // busco el registro por id y sino lo agrego
-        int pos = descubirEnIdx(p.idEst,collIdx);
-        
-        // obtengo el elemento
-        Idx elemIdx = collGetAt<Idx>(collIdx,pos,idxFromString);
+        // / buscamos por idEst y (si corresponde) agregamos
+        int posElment = descubrirOAgregar(regPadron.idEst,regPadron.idEscuela,collIdx);
+        Idx p = collGetAt<Idx>(collIdx,posElment,idxFromString);
 
-        // obtenemos la poscion del archivo
-        int posArch = filePos<Padron>(archPradron)-1;
-        // agregamos la posicion del archivo
-        collAdd<int>(elemIdx.collPos,posArch,intToString);
-
-        // actualizamos el elemento a la coleccion
-        collSetAt<Idx>(collIdx,elemIdx,pos,idxToString);
-
-        p = read<Padron>(archPradron);
+        // agregar la poscion del registro a la coll
+        int posRegistro = filePos<Padron>(archPadron)-1;
+        collAdd<int>(p.collPos,posRegistro,intToString);
+        //reemplazar el elemento en la posicion X en la coleccion o actualziarlo
+        collSetAt<Idx>(collIdx,p,posElment,idxToString);
     }
-
-    // ordeno la coleccion de indices
-    collSort<Idx>(collIdx,cmpIdEst,idxFromString,idxToString);
     
-    // muestro las listas
-    mostrarLista1(collIdx,archPradron);
-    mostrarLista2(collIdx,archPradron);
+    // ordeamos y genermos el archivo
+    generarArchivo(collIdx,archPadron);
 
 
-    fclose(archPradron);
+    fclose(archPadron);
+
     return 0;
 }
 
