@@ -1,13 +1,12 @@
-// #include <string.h>
+#include <iostream>
 #include <stdio.h>
-#include "../include/funciones/strings.hpp"
-#include "../include/funciones/tokens.hpp"
-#include "../include/funciones/files.hpp"
-// #include "../include/funciones/testPropio.hpp"
-#include "../include/tads/BitReader.hpp"
-#include "../include/tads/BitWriter.hpp"
 #include "../include/tads/Coll.hpp"
-// #include "../include/tads/test.hpp"
+#include "../include/tads/testTools.hpp"
+// #include "funciones/files.hpp"
+// #include "../funciones/strings.hpp"
+// #include "../funciones/tokens.hpp"
+// #include "../tads/Coll.hpp"
+
 using namespace std;
 
 

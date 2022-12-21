@@ -393,10 +393,6 @@ void generarArchivo(Coll<Idx> collIdx,FILE* archPadron){
 			}
 		}
 	}
-	
-
-
-
 	fclose(archFix);
 }
 
