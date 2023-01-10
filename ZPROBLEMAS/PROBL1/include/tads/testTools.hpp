@@ -423,11 +423,11 @@ bool rVuelosEquals(RVuelos a,RVuelos b)
 
 // ----------------------------------------
 int cmpVueloId(RVuelos r1 , RVuelos r2){
-	r1.vuelo.idVue-r1.vuelo.idVue;
+	return r1.vuelo.idVue-r1.vuelo.idVue;
 }
 
 int cmpCiudadId(RCiudad c1 , RCiudad c2){
-	c1.ciudad.idCiu-c2.ciudad.idCiu;
+	return c1.ciudad.idCiu-c2.ciudad.idCiu;
 }
 
 int cmpRVueloId(RVuelos vue, int id){
@@ -456,9 +456,9 @@ Coll<RVuelos> subirVuelos(){
 		v = read<Vuelo>(archVuelo);
 	}
 
+	collSort<RVuelos>(collVuelos,cmpVueloId,rVuelosFromString,rVuelosToString);
 	fclose(archVuelo);
 
-	collSort<RVuelos>(collVuelos,cmpVueloId,rVuelosFromString,rVuelosToString);
 	return collVuelos;
 }
 
@@ -475,9 +475,9 @@ Coll<RCiudad> subirCiduades(){
 		collAdd<RCiudad>(collCiudades,elemRCiudad,rCiudadToString);
 		c = read<Ciudad>(archCiudad);
 	}
+	collSort<RCiudad>(collCiudades,cmpCiudadId,rCiudadFromString,rCiudadToString);
 	fclose(archCiudad);
 
-	collSort<RCiudad>(collCiudades,cmpCiudadId,rCiudadFromString,rCiudadToString);
 	return collCiudades;
 }
 
@@ -517,11 +517,13 @@ void mostrarResultados(Coll<RVuelos> collVuelos){
 	cout<<"******************REPORTES VUELOS***********************"<<endl;
 	RVuelos rv;
 	string sCap = "";
-	for (int i = 0; i < collSize<RVuelos>(collVuelos)-1; i++)
+	string sDes = "";
+	for (int i = 0; i < collSize<RVuelos>(collVuelos); i++)
 	{
 		rv = collGetAt<RVuelos>(collVuelos,i,rVuelosFromString);
 		sCap= rv.vuelo.cap==0?"COMPLETO":"INCOMPLETO";
-		cout<<"VUELO: "<<rv.vuelo.idDes<<" ""PLAZAS RECHAZADAS: "<<rv.acumRechazada<<" "<<"CAPACIDAD DEL VUELO: "<<sCap<<endl;
+		sDes =rv.vuelo.idDes;
+		cout<<"VUELO: "<<sDes<<" PLAZAS RECHAZADAS: "<<rv.acumRechazada<<" "<<"CAPACIDAD DEL VUELO: "<<sCap<<endl;
 		cout<<"------------------------------"<<endl;
 	}
 }

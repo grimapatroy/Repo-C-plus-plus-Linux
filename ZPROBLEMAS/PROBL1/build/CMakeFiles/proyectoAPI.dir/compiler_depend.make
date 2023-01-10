@@ -204,6 +204,7 @@ CMakeFiles/proyectoAPI.dir/src/main.cpp.o: /home/jguivar/Documentos/LAFP2022/Rep
   /usr/include/c++/9/bits/sstream.tcc \
   /usr/include/c++/9/stdlib.h \
   /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL1/include/tads/Coll.hpp \
+  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL1/include/funciones/files.hpp \
   /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL1/include/funciones/files.hpp
 
 
