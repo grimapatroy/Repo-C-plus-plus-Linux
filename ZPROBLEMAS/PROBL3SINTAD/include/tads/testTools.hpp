@@ -386,4 +386,99 @@ bool itemEquals(Item a,Item b)
 	return true;
 }
 
+
+Coll<RProducto> subirProductos(){
+
+	FILE* archiProduct = fopen("PRODUCTOS.dat","r+b");
+
+	Producto pr = read<Producto>(archiProduct);
+	Coll<RProducto>  collRProduct = coll<RProducto>();
+	// RProducto rp;
+
+	while (!feof(archiProduct))
+	{
+		RProducto rp = rProducto(pr,0);
+		collAdd<RProducto>(collRProduct,rp,rProductoToString);
+		pr = read<Producto>(archiProduct);
+	}
+
+	fclose(archiProduct);
+	return collRProduct;
+}
+
+Coll<RRubro> subirRubros(){
+	FILE* archiRubros = fopen("RUBROS.dat","r+b");
+	Coll<RRubro> collRRubros = coll<RRubro>();
+
+	Rubro ru = read<Rubro>(archiRubros);
+	while (!feof(archiRubros))
+	{
+		RRubro rrb = rRubro(ru,0);
+		collAdd<RRubro>(collRRubros,rrb,rRubroToString);
+		collRRubros = coll<RRubro>();
+	}
+	
+	fclose(archiRubros);
+
+	return collRRubros;
+}
+
+int cmpProductId(RProducto rp , int id){
+	return rp.p.idProd-id;
+}
+
+int cmpRubroId (RRubro rr, int idR){
+	return rr.r.idRub-idR;
+}
+
+
+void procesarItem(Coll<RProducto>& collProductos,Coll<RRubro>& collRubros,Coll<Item>& collItems,int idProducto,int cant,double& total,double& descTotal){
+
+	int posProduct = collFind<RProducto,int>(collProductos,idProducto,cmpProductId,rProductoFromString);
+	// este caso para productos desconocidos esta fuera del contexto
+	// if (posProduct<0)
+	// {
+	// 	Producto p = producto()
+	// 	RProducto nuevoRP = rProducto();
+	// 	collAdd
+	// }
+	RProducto rproduct = collGetAt<RProducto>(collProductos,posProduct,rProductoFromString);
+
+	int posRubro = collFind<RRubro,int>(collRubros,rproduct.p.idRub,cmpRubroId,rRubroFromString);
+	RRubro rRubro = collGetAt<RRubro>(collRubros,posRubro,rRubroFromString);
+
+
+	// actualizo el item
+	Item ite = item(rproduct.p.descr,rproduct.p.precio,cant);
+	// collSetAt<Item>(collItems,);
+	collAdd<Item>(collItems,ite,itemToString);
+
+	// actualizo la coleccion para cada uno
+	rproduct.acumCant+=cant;
+	double descto = rproduct.p.precio*rRubro.r.promo*cant;
+	rRubro.acumDesc+=descto;
+	
+	// Voy actualizando los totales de precios y descuentos
+	total = rproduct.p.precio*cant-descto;
+	descTotal +=descto;
+
+	// actualizo la coleccion para cada uno
+	collSetAt<RProducto>(collProductos,rproduct,posProduct,rProductoToString);
+	collSetAt<RRubro>(collRubros,rRubro,posRubro,rRubroToString);
+	
+
+}
+
+void mostrarTikets(Coll<Item> collItems){
+
+	collReset<Item>(collItems);
+	while (collHasNext<Item>(collItems))
+	{
+		Item it = collNext<Item>(collItems,itemFromString);
+		// ...
+	}
+	
+}
+
+
 #endif

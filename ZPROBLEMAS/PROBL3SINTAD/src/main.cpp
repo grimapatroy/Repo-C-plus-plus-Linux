@@ -18,6 +18,7 @@ int main()
     Coll<RProducto> collProductos = subirProductos();
     Coll<RRubro> collRubros = subirRubros();
     int idCliente {0}, idProducto {0}, cant {0};
+    double total {0}, descTotal {0};
     cout<<"INGRESE CODIGO DE CLIENTE: ";
     cin>>idCliente;
 
@@ -33,7 +34,7 @@ int main()
 
         while (idProducto>0)
         {
-            procesarItems(collProductos,collRubros,collItems,idProducto,cant);
+            procesarItem(collProductos,collRubros,collItems,idProducto,cant,total,descTotal);
 
             cout<<"INGRESE CODIGO DE PRODUCTO: ";
             cin>>idProducto;
