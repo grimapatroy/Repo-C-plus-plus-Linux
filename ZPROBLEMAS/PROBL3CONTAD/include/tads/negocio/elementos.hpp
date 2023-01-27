@@ -415,7 +415,8 @@ Coll<RRubro> rrubrosCreate(){
 	{
 		RRubro rrb = rRubro(ru,0);
 		collAdd<RRubro>(collRRubros,rrb,rRubroToString);
-		collRRubros = coll<RRubro>();
+		// collRRubros = coll<RRubro>();
+		ru = read<Rubro>(archiRubros);
 	}
 	fclose(archiRubros);
 	return collRRubros;

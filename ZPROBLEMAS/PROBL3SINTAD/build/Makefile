@@ -57,10 +57,10 @@ RM = /opt/cmake/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL3
+CMAKE_SOURCE_DIR = /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL3SINTAD
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL3/build
+CMAKE_BINARY_DIR = /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL3SINTAD/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL3/build/CMakeFiles /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL3/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL3SINTAD/build/CMakeFiles /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL3SINTAD/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL3/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL3SINTAD/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

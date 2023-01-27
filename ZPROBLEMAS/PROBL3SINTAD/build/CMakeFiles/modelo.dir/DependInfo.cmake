@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL3/src/main.cpp" "CMakeFiles/modelo.dir/src/main.cpp.o" "gcc" "CMakeFiles/modelo.dir/src/main.cpp.o.d"
+  "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL3SINTAD/src/main.cpp" "CMakeFiles/modelo.dir/src/main.cpp.o" "gcc" "CMakeFiles/modelo.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links.

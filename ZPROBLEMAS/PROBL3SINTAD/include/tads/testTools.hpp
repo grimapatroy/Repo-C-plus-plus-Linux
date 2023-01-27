@@ -415,7 +415,8 @@ Coll<RRubro> subirRubros(){
 	{
 		RRubro rrb = rRubro(ru,0);
 		collAdd<RRubro>(collRRubros,rrb,rRubroToString);
-		collRRubros = coll<RRubro>();
+		// collRRubros = coll<RRubro>();
+		ru = read<Rubro>(archiRubros);
 	}
 	
 	fclose(archiRubros);
@@ -475,7 +476,7 @@ void mostrarTikets(Coll<Item> collItems){
 	while (collHasNext<Item>(collItems))
 	{
 		Item it = collNext<Item>(collItems,itemFromString);
-		// ...
+		cout<<it.nomProducto<<"\t"<<it.cant<<"\t"<<it.precio<<endl;
 	}
 	
 }

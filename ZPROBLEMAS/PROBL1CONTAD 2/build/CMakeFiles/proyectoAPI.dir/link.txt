@@ -1,0 +1,1 @@
+/usr/bin/g++ -O3 -DNDEBUG CMakeFiles/proyectoAPI.dir/src/main.cpp.o -o proyectoAPI 
