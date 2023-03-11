@@ -17,6 +17,18 @@
 
 using namespace std;
 
+
+
+
+struct Item
+{
+	string producto;
+	double precio;
+	int cantidad;
+	double desc;
+	double total;
+};
+
 struct Tikets
 {
 	int nroTk;
@@ -24,6 +36,89 @@ struct Tikets
 	double tot;
 	double totlDesc;
 };
+
+string itemToString(Item x)
+{
+	char sep = 3;
+	string sProducto=x.producto;
+	string sPrecio=to_string(x.precio);
+	string sCantidad=to_string(x.cantidad);
+	string sDesc=to_string(x.desc);
+	string sTotal=to_string(x.total);
+	return sProducto+sep+sPrecio+sep+sCantidad+sep+sDesc+sep+sTotal;
+}
+
+Item itemFromString(string s)
+{
+	char sep = 3;
+	Item x;
+	string t0 = getTokenAt(s,sep,0);
+	x.producto=t0;
+	string t1 = getTokenAt(s,sep,1);
+	x.precio=stod(t1);
+	string t2 = getTokenAt(s,sep,2);
+	x.cantidad=stoi(t2);
+	string t3 = getTokenAt(s,sep,3);
+	x.desc=stod(t3);
+	string t4 = getTokenAt(s,sep,4);
+	x.total=stod(t4);
+	return x;
+}
+
+string itemToDebug(Item x)
+{
+	stringstream sout;
+	sout<< "[";
+	sout << x.producto;
+	sout << ",";
+	sout << x.precio;
+	sout << ",";
+	sout << x.cantidad;
+	sout << ",";
+	sout << x.desc;
+	sout << ",";
+	sout << x.total;
+	sout<< "]";
+	return sout.str();
+}
+
+string itemToDebug(string mssg,Item x)
+{
+	stringstream sout;
+	sout<< mssg<<":[";
+	sout << x.producto;
+	sout << ",";
+	sout << x.precio;
+	sout << ",";
+	sout << x.cantidad;
+	sout << ",";
+	sout << x.desc;
+	sout << ",";
+	sout << x.total;
+	sout<< "]";
+	return sout.str();
+}
+
+Item item(string producto,double precio,int cantidad,double desc,double total)
+{
+	Item a;
+	a.producto = producto;
+	a.precio = precio;
+	a.cantidad = cantidad;
+	a.desc = desc;
+	a.total = total;
+	return a;
+}
+
+bool itemEquals(Item a,Item b)
+{
+	if(a.producto!=b.producto) return false;
+	if(a.precio!=b.precio) return false;
+	if(a.cantidad!=b.cantidad) return false;
+	if(a.desc!=b.desc) return false;
+	if(a.total!=b.total) return false;
+	return true;
+}
 
 string tiketsToString(Tikets x)
 {
@@ -114,7 +209,7 @@ bool tiketsEquals(Tikets a,Tikets b)
 	if(a.totlDesc!=b.totlDesc) return false;
 	return true;
 }
-
+// -----------------------------------------------------------
 Tikets tiketsCreate(int nroTk){
 	// Tikets tk {nroTk,coll<Item>c,}
 	// Tikets tk;
@@ -143,23 +238,22 @@ int cmpItemProductNombre(Item a , Item b){
 
 void tiketsImprimir(Tikets tk){
 	cout<<"Nº TIKET: "<<tk.nroTk<<endl;
-	
 	// ordenamos alfabeticamente
 	collSort<Item>(tk.c,cmpItemProductNombre,itemFromString,itemToString);
 	cout<<"PRODUCTO" <<"\t"<<"\t"<<"PRECIO"<<"\t"<<"c/Dto"<<"\t"<<"Cant."<<"\t"<<"TOTAL"<<endl;
-	
 	for (int i = 0; i < collSize<Item>(tk.c)-1; i++)
 	{
 		Item it = collGetAt<Item>(tk.c,i,itemFromString);
 		double tot = it.cantidad*it.precio;
-		cout<<it.producto<<"\t"<<it.precio<<"\t"<<it.desc<<"\t"<<it.cantidad<<"\t"<<tot<<endl;
+		// cout<<it.producto<<"\t"<<it.precio<<"\t"<<it.desc<<"\t"<<it.cantidad<<"\t"<<tot<<endl;
+		cout<<itemToDebug(it)<<endl;
 		tk.tot+=tot;
 		tk.totlDesc+=it.desc;
 	}
-	
 	cout<<"TOTAL BRUTO: "<<tk.tot<<endl;
 	cout<<"DESCUENTO TOTAL: "<<tk.totlDesc<<endl;
-
 }
+
+
 
 #endif

@@ -11,8 +11,6 @@ using namespace std;
 
 // Emisión de tickets (4 y 5)
 
-
-
 int main()
 {
     // Coll<RProducto> collProductos = subirProductos();
@@ -36,14 +34,7 @@ int main()
 
     while (idCliente>0)
     {
-        
-        
-        // creo coleccion vacia de sitems para cada compra del cliente 
-        // Coll<Item> collItems = coll<Item>();
-        // reseteo un tikets para la proxima venta
         tiketsReset(Tk);
-
-
         cout<<"INGRESE CODIGO DE PRODUCTO: ";
         cin>>idProducto;
         cout<<"INGRESE CANTIDAD DE PRODUCTOS: ";
@@ -53,20 +44,18 @@ int main()
         {
             // funcion del programa , parte del main
             procesar(cproductos,crubros,Tk,idProducto,cant);
-
             cout<<"INGRESE CODIGO DE PRODUCTO: ";
             cin>>idProducto;
             cout<<"INGRESE CANTIDAD DE PRODUCTOS: ";
             cin>>cant;
         }
-
         tiketsImprimir(Tk);
         cout<<"INGRESE CODIGO DE CLIENTE: ";
         cin>>idCliente;
     }
     
-    // productoMostrarDemanda(cproductos);
-    // rubroMostarDesct(crubros);
+    productoMostrarDemanda(cproductos);
+    rubroMostarDesct(crubros);
 
     return 0;
 }

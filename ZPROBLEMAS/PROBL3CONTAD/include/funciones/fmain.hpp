@@ -13,7 +13,7 @@
 #include "../tads/negocio/tikets.hpp"
 #include "../tads/negocio/elementos.hpp"
 
-void procesar(Productos& cproductos,Rubros& crubros,Tikets Tk, int& idProducto,int& cant){
+void procesar(Productos& cproductos,Rubros& crubros,Tikets& Tk, int& idProducto,int& cant){
 
 	Producto elemProduct = productosBuscar(cproductos, idProducto);
 
