@@ -88,10 +88,10 @@ bool inscripcionEquals(Inscripcion a,Inscripcion b)
 	return true;
 }
 // -------------------------------------------------------------
-// Inscripcion inscripcionLeer(FILE* f){
-// 	Inscripcion ins = read<Inscripcion>(f);
-// 	return ins;
-// }
+Inscripcion inscripcionLeer(FILE* f){
+	Inscripcion r = read<Inscripcion>(f);
+	return r ;
+}
 
 // bool isInscripcion(FILE* arcInsc){
 // 	return !feof(arcInsc)?true:false;

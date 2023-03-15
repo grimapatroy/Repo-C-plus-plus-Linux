@@ -15,17 +15,31 @@
 #include "../tads/negocio/Inscripciones.hpp"
 
 
-void procesarInscripcionesYCursosRechazados(Cursos& cCurso,Inscripcion regInsc,AlumnosRechazados& alumRecha){
-    
-    int pos = cursosBuscar(cCurso.c,regInsc.idCur);
-    // Curso cur = collGetAt<Curso>(cCurso.c,pos,)
-    Curso cur = cursosObtener(cCurso.c,pos);
-    cursosActualizarInscripcionesCapacidad(cur,regInsc);
-    if (isCursosCapacidad(cur))
+void procesarInscripcionesYCursosRechazados(Cursos& cCurso,Inscripcion& regInsc,AlumnosRechazados& alumRecha){
+    Curso cur = cursosActualizarCapacidad(cCurso.c,regInsc.idCur);
+    if (!isCursosCapacidad(cur))
     {
-        alumnosRechazadosActualizar(alumRecha,cur,regInsc.idAlu);
+        alumnosRechazadosActualizar(alumRecha,cur.materia,regInsc.idAlu);
     }
-    
 }
+
+void  procesarReasignaciones(Reasignaciones& cReasig,AlumnosRechazados alumRecha,    Cursos cCurso){
+    for (int posAlum = 0; posAlum <alumnosRechazadosSize(alumRecha.c); posAlum++)
+    {
+        AlumnoRechasoInsc alumnitoX =  AlumnoRechasoInscObtener(alumRecha.c,posAlum);
+        bool libre ;
+        Curso cursito = cursosBucarCapacidadLibre(cCurso.c,libre);
+        while (!libre)
+        {
+            reasignacionBuscarYOAgregar(cReasig.c,cursito.idCur,alumnitoX.idAlumno);
+            Curso cursito = cursosBucarCapacidadLibre(cCurso.c,libre);
+        }
+    }
+}
+
+
+
+
+
 
 #endif

@@ -166,62 +166,96 @@ bool cursosEquals(Cursos a,Cursos b)
 	return true;
 }
 // ---------------------------------------------------------------------------------------
+Curso cursoLeer(FILE* cur){
+	Curso c = read<Curso>(cur);
+	return c;
+}
 
-// void cursosAgregar(Cursos& ccursos,Curso curso){
-// 	collAdd<Curso>(ccursos.c,curso,cursoToString);
-// }
+void cursosAgregar(Cursos& ccursos,Curso curso){
+	collAdd<Curso>(ccursos.c,curso,cursoToString);
+}
+
+Cursos cursosSubirConsultas(){
+	FILE* fcur = fopen("CURSOS.dat","r+b");
+	Cursos ccursos = cursos(coll<Curso>());
+	Curso curso = cursoLeer(fcur);
+	while (!feof(fcur))
+	{
+		cursosAgregar(ccursos,curso);
+		curso = cursoLeer(fcur);
+	}
+	fclose(fcur);
+	return ccursos;
+}
 
 // bool isCurso(FILE* f){
 // 	return !feof(f)?true:false;
 // } 
 
-// Curso cursoLeer(FILE* cur){
-// 	Curso c = read<Curso>(cur);
-// 	return c;
-// }
 
 
-// Cursos cursosSubirConsultas(){
-// 	FILE* cur = fopen("CURSOS.dat","r+b");
-// 	Coll<Curso> c = coll<Curso>();
-// 	Cursos ccursos = cursos(c);
-// 	Curso curso = cursoLeer(cur);
-// 	while (isCurso(cur))
-// 	{
-// 		cursosAgregar(ccursos,curso);
-// 		curso = cursoLeer(cur);
-// 	}
-// 	fclose(cur);
-// 	return ccursos;
-// }
 
-// int cmpCursoId(Curso c, int id){
-// 	return c.idCur-id;
-// }
 
-// int cursosBuscar(Coll<Curso> c,int idCur){
-// 	int pos = collFind<Curso,int>(c,idCur,cmpCursoId,cursoFromString);
-// 	return pos;
-// }
 
-// Curso cursosObtener(Coll<Curso> c,int pos){
-// 	return collGetAt<Curso>(c,pos,cursoFromString);
-// }
+int cmpCursoId(Curso c, int id){
+	return c.idCur-id;
+}
 
-// bool isCursosCapacidad(Curso cur){
-// 	return cur.cap==0?true:false;
-// }
+int cursosBuscar(Coll<Curso> c,int idCur){
+	return collFind<Curso,int>(c,idCur,cmpCursoId,cursoFromString);
+}
 
-// void cursosActualizarInscripcionesCapacidad(Curso& cur,Inscripcion ins){
-// 	if (cur.cap>0 && ins.idCur == cur.idCur)
-// 	{
-// 		cur.cap--;
-// 	}
-// }
+Curso cursosObtener(Coll<Curso> c,int pos){
+	return collGetAt<Curso>(c,pos,cursoFromString);
+}
+
+bool isCursosCapacidad(Curso cur){
+	return cur.cap>0?true:false;
+}
+
+void cursosActualizar(Curso cursito,int pos,Coll<Curso>& c){
+	collSetAt<Curso>(c,cursito,pos,cursoToString);
+}
+
+
+Curso cursosActualizarCapacidad(Coll<Curso>& c,int idCurso){
+	int pos = cursosBuscar(c,idCurso);
+    Curso cursito = cursosObtener(c,pos);
+	if (isCursosCapacidad(cursito))
+	{
+		cursito.cap--;
+		cursosActualizar(cursito,pos,c);
+	}
+	else
+	{
+		cout<<"MENSAJE:::EL CURSO ESTA COMPLETO"<<endl;
+	}
+	return cursito;
+}
+
+
+Curso cursosBucarCapacidadLibre(Coll<Curso>& c,bool& libre){
+	Curso cursito;
+	for (int i = 0; i < collSize<Curso>(c)-1; i++)
+	{
+		cursito = cursosObtener(c,i);
+		if (isCursosCapacidad(cursito))
+		{
+			libre =  true;
+			cursosActualizarCapacidad(c,cursito.idCur);
+			return cursito;
+		}
+	}
+	return cursito;
+}
+
+
+
+
 
 // Curso cursoBuscarCapacidadLibreYActualizar(Cursos cCurso){
 // 	Curso cur ;
-// 	for (int i = 0; i < collSize<Curso>(cCurso.c) ; i++)
+// 	for (int i = 0; i < collSize<Curso>(cCuc) ; i++)
 // 	{	
 // 		cur = cursosObtener(cCurso.c,i);
 // 		if (!isCursosCapacidad(cur))
@@ -231,5 +265,8 @@ bool cursosEquals(Cursos a,Cursos b)
 // 	}
 // 	return cur;
 // }
+
+//  reasignacionActualizar
+
 
 #endif

@@ -28,11 +28,12 @@ int main()
     while (!feof(fArchivoIns))
     {
         procesarInscripcionesYCursosRechazados(cCurso,regInsc,alumRecha);
+        regInsc = inscripcionLeer(fArchivoIns);
     }
-    
-    reasignacionesActualizar(cReasig,alumRecha,cCurso);
-
-    revisionesWrite(cReasig,cRevision);
+    procesarReasignaciones(cReasig,alumRecha,cCurso);
+    // procesarReviciones(cReasig,alumRecha,cCurso,cRevision);
+    // reasignacionesWrite(cReasig);
+    // revisionesWrite(cRevision);
 
     fclose(fArchivoIns);
 

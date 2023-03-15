@@ -161,43 +161,72 @@ bool alumnosRechazadosEquals(AlumnosRechazados a,AlumnosRechazados b)
 	return true;
 }
 // -----------------------------------------------------------------------------------
-// AlumnosRechazados alumnosRechazadosCreate(){
-// 	AlumnoRechasoInsc aIns = alumnoRechasoInsc(0,coll<string>());
-// 	AlumnosRechazados cAlum = alumnosRechazados(coll<AlumnoRechasoInsc>());
-// 	collAdd<AlumnoRechasoInsc>(cAlum.c,aIns,alumnoRechasoInscToString);
-// 	return cAlum;
-// }
+AlumnosRechazados alumnosRechazadosCreate(){
+	AlumnoRechasoInsc aIns = alumnoRechasoInsc(0,coll<string>());
+	AlumnosRechazados cAlum = alumnosRechazados(coll<AlumnoRechasoInsc>());
+	collAdd<AlumnoRechasoInsc>(cAlum.c,aIns,alumnoRechasoInscToString);
+	return cAlum;
+}
 
-// int cmpAlumnoRechasadoId(AlumnoRechasoInsc a, int b){
-// 	return a.idAlumno-b;
-// }
 
-// void alumnosRechazadosActualizar(AlumnosRechazados& aRecha,Curso& cur, int idAlum){
-// 	string sMateria = cur.materia;
-// 	int pos = collFind<AlumnoRechasoInsc,int>(aRecha.c,idAlum,cmpAlumnoRechasadoId,alumnoRechasoInscFromString);
-// 	if (pos<0)
-// 	{
-// 		// string s = 
-// 		AlumnoRechasoInsc aIns = alumnoRechasoInsc(idAlum,coll<string>());
-// 		int posMateria = collFind<string,string>(aIns.c,sMateria,cmpString,stringToString);
-// 		if (pos<0)
-// 		{
-// 			collAdd<string>(aIns.c,sMateria,stringToString);
-// 		}
-// 	}else
-// 	{
-// 		AlumnoRechasoInsc aIns = collGetAt<AlumnoRechasoInsc>(aRecha.c,pos,alumnoRechasoInscFromString);
-// 		collAdd<string>(aIns.c,sMateria,stringToString);
-// 	}
-// }
 
-// int alumnosRechazadosSize(Coll<AlumnoRechasoInsc>& c){
-// 	return collSize<AlumnoRechasoInsc>(c);
-// }
+int cmpAlumnoRechasadoId(AlumnoRechasoInsc a, int b){
+	return a.idAlumno-b;
+}
 
-// AlumnoRechasoInsc alumnosRechazadosObtener(Coll<AlumnoRechasoInsc> c,int pos){
-// 	return collGetAt<AlumnoRechasoInsc>(c,pos,alumnoRechasoInscFromString);
-// }
+int alumnosRechazadoBuscar(Coll<AlumnoRechasoInsc>c , int idAlum){
+	return collFind<AlumnoRechasoInsc,int>(c,idAlum,cmpAlumnoRechasadoId,alumnoRechasoInscFromString);
+}
+
+AlumnoRechasoInsc AlumnoRechasoInscObtener(Coll<AlumnoRechasoInsc>c, int pos){
+	return collGetAt<AlumnoRechasoInsc>(c,pos,alumnoRechasoInscFromString);
+}
+
+
+int cmpStringString(string a, string b){
+	return cmpString(a,b);
+}
+
+
+int alumnosRechazadosBuscarPorMateria(Coll<string>c, string sMateria){
+	return  collFind<string,string>(c,sMateria,cmpStringString,stringToString);
+}
+
+
+void alumnosRechazadosAgregarMateria(Coll<string>& c,string sMateria){
+	collAdd<string>(c,sMateria,stringToString);
+}
+
+
+void alumnosRechazadosSet(Coll<AlumnoRechasoInsc>c,AlumnoRechasoInsc element, int pos){
+	collSetAt<AlumnoRechasoInsc>(c,element,pos,alumnoRechasoInscToString);
+}
+
+
+void alumnosRechazadosActualizar(AlumnosRechazados& aRecha, char materia[20], int idAlum){
+	string sMateria = materia;
+	int pos = alumnosRechazadoBuscar(aRecha.c,idAlum);
+	if (pos<0)
+	{
+		AlumnoRechasoInsc aIns = alumnoRechasoInsc(idAlum,coll<string>());
+		int posMateria = alumnosRechazadosBuscarPorMateria(aIns.c,sMateria);
+		if (posMateria<0)
+		{
+			alumnosRechazadosAgregarMateria(aIns.c,sMateria);
+		}
+	}else
+	{
+		AlumnoRechasoInsc aIns = AlumnoRechasoInscObtener(aRecha.c,pos);
+		alumnosRechazadosAgregarMateria(aIns.c,sMateria);
+		alumnosRechazadosSet(aRecha.c,aIns,pos);
+	}
+}
+
+
+
+int alumnosRechazadosSize(Coll<AlumnoRechasoInsc>& c){
+	return collSize<AlumnoRechasoInsc>(c)-1;
+}
 
 
 

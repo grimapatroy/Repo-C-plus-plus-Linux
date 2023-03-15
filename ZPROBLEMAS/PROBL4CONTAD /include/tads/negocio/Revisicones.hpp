@@ -146,10 +146,13 @@ bool revicionesEquals(Reviciones a,Reviciones b)
 	return true;
 }
 // ------------------------------------------------------------------------------
-// Reviciones revicionesCreate(){
-// 	Reviciones cRev = reviciones(coll<Revision>());
-// 	return cRev;
-// }
+Reviciones revicionesCreate(){
+	string s = "";
+	Revision r = revision(0,strcpy(r.materia,s.c_str()));
+	Reviciones cRev = reviciones(coll<Revision>());
+	collAdd<Revision>(cRev.c,r,revisionToString);
+	return cRev;
+}
 
 // void revisionesWrite(Reasignaciones& cReasig,Reviciones& cRevision){
 // 	//falta

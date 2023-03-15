@@ -150,27 +150,44 @@ bool reasignacionesEquals(Reasignaciones a,Reasignaciones b)
 	return true;
 }
 // ------------------------------------------------------------------------------------
-// Reasignaciones reasignacionesCreate(){
-// 	Reasignacion r = reasignacion(0,0);
-// 	Reasignaciones cReag = reasignaciones(coll<Reasignacion>());
-// 	collAdd<Reasignacion>(cReag.c,r,reasignacionToString);
-// 	return cReag;
-// }
+Reasignaciones reasignacionesCreate(){
+	Reasignacion r = reasignacion(0,0);
+	Reasignaciones cReag = reasignaciones(coll<Reasignacion>());
+	collAdd<Reasignacion>(cReag.c,r,reasignacionToString);
+	return cReag;
+}
+
+int reasignacionAgregar(Coll<Reasignacion>&c,Reasignacion reag){
+	return collAdd<Reasignacion>(c,reag,reasignacionToString);
+}
+
+int cmpReasignacionIdAlum(Reasignacion r, int id){
+	return r.idAlu-id;
+}
+
+
+void reasignacionBuscarYOAgregar(Coll<Reasignacion>& c,int idAlumno ,int idCurso){
+	int pos = collFind<Reasignacion,int>(c,idAlumno,cmpReasignacionIdAlum,reasignacionFromString);
+	if (pos<0)
+	{	
+		Reasignacion reag = reasignacion(idAlumno,idCurso);
+		pos = reasignacionAgregar(c,reag);
+	}
+}
+
+
+
 
 // Reasignacion reasignacionObtener(Coll<Reasignacion>c,int i){
 // 	return collGetAt<Reasignacion>(c,i,reasignacionFromString);
 // }
-
 // int cmpReasigIdAlum(Reasignacion r, int a){
 // 	return r.idAlu - a;
 // }
-
 // int reasignacionBuscar(Coll<Reasignacion> c, int id){
 // 	return collFind<Reasignacion,int>(c,id,cmpReasigIdAlum,reasignacionFromString);
 // }
-
 // void reasignacionActualizar(AlumnoRechasoInsc alum,Curso curs,Coll<Reasignacion>& c){
-
 // 		int pos = reasignacionBuscar(c,alum.idAlumno);
 // 		if (pos<0)
 // 		{
@@ -178,12 +195,9 @@ bool reasignacionesEquals(Reasignaciones a,Reasignaciones b)
 // 			collAdd<Reasignacion>(c,re,reasignacionToString);
 // 		}
 // }
-
 // void reasignacionGrabar(FILE* arReasig,Reasignacion reasig){
 // 	write<Reasignacion>(arReasig,reasig);
 // }
-
-
 // void reasignacionesWrite(Reasignaciones& cReasig,AlumnosRechazados& alumRecha, Cursos& cCurso){
 // 	FILE* arReasig = fopen("REASIGNACIONES.dat","w+b");
 // 	for (int i = 0; i < collSize<AlumnoRechasoInsc>(alumRecha.c); i++)
@@ -192,13 +206,11 @@ bool reasignacionesEquals(Reasignaciones a,Reasignaciones b)
 // 		Curso curs = cursoBuscarCapacidadLibreYActualizar(cCurso);//tengo que actualizar la cap del curso reasignado
 // 		reasignacionActualizar(alum,curs,cReasig.c);
 // 	}
-	
 // 	for (int i = 0; i < collSize<Reasignacion>(cReasig.c); i++)
 // 	{
 // 		Reasignacion reasig = reasignacionObtener(cReasig.c,i);
 // 		reasignacionGrabar(arReasig,reasig);
 // 	}
-	
 // 	fclose(arReasig);
 // }
 

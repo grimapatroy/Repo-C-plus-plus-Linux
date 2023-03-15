@@ -73,15 +73,15 @@ CMakeFiles/modelo.dir/src/main.cpp.o: CMakeFiles/modelo.dir/flags.make
 CMakeFiles/modelo.dir/src/main.cpp.o: /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/main.cpp
 CMakeFiles/modelo.dir/src/main.cpp.o: CMakeFiles/modelo.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD /build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/modelo.dir/src/main.cpp.o"
-	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/modelo.dir/src/main.cpp.o -MF CMakeFiles/modelo.dir/src/main.cpp.o.d -o CMakeFiles/modelo.dir/src/main.cpp.o -c "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD /src/main.cpp"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/modelo.dir/src/main.cpp.o -MF CMakeFiles/modelo.dir/src/main.cpp.o.d -o CMakeFiles/modelo.dir/src/main.cpp.o -c "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD /src/main.cpp"
 
 CMakeFiles/modelo.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/modelo.dir/src/main.cpp.i"
-	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD /src/main.cpp" > CMakeFiles/modelo.dir/src/main.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD /src/main.cpp" > CMakeFiles/modelo.dir/src/main.cpp.i
 
 CMakeFiles/modelo.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/modelo.dir/src/main.cpp.s"
-	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD /src/main.cpp" -o CMakeFiles/modelo.dir/src/main.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD /src/main.cpp" -o CMakeFiles/modelo.dir/src/main.cpp.s
 
 # Object files for target modelo
 modelo_OBJECTS = \

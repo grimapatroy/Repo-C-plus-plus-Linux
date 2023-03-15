@@ -165,43 +165,7 @@ CMakeFiles/modelo.dir/src/main.cpp.o: \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../funciones/strings.hpp \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../funciones/tokens.hpp \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../funciones/files.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/Inscripciones.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../funciones/strings.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../funciones/tokens.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../funciones/files.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/Coll.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/AlumnosRechazados.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../funciones/strings.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../funciones/tokens.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../funciones/files.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/Coll.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/Cursos.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/Inscripciones.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/Reasignaciones.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../funciones/strings.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../funciones/tokens.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../funciones/files.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/Coll.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/AlumnosRechazados.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/Cursos.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/Inscripciones.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/Revisicones.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../funciones/strings.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../funciones/tokens.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../funciones/files.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/Coll.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/AlumnosRechazados.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/Inscripciones.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/Reasignaciones.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/Cursos.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/../../tads/negocio/Revisicones.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/Cursos.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/Reasignaciones.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/../../tads/negocio/Revisicones.hpp \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/Coll.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/AlumnosRechazados.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/Reasignaciones.hpp \
- /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/../../tads/negocio/Revisicones.hpp \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/AlumnosRechazados.hpp \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/Reasignaciones.hpp \
  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/ZPROBLEMAS/PROBL4CONTAD\ /src/../include/tads/negocio/Revisicones.hpp \
