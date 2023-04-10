@@ -7,17 +7,42 @@
 template <typename T>
 struct Node
 {
+   T t;
+   Node<T>* sig;
 };
 
 template <typename T>
 Node<T>* add(Node<T>*& p,T e)
 {
-   return NULL;
+   // inicializo con memoria dinamica y valores en nuevo node
+   Node<T>* nuevo = new Node<T>();
+   nuevo->t = e;
+   nuevo->sig = NULL;
+
+   if (p!=NULL)
+   {
+      // creamos un node auxiliar que apunte a p
+      Node<T>* aux = p;
+      while (aux->sig!=NULL)
+      {
+         // aux apunte al siguiente node
+         aux = aux->sig;
+      }
+         // enlazo el nuevo nodo
+         aux->sig = nuevo;
+   }
+   else
+   {
+      // cambio la direccion apuntada por p , y nuevo es el primero
+      p = nuevo;
+   }
+   return nuevo;
 }
 
 template <typename T>
 Node<T>* addFirst(Node<T>*& p,T e)
 {
+   
    return NULL;
 }
 

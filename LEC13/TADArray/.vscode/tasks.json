@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "build",
+			"command": "C:\\cygwin64\\bin\\g++.exe",
+			"args": [
+				"-g",
+				"${file}",
+				//"C:\\Users\\Humanitroy\\Documents\\Practica_Algoritmos2020\\AlgoritmosC++\\projec_cadenas-30-03-2021\\main.cpp",
+				"-o",
+				//"C:\\Users\\Humanitroy\\Documents\\Practica_Algoritmos2020\\AlgoritmosC++\\projec_cadenas-30-03-2021\\main.exe",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "C:\\cygwin64\\bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: C:\\cygwin64\\bin\\g++.exe"
+		}
+	]
+}

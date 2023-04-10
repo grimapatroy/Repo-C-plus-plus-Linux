@@ -2,36 +2,22 @@
 #include <stdio.h>
 #include "../include/tads/Coll.hpp"
 #include "../include/tads/Array.hpp"
+#include "../include/tads/Map.hpp"
 // #include "../include/tads/testTools.hpp"
 #include "../include/funciones/arrays.hpp"
-// #include "funciones/files.hpp"
-// #include "../funciones/strings.hpp"
-// #include "../funciones/tokens.hpp"
-// #include "../tads/Coll.hpp"
+#include "../include/funciones/lists.hpp"
 
-
-int cmpInt (int a,int b){
-    return b-a;
-}
 
 
 int main()
 {   
-    Array<int> a = array<int>();
-    // Array<int> b = array<int>(6);
-arrayOrderedInsert<int>(a,2,cmpInt);
-arrayOrderedInsert<int>(a,1,cmpInt);
-arrayOrderedInsert<int>(a,3,cmpInt);
-for(int i=0;i<arraySize<int>(a);i++)
-{
-int* p = arrayGet<int>(a,i);
-cout << *p << endl; // SALIDA 1,2,3
-}
 
-    cout << "------"<< endl; // SALIDA 1,2,3
-    cout << a.len << endl; // SALIDA 1,2,3
-    cout << a.cap << endl; // SALIDA 1,2,3
-
+    Node<int>* p = NULL;   
+    add<int>(p,10);
+    add<int>(p,11);
+    add<int>(p,12);
+    add<int>(p,13);
+    add<int>(p,14);
 
     return 0;
 }

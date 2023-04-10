@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/build",
+  "command": "/usr/bin/g++  -I/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/include -O3 -DNDEBUG -o CMakeFiles/proyectoAPI.dir/src/main.cpp.o -c /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/src/main.cpp",
+  "file": "/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/src/main.cpp"
+}
+]

@@ -201,8 +201,13 @@ CMakeFiles/proyectoAPI.dir/src/main.cpp.o: /home/jguivar/Documentos/LAFP2022/Rep
   /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/include/funciones/strings.hpp \
   /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/include/tads/Array.hpp \
   /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/include/funciones/arrays.hpp \
-  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/include/funciones/arrays.hpp
+  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/include/tads/Map.hpp \
+  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/include/tads/Array.hpp \
+  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/include/funciones/arrays.hpp \
+  /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/include/funciones/lists.hpp
 
+
+/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/include/tads/Map.hpp:
 
 /home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/include/funciones/arrays.hpp:
 
@@ -527,6 +532,8 @@ CMakeFiles/proyectoAPI.dir/src/main.cpp.o: /home/jguivar/Documentos/LAFP2022/Rep
 /usr/include/c++/9/system_error:
 
 /usr/include/x86_64-linux-gnu/c++/9/bits/error_constants.h:
+
+/home/jguivar/Documentos/LAFP2022/Repo_Cplusplus_Linux/proyectoBiblioApi/include/funciones/lists.hpp:
 
 /usr/include/c++/9/bits/locale_facets.h:
 
